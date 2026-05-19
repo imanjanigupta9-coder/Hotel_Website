@@ -55,6 +55,21 @@ class TestimonialsCarousel {
     dots.forEach((dot, i) => {
       dot.style.backgroundColor = i === this.currentIndex ? 'var(--accent)' : '#cbd5e1';
     });
+
+    // Update right-side testimonial image (if present)
+    try {
+      const displayImg = document.getElementById('testimonial-display-image');
+      if (displayImg) {
+        const activeCard = this.testimonials[this.currentIndex];
+        const img = activeCard.querySelector('img');
+        if (img) {
+          displayImg.src = img.src || img.getAttribute('data-src') || displayImg.src;
+          displayImg.alt = img.alt || displayImg.alt;
+        }
+      }
+    } catch (e) {
+      // fail silently
+    }
   }
 
   next() {
@@ -91,6 +106,9 @@ class HorizontalSlider {
     this.dots = wrapper.querySelector('.carousel-dots');
     this.cards = this.slider ? Array.from(this.slider.children) : [];
     this.activeIndex = 0;
+    this.isDragging = false;
+    this.startX = 0;
+    this.scrollStart = 0;
 
     this.init();
   }
@@ -132,6 +150,39 @@ class HorizontalSlider {
       this.activeIndex = index;
       this.updateActiveDot(index);
     }
+  }
+
+  onWheel(e) {
+    e.preventDefault();
+    const scrollAmount = e.deltaY || e.deltaX;
+    this.slider.scrollLeft += scrollAmount > 0 ? 300 : -300;
+  }
+
+  onPointerDown(e) {
+    this.isDragging = true;
+    this.startX = e.clientX;
+    this.scrollStart = this.slider.scrollLeft;
+    e.preventDefault();
+    this.slider.classList.add('grabbing');
+    this.slider.setPointerCapture(e.pointerId);
+  }
+
+  onPointerMove(e) {
+    if (!this.isDragging) return;
+    e.preventDefault();
+    const delta = this.startX - e.clientX;
+    this.slider.scrollLeft = this.scrollStart + delta;
+  }
+
+  onPointerUp(e) {
+    if (!this.isDragging) return;
+    this.isDragging = false;
+    this.slider.classList.remove('grabbing');
+    if (e.pointerId) {
+      this.slider.releasePointerCapture(e.pointerId);
+    }
+    const snapIndex = this.getNearestCardIndex();
+    this.goTo(snapIndex);
   }
 
   updateActiveDot(index) {

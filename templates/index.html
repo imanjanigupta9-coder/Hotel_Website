@@ -3,54 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title data-i18n="site_title_hero">THE ZENITH</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body class="antialiased text-neutral-900 bg-gradient-to-b from-white to-gray-50">
-  <header class="bg-slate-900 text-white shadow-xl sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 md:p-6">
-      <a href="#" class="flex items-center gap-3">
+  <header class="bg-black text-white shadow-sm sticky top-0 z-50 site-header">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2 md:px-5 md:py-3 header-inner">
+      <a href="/" class="flex items-center gap-2">
         {% if logo_image %}
-        <img src="{{ logo_image }}" alt="THE ZENITH" class="h-10 object-contain logo-img" onerror="this.style.display='none'" />
+        <img src="{{ logo_image or '/static/images/avyukt_logo_transparent.png' }}" alt="AVYUKT VIEW" class="h-14 md:h-16 object-contain logo-img nav-logo-img" onerror="this.style.display='none'" />
         {% else %}
-        <div id="logo-fallback" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold">Z</div>
-          <span class="font-serif text-xl tracking-wide" data-i18n="site_title_hero">THE ZENITH</span>
-        </div>
+        <img src="/static/images/avyukt_logo_transparent.png" alt="AVYUKT VIEW" class="h-14 md:h-16 object-contain logo-img nav-logo-img" onerror="this.style.display='none'" />
         {% endif %}
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm uppercase tracking-wider">
-        <a href="/pages" class="text-white transition hover:text-amber-300">Pages</a>
-        <a href="/rooms" class="text-white transition hover:text-amber-300">Rooms</a>
-        <a href="#services" class="text-white transition hover:text-amber-300">Services</a>
-        <a href="#offers" data-i18n="offers_label" class="text-white transition hover:text-amber-300">Offers</a>
-        <a href="#partners" data-i18n="partners_label" class="text-white transition hover:text-amber-300">Partners</a>
-        <a href="#contact" class="text-white transition hover:text-amber-300">Contact</a>
+      <nav class="hidden md:flex items-center gap-3 text-[0.75rem] uppercase tracking-[0.24em]">
+        <a href="#rooms" class="text-white transition hover:text-amber-500 py-2" data-i18n="rooms_label">Rooms</a>
+        <a href="#partners" data-i18n="partners_label" class="text-white transition hover:text-amber-500 py-2">Partners</a>
+        <a href="#about" data-i18n="about_label" class="text-white transition hover:text-amber-500 py-2">About Us</a>
+        <a href="#services" data-i18n="services_label" class="text-white transition hover:text-amber-500 py-2">Services</a>
+        <a href="#offers" data-i18n="offers_label" class="text-white transition hover:text-amber-500 py-2">Offers</a>
+        <a href="#contact" data-i18n="contact_label" class="text-white transition hover:text-amber-500 py-2">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <select id="lang-select" class="bg-slate-900 border border-slate-700 text-white text-sm hidden md:block rounded-lg px-3 py-2">
-          <option value="en">English</option>
-          <option value="hi">हिन्दी</option>
-          <option value="kn">ಕನ್ನಡ</option>
-          <option value="fr">Français</option>
-          <option value="de">Deutsch</option>
-        </select>
-        <a href="/rooms" class="book-now-btn px-6 py-3 rounded-full text-sm md:text-base font-semibold text-white bg-amber-500 hover:bg-amber-400 transition">Book Now!</a>
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="flex items-center gap-2 md:gap-3">
+        <div class="language-picker relative">
+          <button id="lang-picker-btn" type="button" class="lang-btn rounded-full border border-white/15 bg-white/10 text-white p-1 md:p-2 hover:bg-white/15 transition" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 md:h-5 w-4 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M2 12h20"></path>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </button>
+          <div id="lang-menu" class="lang-menu hidden absolute right-0 mt-2 w-36 rounded-xl border border-white/10 bg-black/95 shadow-xl backdrop-blur-md z-50">
+            <button type="button" class="lang-option w-full px-3 py-2 text-sm text-left text-white hover:bg-white/10" data-lang="en">English</button>
+            <button type="button" class="lang-option w-full px-3 py-2 text-sm text-left text-white hover:bg-white/10" data-lang="hi">हिन्दी</button>
+            <button type="button" class="lang-option w-full px-3 py-2 text-sm text-left text-white hover:bg-white/10" data-lang="te">తెలుగు</button>
+          </div>
+        </div>
+        <a href="{{ booking_link }}" data-i18n="book_now_button" class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-white bg-amber-500 hover:bg-amber-400 transition">Book Now!</a>
+        <button id="mobile-menu-btn" class="md:hidden p-1.5 text-white" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-700 bg-slate-900">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black">
       <div class="p-4 flex flex-col gap-3">
-        <a href="/pages" class="uppercase text-white hover:text-amber-300">Pages</a>
-        <a href="/rooms" class="uppercase text-white hover:text-amber-300">Rooms</a>
-        <a href="#services" class="uppercase text-white hover:text-amber-300">Services</a>
-        <a href="#offers" class="uppercase text-white hover:text-amber-300">Offers</a>
-        <a href="#partners" class="uppercase text-white hover:text-amber-300">Partners</a>
-        <a href="#contact" class="uppercase text-white hover:text-amber-300">Contact</a>
+        <a href="#about" data-i18n="about_label" class="uppercase text-white hover:text-amber-500">About Us</a>
+        <a href="#rooms" data-i18n="rooms_label" class="uppercase text-white hover:text-amber-500">Rooms</a>
+        <a href="/rooms" class="uppercase text-white hover:text-amber-500">Browse rooms</a>
+        <a href="/gallery" class="uppercase text-white hover:text-amber-500">Gallery</a>
+        <a href="#services" data-i18n="services_label" class="uppercase text-white hover:text-amber-500">Services</a>
+        <a href="#offers" data-i18n="offers_label" class="uppercase text-white hover:text-amber-500">Offers</a>
+        <a href="#partners" data-i18n="partners_label" class="uppercase text-white hover:text-amber-500">Partners</a>
+        <a href="#contact" data-i18n="contact_label" class="uppercase text-white hover:text-amber-500">Contact</a>
       </div>
     </div>
   </header>
@@ -61,11 +67,11 @@
       <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40"></div>
       <div class="relative z-20 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div class="text-white">
-          <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-4" data-i18n="site_title_hero">THE ZENITH</h1>
+          <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-4" data-i18n="site_title_hero">AVYUKT VIEW</h1>
           <p class="uppercase tracking-widest text-sm md:text-base opacity-90 mb-6" data-i18n="hero_tagline">A New Chapter of Luxury in Bangalore</p>
-          <p class="max-w-xl text-sm md:text-base opacity-80 mb-6">Ultrices quam mattis posuere porttitor tellus rhoncus tristique. Primis aliquam dignissim interdum vel suscipit sodales.</p>
+          <p data-i18n="hero_description" class="max-w-xl text-sm md:text-base opacity-80 mb-6">Premium luxury hotel with world-class amenities, fine dining, and exceptional service in the heart of Bangalore.</p>
           <div class="flex flex-wrap gap-4">
-            <a href="/rooms" class="crystal-btn book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
+            <a href="#rooms" data-i18n="explore_rooms" class="crystal-btn book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
             <a href="#offers" class="inline-flex items-center gap-2 text-sm md:text-base bg-white/15 text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white/30 transition" data-i18n="offers_label">Offers</a>
           </div>
         </div>
@@ -73,109 +79,190 @@
     </section>
 
     <section id="booking" class="relative -mt-16 z-20 px-6">
-      <div class="max-w-6xl mx-auto bg-white rounded-[32px] shadow-2xl overflow-hidden grid gap-6 lg:grid-cols-[1.2fr_0.8fr] items-stretch p-6 md:p-10">
-        <div class="rounded-[32px] overflow-hidden shadow-sm h-full min-h-[460px] bg-slate-100">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Classic suite" class="w-full h-full object-cover transition duration-700 ease-in-out hover:scale-105" onerror="this.src='https://via.placeholder.com/1200x900?text=Room+Image+Unavailable';">
-        </div>
-        <aside class="rounded-3xl bg-slate-950/95 p-6 text-white shadow-lg booking-panel glass-card">
-          <div class="mb-6">
-            <p class="uppercase tracking-[0.35em] text-amber-600 text-sm">Reserve your stay</p>
-            <h2 class="text-3xl font-serif">Find your perfect room in seconds</h2>
-            <p class="text-neutral-300 mt-3">Search availability, select your preferred room, and secure the best price with our easy booking experience.</p>
-          </div>
-          <form id="booking-form" action="/book" method="POST" class="grid gap-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-xs uppercase text-amber-200">Name</label>
-                <input name="name" type="text" placeholder="Your name" class="w-full px-4 py-3 rounded-2xl bg-white text-neutral-900"/>
-              </div>
-              <div>
-                <label class="text-xs uppercase text-amber-200">Email</label>
-                <input name="email" type="email" placeholder="Email address" class="w-full px-4 py-3 rounded-2xl bg-white text-neutral-900"/>
+      <div class="max-w-7xl mx-auto rounded-2xl shadow-xl overflow-hidden grid gap-4 lg:grid-cols-1 items-center p-6" style="background: linear-gradient(135deg, rgba(18,14,10,0.95) 0%, rgba(28,22,17,0.95) 100%); border:1px solid rgba(212,175,55,0.15);">
+          <aside class="rounded-2xl bg-transparent p-0 text-white booking-panel w-full">
+          <form id="booking-form" action="/book" method="POST" class="flex flex-wrap items-end gap-3">
+            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+              <label data-i18n="name_label" class="text-xs uppercase text-white font-semibold block mb-1">Name</label>
+              <input name="name" type="text" data-i18n-placeholder="placeholder_name" placeholder="Name" class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;"/>
+            </div>
+            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+              <label class="text-xs uppercase text-white font-semibold block mb-1" data-i18n="check_in_label">Check In</label>
+              <input name="check_in" type="date" class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;" />
+            </div>
+            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+              <label class="text-xs uppercase text-white font-semibold block mb-1" data-i18n="check_out_label">Check Out</label>
+              <input name="check_out" type="date" class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;" />
+            </div>
+            <div class="w-full sm:w-auto min-w-[120px]">
+              <label data-i18n="adults_label" class="text-xs uppercase text-white font-semibold block mb-1">Adults</label>
+              <div class="flex items-center gap-1 rounded-lg border border-white/30 bg-transparent px-2 py-2">
+                <button type="button" class="guest-button guest-decrement rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="adults">−</button>
+                <span id="adults-value" class="min-w-[1.5rem] text-center text-sm font-semibold text-white">1</span>
+                <button type="button" class="guest-button guest-increment rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="adults">+</button>
+                <input id="adults-input" name="adults" type="hidden" value="1" />
               </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-xs uppercase text-amber-200" data-i18n="check_in_label">Check In</label>
-                <input name="check_in" type="date" class="w-full px-4 py-3 rounded-2xl bg-white text-neutral-900" />
-              </div>
-              <div>
-                <label class="text-xs uppercase text-amber-200" data-i18n="check_out_label">Check Out</label>
-                <input name="check_out" type="date" class="w-full px-4 py-3 rounded-2xl bg-white text-neutral-900" />
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="text-xs uppercase text-amber-200">Adults</label>
-                <div class="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-2 py-2">
-                  <button type="button" class="guest-button guest-decrement rounded-full bg-slate-100 text-slate-700 w-10 h-10 flex items-center justify-center" data-target="adults">−</button>
-                  <span id="adults-value" class="min-w-[2rem] text-center text-xl font-semibold">1</span>
-                  <button type="button" class="guest-button guest-increment rounded-full bg-slate-100 text-slate-700 w-10 h-10 flex items-center justify-center" data-target="adults">+</button>
-                  <input id="adults-input" name="adults" type="hidden" value="1" />
-                </div>
-              </div>
-              <div>
-                <label class="text-xs uppercase text-amber-200">Kids</label>
-                <div class="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-2 py-2">
-                  <button type="button" class="guest-button guest-decrement rounded-full bg-slate-100 text-slate-700 w-10 h-10 flex items-center justify-center" data-target="children">−</button>
-                  <span id="children-value" class="min-w-[2rem] text-center text-xl font-semibold">0</span>
-                  <button type="button" class="guest-button guest-increment rounded-full bg-slate-100 text-slate-700 w-10 h-10 flex items-center justify-center" data-target="children">+</button>
-                  <input id="children-input" name="children" type="hidden" value="0" />
-                </div>
+            <div class="w-full sm:w-auto min-w-[120px]">
+              <label data-i18n="children_label" class="text-xs uppercase text-white font-semibold block mb-1">Children</label>
+              <div class="flex items-center gap-1 rounded-lg border border-white/30 bg-transparent px-2 py-2">
+                <button type="button" class="guest-button guest-decrement rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="children">−</button>
+                <span id="children-value" class="min-w-[1.5rem] text-center text-sm font-semibold text-white">0</span>
+                <button type="button" class="guest-button guest-increment rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="children">+</button>
+                <input id="children-input" name="children" type="hidden" value="0" />
               </div>
             </div>
-            <div>
-              <label class="text-xs uppercase text-amber-200">Room</label>
-              <select name="room_type" class="w-full px-4 py-3 rounded-2xl bg-white text-neutral-900">
+            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+              <label data-i18n="room_label" class="text-xs uppercase text-white font-semibold block mb-1">Room</label>
+              <select name="room_type" class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;">
                 {% for room in rooms %}
                 <option value="{{ room.name }}">{{ room.name }}</option>
                 {% endfor %}
               </select>
             </div>
-            <button id="search-button" type="button" class="w-full bg-amber-600 hover:bg-amber-700 text-white rounded-2xl py-3 font-semibold">Reserve now</button>
-            <div id="availability-status" class="text-sm text-amber-100">Enter dates and guest count to preview pricing.</div>
+            <div class="w-full sm:w-auto min-w-[140px]">
+              <button id="search-button" type="submit" data-i18n="book_now" class="w-full bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-3 font-semibold text-base">Book Now</button>
+            </div>
+            <div class="w-full mt-3">
+              <div id="availability-status" class="rounded-3xl border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-700"></div>
+              <p id="validation-message" class="mt-2 text-sm text-rose-200"></p>
+            </div>
           </form>
         </aside>
       </div>
     </section>
 
-    <section id="services" class="py-20 bg-slate-50">
+    <section id="partners" class="py-16 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10">
-          <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Our hotel services</p>
-          <h3 class="text-3xl font-serif">Rooms, Restaurant, Hall & Bar</h3>
-          <p class="text-neutral-600 max-w-2xl mx-auto mt-3">The Zenith brings premium guest rooms, elevated dining, grand events, and stylish evenings together in one modern destination.</p>
-        </div>
-        <div class="horizontal-card-slider-wrapper reveal-hidden">
-          <div class="horizontal-card-slider" data-slider-name="services">
-            {% for service in service_features %}
-            <article class="glass-card visual-card rounded-3xl overflow-hidden shadow-sm transition-transform duration-300 hover:-translate-y-2">
-              <img src="{{ service.img }}" alt="{{ service.title }}" class="h-56 w-full object-cover transition-transform duration-500 hover:scale-105">
-              <div class="p-6">
-                <h4 class="text-xl font-semibold mb-3">{{ service.title }}</h4>
-                <p class="text-neutral-600 mb-4">{{ service.description }}</p>
-                <a href="#booking" class="inline-flex items-center gap-2 text-amber-600 font-semibold">Reserve now</a>
-              </div>
-            </article>
-            {% endfor %}
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-8 md:p-10">
+          <div class="max-w-2xl mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">Our partners</h3>
+            <p class="mt-3 text-sm md:text-base text-slate-500">Trusted by 25,000+ world-class brands and organizations of all sizes.</p>
           </div>
-          <div class="carousel-dots"></div>
+
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-12">
+            <div class="flex items-center justify-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg" alt="Booking.com" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/booking.svg';" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/expedia.svg" alt="Expedia" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/d/df/Expedia_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/agoda-1.svg" alt="Agoda" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/c/ca/Agoda_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/airbnb.svg';" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hotelsdotcom.svg" alt="Hotels.com" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Hotels.com_Logo_2023.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/tripadvisor.svg" alt="TripAdvisor" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/0/02/Tripadvisor_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/trivago.svg" alt="Trivago" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Trivago_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out partner-logo" loading="lazy" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="rooms" class="py-20">
+
+    <section id="services" class="py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-serif" data-i18n="accommodation_title">Accommodation</h2>
-          <p class="text-neutral-600 mt-2">Comfort and style in every room.</p>
+        <div class="text-center mb-12">
+          <h3 class="text-4xl font-serif mb-4">Modern Hotel Experiences</h3>
+          <p class="text-neutral-600 max-w-3xl mx-auto">Enjoy a seamless blend of stylish rooms, signature dining, and premium event hospitality.</p>
         </div>
-        <div class="horizontal-card-slider-wrapper reveal-hidden">
-          <div class="horizontal-card-slider" data-slider-name="accommodation">
-            {% for room in rooms %}
-            <article class="room-card glass-card hover:-translate-y-2 transition-transform duration-300">
-              <div class="relative overflow-hidden">
-                <img src="{{ room.img }}" alt="{{ room.name }}" class="w-full h-56 object-cover" onerror="this.src='https://via.placeholder.com/900x560?text=Room+Image+Unavailable';">
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <!-- Luxurious Rooms Card -->
+          <article class="services-card glass-card rounded-[28px] overflow-hidden shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="relative overflow-hidden h-40">
+              <img src="{{ src_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg', 800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Luxurious room" class="w-full object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/900x560?text=Room+Unavailable';">
+            </div>
+            <div class="p-8">
+              <p class="uppercase tracking-[0.28em] text-xs text-amber-600 font-semibold mb-2">Luxurious room</p>
+              <h4 class="text-2xl font-semibold mb-2">Rooms</h4>
+              <h5 class="text-lg font-semibold text-neutral-800 mb-3">Stylish Guest Rooms</h5>
+              <p class="text-neutral-600 mb-6">Relax in thoughtfully designed guest rooms with premium amenities, modern comfort, and sleek style.</p>
+              <a href="/rooms" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700">Explore rooms →</a>
+            </div>
+          </article>
+
+          <!-- Restaurant Card -->
+          <article class="services-card glass-card rounded-[28px] overflow-hidden shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="relative overflow-hidden h-40">
+              <img src="{{ src_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Restaurant" class="w-full object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/900x560?text=Restaurant+Unavailable';">
+            </div>
+            <div class="p-8">
+              <p class="uppercase tracking-[0.28em] text-xs text-amber-600 font-semibold mb-2">Restaurant</p>
+              <h4 class="text-2xl font-semibold mb-2">Restaurant</h4>
+              <h5 class="text-lg font-semibold text-neutral-800 mb-3">Elevated Dining</h5>
+              <p class="text-neutral-600 mb-6">Enjoy premium cuisine and bar experiences crafted for every mood, from day to evening.</p>
+              <a href="#booking" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700">Discover dining →</a>
+            </div>
+          </article>
+
+          <!-- Events Hall Card -->
+          <article class="services-card glass-card rounded-[28px] overflow-hidden shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="relative overflow-hidden h-40">
+              <img src="{{ src_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Event hall" class="w-full object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/900x560?text=Events+Unavailable';">
+            </div>
+            <div class="p-8">
+              <p class="uppercase tracking-[0.28em] text-xs text-amber-600 font-semibold mb-2">Event hall</p>
+              <h4 class="text-2xl font-semibold mb-2">Events</h4>
+              <h5 class="text-lg font-semibold text-neutral-800 mb-3">Grand Events</h5>
+              <p class="text-neutral-600 mb-6">Host weddings and meetings with flexible venues, modern styling, and attentive planning support.</p>
+              <a href="#booking" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700">Plan events →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
+          <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">About AVYUKT VIEW</p>
+            <h2 class="text-4xl font-serif mb-4">{{ about_us.title }}</h2>
+            <p class="text-lg font-semibold text-neutral-600 mb-6">{{ about_us.tagline }}</p>
+            <p class="text-neutral-700 mb-6 leading-relaxed">{{ about_us.description }}</p>
+            <p class="text-neutral-700 mb-8 leading-relaxed italic">{{ about_us.mission }}</p>
+          </div>
+            <div class="overflow-hidden rounded-[32px] shadow-2xl">
+            <img src="{{ src_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel lounge" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x420?text=Hotel+Image+Coming+Soon';" />
+          </div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {% for highlight in about_us.highlights %}
+          <article class="glass-card rounded-3xl p-6 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-xl font-bold">✓</div>
+            <h4 class="text-lg font-semibold mb-2">{{ highlight.title }}</h4>
+            <p class="text-neutral-600 text-sm">{{ highlight.description }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="rooms" class="py-20 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="rounded-[40px] border border-slate-200 bg-transparent shadow-none p-8">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-serif" data-i18n="accommodation_title">Accommodation</h2>
+            <p class="text-neutral-600 mt-2">Comfort and style in every room.</p>
+          </div>
+          <div class="horizontal-card-slider-wrapper reveal-hidden">
+            <div class="horizontal-card-slider" data-slider-name="accommodation">
+              {% for room in rooms %}
+              <article class="room-card glass-card rounded-[40px] overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                <div class="relative overflow-hidden">
+                  <img src="{{ src_for(room.img,800) }}" srcset="{{ srcset_for(room.img) }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="{{ room.name }}" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x560?text=Room+Image+Unavailable';">
                 <div class="absolute top-4 right-4 bg-amber-600 text-white px-3 py-2 rounded-md text-sm font-semibold room-price-badge">₹{{ room.price }}</div>
               </div>
               <div class="p-5 flex flex-col justify-between gap-4">
@@ -189,7 +276,12 @@
                 </div>
                 <div class="flex items-center justify-between gap-3">
                   <span class="text-amber-600 font-semibold">₹{{ room.price }}</span>
-                  <a href="/detail-room" class="room-cta inline-flex items-center gap-2 rounded-full bg-amber-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">Book now</a>
+                </div>
+                <div class="room-card-details">
+                  <div class="flex items-center gap-2 w-full">
+                    <a href="/room-details?slug={{ room.slug }}" class="room-details-cta inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">More details</a>
+                    <a href="{{ booking_link }}?room={{ room.slug }}" class="room-book-btn inline-flex items-center gap-2 rounded-full bg-amber-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">Book now</a>
+                  </div>
                 </div>
               </div>
             </article>
@@ -203,14 +295,14 @@
     <section id="featured-experiences" class="py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-10">
-          <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Featured Experiences</p>
-          <h3 class="text-3xl font-serif">Uplifted Page Features with Unique Imagery</h3>
-          <p class="text-neutral-600 max-w-2xl mx-auto mt-3">Each feature below uses its own image, bold styling, and visual dynamics to make the page feel more premium.</p>
+          <p data-i18n="featured_heading" class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Featured Experiences</p>
+          <h3 data-i18n="featured_title" class="text-3xl font-serif">Uplifted Page Features with Unique Imagery</h3>
+          <p data-i18n="featured_desc" class="text-neutral-600 max-w-2xl mx-auto mt-3">Each feature below uses its own image, bold styling, and visual dynamics to make the page feel more premium.</p>
         </div>
         <div class="horizontal-card-slider-wrapper reveal-hidden">
           <div class="horizontal-card-slider" data-slider-name="featured-experiences">
             <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Private pool retreat" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <img src="{{ src_for('/static/images/optimized/opt_b263daf1_photo-1507525428034-b723cf961d3e.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_b263daf1_photo-1507525428034-b723cf961d3e.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Private pool retreat" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Private escape</p>
                 <h4 class="text-2xl font-semibold mb-3">Private pool retreats</h4>
@@ -219,7 +311,7 @@
               </div>
             </article>
             <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="City culture stay" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <img src="{{ src_for('/static/images/optimized/opt_c9d85b09_photo-1512917774080-9991f1c4c750.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_c9d85b09_photo-1512917774080-9991f1c4c750.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="City culture stay" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">City culture</p>
                 <h4 class="text-2xl font-semibold mb-3">Sophisticated urban stays</h4>
@@ -228,7 +320,7 @@
               </div>
             </article>
             <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Wellness sanctuary" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <img src="{{ src_for('/static/images/optimized/opt_3c501f0f_photo-1484154218962-a197022b5858.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_3c501f0f_photo-1484154218962-a197022b5858.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Wellness sanctuary" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Wellness journey</p>
                 <h4 class="text-2xl font-semibold mb-3">Spa & wellness journeys</h4>
@@ -251,7 +343,7 @@
         <div class="horizontal-card-slider-wrapper reveal-hidden">
           <div class="horizontal-card-slider" data-slider-name="discover-more">
             <article class="group glass-card visual-card overflow-hidden rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-2">
-              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=80" alt="Luxury suite" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <img src="{{ src_for('/static/images/optimized/opt_09a59c3e_photo-1542314831-068cd1dbfeeb.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_09a59c3e_photo-1542314831-068cd1dbfeeb.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Luxury suite" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Discover more</p>
                 <h4 class="text-xl font-semibold mb-3">Signature Suites</h4>
@@ -259,7 +351,7 @@
               </div>
             </article>
             <article class="group glass-card visual-card overflow-hidden rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-2">
-              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Fine dining" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <img src="{{ src_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Fine dining" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Featured Facilities</p>
                 <h4 class="text-xl font-semibold mb-3">Rooftop Dining</h4>
@@ -267,7 +359,7 @@
               </div>
             </article>
             <article class="group glass-card visual-card overflow-hidden rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-2">
-              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Spa and wellness" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <img src="{{ src_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Spa and wellness" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Client Feedback</p>
                 <h4 class="text-xl font-semibold mb-3">Spa & Wellness</h4>
@@ -286,7 +378,7 @@
           <h3 class="text-3xl font-serif" data-i18n="offers_heading">Curated Packages for Every Stay</h3>
           <p class="text-neutral-600" data-i18n="offers_desc">Discover seasonal packages designed for romantic getaways, family retreats, and business travel.</p>
           <div class="group relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl transition-transform duration-500 hover:-translate-y-1 hover:shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Curated stay package" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1200x800?text=Package+Image+Unavailable';">
+            <img src="{{ src_for('/static/images/optimized/opt_813f0942_photo-1505693416388-ac5ce068fe85.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_813f0942_photo-1505693416388-ac5ce068fe85.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Curated stay package" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1200x800?text=Package+Image+Unavailable';">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent opacity-90"></div>
             <div class="absolute bottom-6 left-6 text-white max-w-xs">
               <p class="uppercase tracking-[0.35em] text-sm text-amber-300 mb-2">Exclusive stay</p>
@@ -315,7 +407,7 @@
         </div>
         <div class="grid gap-6 lg:grid-cols-[1fr_0.95fr] items-center mb-10">
           <div class="overflow-hidden rounded-[32px] border border-slate-200 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Featured Facilities" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x800?text=Facilities+Image+Unavailable';">
+            <img src="/static/images/optimized/opt_19c1ebcd_photo-1512917774080-9991f1c4c750.jpg" alt="Featured Facilities" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x800?text=Facilities+Image+Unavailable';">
           </div>
           <div class="space-y-4">
             <p class="text-sm uppercase tracking-[0.28em] text-amber-600">Featured Facilities</p>
@@ -340,12 +432,12 @@
 
     <!-- Luxury Living Hero Section -->
     <section class="relative h-[60vh] md:h-[70vh] lg:h-[78vh] grid items-center hero-section overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1900&q=80" alt="Luxury Living" class="absolute inset-0 w-full h-full object-cover brightness-60">
+      <img src="/static/images/optimized/opt_bb02fee9_photo-1566073771259-6a8506099945.jpg" alt="Luxury Living" class="absolute inset-0 w-full h-full object-cover brightness-60">
       <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
       <div class="relative z-20 max-w-6xl mx-auto px-6 w-full">
         <div class="max-w-2xl">
           <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-3" data-i18n="luxury_title">Luxury Living, Surrounded by Nature's Beauty</h2>
-          <p class="text-sm md:text-base text-white/90 mb-4 max-w-xl">Ultrices quam mattis posuere porttitor tellus rhoncus tristique. Primis aliquam dignissim interdum vel suscipit sodales.</p>
+           <p class="text-sm md:text-base text-white/90 mb-4 max-w-xl">Experience luxury, comfort, and world-class service designed for your perfect stay.</p>
           <div class="flex flex-col sm:flex-row gap-3 mb-6">
             <a href="#booking" class="crystal-btn px-8 py-3 text-sm md:text-base">Discover more</a>
           </div>
@@ -355,18 +447,7 @@
       </div>
     </section>
 
-    <!-- World Better Hero Section -->
-    <section class="relative h-[60vh] md:h-[70vh] lg:h-[78vh] grid items-center hero-section overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1900&q=80" alt="Better World" class="absolute inset-0 w-full h-full object-cover brightness-60" onerror="this.src='https://via.placeholder.com/1900x1200?text=Image+Unavailable';">
-      <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
-      <div class="relative z-20 max-w-6xl mx-auto px-6 w-full">
-        <div class="max-w-2xl">
-          <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-3">Let's make the world a better place.</h2>
-          <p class="text-sm md:text-base text-white/90 mb-6 max-w-xl">Ultrices quam mattis posuere porttitor tellus rhoncus tristique. Primis aliquam dignissim interdum vel suscipit sodales.</p>
-          <a href="#booking" class="crystal-btn px-8 py-3 text-sm md:text-base">Discover more</a>
-        </div>
-      </div>
-    </section>
+
 
     <section id="hotel-experiences" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-6">
@@ -377,7 +458,7 @@
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
           <article class="glass-card rounded-3xl overflow-hidden shadow-sm group flex flex-col h-full">
             <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Luxurious room" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Room+Image+Unavailable';">
+              <img src="/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg" alt="Luxurious room" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Room+Image+Unavailable';">
             </div>
             <div class="p-8 flex flex-col justify-between flex-1">
               <div>
@@ -390,7 +471,7 @@
           </article>
           <article class="glass-card rounded-3xl overflow-hidden shadow-sm group flex flex-col h-full">
             <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Restaurant" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Restaurant+Image+Unavailable';">
+              <img src="/static/images/optimized/opt_f14943c4_photo-1517248135467-4c7edcad34c4.jpg" alt="Restaurant" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Restaurant+Image+Unavailable';">
             </div>
             <div class="p-8 flex flex-col justify-between flex-1">
               <div>
@@ -403,7 +484,7 @@
           </article>
           <article class="glass-card rounded-3xl overflow-hidden shadow-sm group flex flex-col h-full">
             <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Event hall" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Event+Image+Unavailable';">
+              <img src="/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg" alt="Event hall" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Event+Image+Unavailable';">
             </div>
             <div class="p-8 flex flex-col justify-between flex-1">
               <div>
@@ -420,202 +501,127 @@
 
     <section id="values" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid gap-10 lg:grid-cols-[1fr_0.9fr] items-center mb-10">
-          <div>
-            <h3 class="text-3xl font-serif">Our Values</h3>
-            <p class="text-neutral-600">Experience the Celestia difference with service, comfort, and thoughtful design in every stay.</p>
-          </div>
+        <div class="text-center mb-12">
+          <h3 class="text-4xl font-serif mb-4">Our Values</h3>
+          <p class="text-neutral-600 max-w-2xl mx-auto">Experience the AVYUKT VIEW difference with service, comfort, and thoughtful design in every stay.</p>
+        </div>
+
+        <div class="grid gap-10 lg:grid-cols-[1fr_1fr] items-stretch mb-12">
           <div class="relative overflow-hidden rounded-[32px] border border-slate-200 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Warm hospitality" class="h-80 w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x800?text=Hospitality+Image+Unavailable';">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
-            <div class="absolute bottom-6 left-6 text-white max-w-xs">
+            <img src="{{ src_for('/static/images/optimized/opt_c4e5397d_photo-1494526585095-c41746248156.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_c4e5397d_photo-1494526585095-c41746248156.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Warm hospitality" class="w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x800?text=Hospitality+Image+Unavailable';">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
               <p class="uppercase tracking-[0.35em] text-xs text-amber-300 mb-2">Core promise</p>
-              <h4 class="text-2xl font-semibold">Memorable stays designed around you.</h4>
+              <h4 class="text-2xl font-semibold leading-tight">Memorable stays designed around you.</h4>
+            </div>
+          </div>
+
+          <div class="values-feature glass-card rounded-[32px] p-10 shadow-lg flex flex-col justify-between">
+            <div>
+              <p class="uppercase tracking-[0.35em] text-xs text-amber-600 mb-3">Warm Hospitality</p>
+              <h4 class="text-2xl font-semibold mb-4">Comfort Beyond Expectations</h4>
+              <p class="text-neutral-600 leading-relaxed">Every moment at AVYUKT VIEW is crafted to exceed your expectations. From our attentive staff to our thoughtfully designed spaces, we ensure your stay is not just comfortable, but truly memorable.</p>
             </div>
           </div>
         </div>
-        <div class="horizontal-card-slider-wrapper reveal-hidden">
-          <div class="horizontal-card-slider" data-slider-name="value-items">
-            {% for value in value_items %}
-            <article class="glass-card visual-card rounded-3xl p-8 shadow-sm">
-              <h4 class="font-semibold text-xl mb-3">{{ value.headline }}</h4>
-              <p class="text-neutral-600">{{ value.description }}</p>
-            </article>
-            {% endfor %}
-          </div>
-          <div class="carousel-dots"></div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="values-card glass-card rounded-[28px] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-lg font-bold">◆</div>
+            <h4 class="font-semibold text-lg mb-3">Indulge in World-Class Comfort and Convenience.</h4>
+            <p class="text-neutral-600 text-sm leading-relaxed">Every detail is designed to make your stay seamless and memorable. From luxurious amenities to personalized service, we prioritize your comfort.</p>
+          </article>
+
+          <article class="values-card glass-card rounded-[28px] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-lg font-bold">◆</div>
+            <h4 class="font-semibold text-lg mb-3">Experience the AVYUKT VIEW Difference: Unparalleled Hospitality.</h4>
+            <p class="text-neutral-600 text-sm leading-relaxed">From arrival to departure, our team delivers thoughtful service at every step. Your satisfaction is our success.</p>
+          </article>
+
+          <article class="values-card glass-card rounded-[28px] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-lg font-bold">◆</div>
+            <h4 class="font-semibold text-lg mb-3">Trusted by 25,000+ world-class brands and organizations.</h4>
+            <p class="text-neutral-600 text-sm leading-relaxed">We create inspiring moments for guests, partners, and corporate clients of all sizes, earning trust through excellence.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="py-16 md:py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10 md:mb-14">
-          <p class="text-xs md:text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">TESTIMONIAL</p>
-          <h3 class="text-3xl md:text-4xl font-serif">Client Feedback & Reviews</h3>
-        </div>
-        
-        <!-- Testimonials Carousel -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          <!-- Carousel Container -->
-          <div class="lg:col-span-2">
-            <div class="testimonial-carousel-wrapper relative">
-              {% for testimonial in testimonials %}
-              <article class="testimonial-card absolute inset-0 rounded-3xl bg-white p-6 md:p-10 shadow-sm transition-all duration-500" data-index="{{ loop.index0 }}" style="{% if loop.first %}opacity: 1; transform: translateY(0); z-index: 10;{% else %}opacity: 0; transform: translateY(20px); z-index: 0; pointer-events: none;{% endif %}">
-                <!-- Testimonial Content -->
-                <div class="flex flex-col md:flex-row gap-4 md:gap-6 h-full md:items-center">
-                  <!-- Profile Image -->
-                  <div class="flex-shrink-0">
-                    <img src="{{ testimonial.image }}" alt="{{ testimonial.author }}" class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover border-4 border-amber-200 shadow-md">
-                  </div>
-                  
-                  <!-- Content -->
-                  <div class="flex-1 flex flex-col justify-center">
-                    <!-- Rating Stars -->
-                    <div class="flex items-center gap-1 mb-2">
-                      {% for i in range(5) %}
-                        {% if i < (testimonial.rating | int) %}
-                          <span class="text-amber-500 text-lg">★</span>
-                        {% elif testimonial.rating % 1 > 0 and i == (testimonial.rating | int) %}
-                          <span class="text-amber-500 text-sm">✦</span>
-                        {% else %}
-                          <span class="text-gray-300 text-lg">★</span>
-                        {% endif %}
-                      {% endfor %}
-                    </div>
-                    
-                    <!-- Quote -->
-                    <p class="text-sm md:text-base text-neutral-700 mb-3 italic line-clamp-3">"{{ testimonial.quote }}"</p>
-                    
-                    <!-- Author & Location -->
-                    <div class="mb-3">
-                      <div class="font-semibold text-neutral-900 text-sm md:text-base">{{ testimonial.author }}</div>
-                      <div class="text-xs text-neutral-500">{{ testimonial.location }}</div>
-                    </div>
-                    
-                    <!-- Badges -->
-                    <div class="flex flex-wrap gap-1 md:gap-2">
-                      {% for badge in testimonial.badges %}
-                        {% if badge == "Excellent Point" %}
-                          <div class="inline-flex items-center text-white text-xs font-bold px-2 md:px-3 py-1 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 border-2 border-yellow-600 shadow-md">
-                            {{ badge }}
-                          </div>
-                        {% elif badge == "Top Company" %}
-                          <div class="inline-flex items-center text-white text-xs font-bold px-2 md:px-3 py-1.5 rounded-lg bg-gradient-to-r from-green-600 to-green-700 border-2 border-green-800 shadow-md">
-                            {{ badge }}
-                          </div>
-                        {% elif badge == "Client Feedback" %}
-                          <div class="inline-flex items-center text-white text-xs font-bold px-2 md:px-3 py-1 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 border-2 border-blue-800 shadow-md">
-                            {{ badge }}
-                          </div>
-                        {% endif %}
-                      {% endfor %}
-                      <!-- Rating Badge -->
-                      <div class="inline-flex items-center justify-center text-white text-sm font-bold px-2 md:px-3 py-1 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 border-2 border-blue-900 shadow-md min-w-12 md:min-w-14">
-                        {{ testimonial.rating_display }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              {% endfor %}
-            </div>
-            
-            <!-- Carousel Navigation -->
-            <div class="flex items-center justify-between gap-2 mt-6 md:mt-8">
-              <button class="carousel-nav-btn prev-btn p-2 md:p-3 rounded-full border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition" aria-label="Previous testimonial">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-              </button>
-              
-              <div class="flex gap-2">
-                {% for testimonial in testimonials %}
-                <button class="carousel-dot w-2 h-2 rounded-full transition" data-index="{{ loop.index0 }}" style="{% if loop.first %}background-color: var(--accent);{% else %}background-color: #cbd5e1;{% endif %}" aria-label="Go to testimonial {{ loop.index }}"></button>
-                {% endfor %}
+    <section id="testimonials" class="py-12 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="testimonial-card flex flex-col md:flex-row items-stretch gap-6">
+          <div class="testimonial-content flex-1 rounded-2xl p-8 bg-gradient-to-r from-violet-400 to-fuchsia-400 text-white relative overflow-hidden">
+            <div class="quote-mark text-6xl opacity-20">“</div>
+            <div class="testimonial-quote mt-2 text-lg md:text-xl font-medium">{{ testimonials[0].quote if testimonials|length > 0 else "From the moment we arrived, we were treated like royalty. AVYUKT VIEW's attention to detail and tranquil ambiance are unmatched." }}</div>
+            <div class="testimonial-meta flex items-center gap-4 mt-6">
+              <div class="meta-text">
+                <div class="text-sm opacity-90 font-semibold">{{ testimonials[0].author if testimonials|length > 0 else 'Laura Greene' }}</div>
+                <div class="text-xs opacity-80">{{ testimonials[0].location if testimonials|length > 0 else 'Jakarta' }}</div>
               </div>
-              
-              <button class="carousel-nav-btn next-btn p-2 md:p-3 rounded-full border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition" aria-label="Next testimonial">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </button>
+              <div class="rating ml-auto text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">{{ testimonials[0].rating_display if testimonials|length > 0 else '4.7' }} • Excellent Point</div>
             </div>
           </div>
-          
-          <!-- Side Image -->
-          <div class="hidden lg:block rounded-3xl overflow-hidden bg-cover bg-center shadow-lg" style="background-image:url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80'); min-height:500px;"></div>
+
+          <div class="testimonial-side w-full md:w-64 flex flex-col items-center justify-center gap-4">
+            <div class="avatar w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <img src="{{ testimonials[0].image if testimonials|length > 0 else '/static/images/avatar-placeholder.png' }}" alt="{{ testimonials[0].author if testimonials|length > 0 else 'Laura Greene' }}" class="w-full h-full object-cover" />
+            </div>
+            <div class="company-badges text-center">
+              <div class="text-sm font-semibold">Top Company</div>
+              <div class="text-xs opacity-80">Client Feedback</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="py-10 bg-gradient-to-r from-amber-50 via-white to-amber-50">
-      <div class="max-w-6xl mx-auto px-6 rounded-3xl border border-gray-200 bg-white p-10 text-center shadow-sm reveal-hidden">
-        <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-4">Trusted by 25,000+ world-class brands</p>
-        <h3 class="text-3xl font-serif mb-3">Trusted by world-class brands and organizations of all sizes.</h3>
-        <p class="text-neutral-600 max-w-3xl mx-auto">We create inspiring moments for business travel, special events, and guest experiences with the same level of care for every stay.</p>
-      </div>
-    </section>
-
-    <section id="partners" class="py-12">
-      <div class="max-w-6xl mx-auto px-6 text-center mb-6">
-        <h3 class="text-2xl font-serif" data-i18n="partners_heading">Our partners</h3>
-        <p class="text-neutral-600">Trusted travel platforms and collaborators</p>
-      </div>
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="horizontal-card-slider-wrapper">
-          <div class="horizontal-card-slider" data-slider-name="partners">
-            {% for partner in partners %}
-            <a href="{{ partner.url }}" target="_blank" rel="noreferrer" class="partner-card group flex items-center justify-center p-6 bg-white rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-amber-50 hover:border-amber-300 cursor-pointer partner-fallback-card">
-              <img src="{{ partner.logo }}" class="partner-logo max-h-10" alt="{{ partner.name }}" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-missing')" />
-              <span class="partner-fallback hidden text-sm font-semibold text-neutral-700">{{ partner.name }}</span>
-            </a>
-            {% endfor %}
-          </div>
-          <div class="carousel-dots"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-[1fr_0.95fr] items-start">
-        <div class="space-y-4">
-          <div class="text-center lg:text-left">
-            <h3 class="text-3xl font-serif" data-i18n="faq_title">Guest Information (FAQ)</h3>
-            <p class="text-neutral-600">Answers to the most common questions about your stay, dining, and reservations.</p>
-          </div>
-          <div class="rounded-[32px] overflow-hidden border border-slate-200 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Hotel service" class="h-96 w-full object-cover" onerror="this.src='https://via.placeholder.com/1200x960?text=FAQ+Image+Unavailable';">
+    <section id="faq" class="py-12 bg-white">
+      <div class="max-w-5xl mx-auto px-6 grid gap-8 md:grid-cols-2 items-start">
+        <div class="faq-left">
+          <h3 class="text-2xl font-serif">Guest Information (FAQ)</h3>
+          <p class="text-neutral-600 mt-2">Answers to the most common questions about your stay, dining, and reservations.</p>
+          <div class="mt-4 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+            <img src="{{ src_for('/static/images/optimized/opt_19c1ebcd_photo-1512917774080-9991f1c4c750.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_19c1ebcd_photo-1512917774080-9991f1c4c750.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel service" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/1200x640?text=FAQ+Image+Unavailable';">
           </div>
         </div>
-        <div class="space-y-4 reveal-hidden">
+        <div class="faq-right space-y-3">
           {% for item in faq_items %}
-          <details class="faq-card rounded-3xl border border-gray-200 bg-gray-50 p-6">
-            <summary>{{ item.question }}</summary>
-            <p class="mt-3 text-neutral-600">{{ item.answer }}</p>
+          <details class="faq-item rounded-xl border border-gray-200 bg-gray-50 p-4">
+            <summary class="font-semibold">{{ item.question }}</summary>
+            <div class="mt-2 text-neutral-600">{{ item.answer }}</div>
           </details>
           {% endfor %}
         </div>
       </div>
     </section>
 
-    <section id="contact" class="pt-16 pb-8 bg-neutral-900 text-white">
+    <section id="contact" class="pt-16 pb-8 bg-black text-white">
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid gap-8 lg:grid-cols-3 items-start">
           <div class="space-y-6">
             <div class="flex items-center gap-4">
-              <div class="w-14 h-14 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-xl">Z</div>
+              <a href="#" class="flex items-center gap-3">
+                {% if logo_image %}
+                <img src="{{ logo_image or '/static/images/avyukt_logo_transparent.png' }}" alt="AVYUKT VIEW" class="h-20 object-contain logo-img" onerror="this.style.display='none'" />
+                {% else %}
+                <img src="/static/images/avyukt_logo_transparent.png" alt="AVYUKT VIEW" class="h-20 object-contain logo-img" onerror="this.style.display='none'" />
+                {% endif %}
+              </a>
               <div>
-                <div class="font-serif text-xl">THE ZENITH</div>
-                <div class="text-sm opacity-80">Hotel & Resort</div>
+                <div class="font-serif text-xl text-white">AVYUKT VIEW</div>
+                <div class="text-sm text-neutral-300">Hotel & Resort</div>
               </div>
             </div>
-            <p class="text-neutral-300 max-w-sm">The Zenith is a haven of luxury and tranquility, offering unparalleled experiences in stunning natural and urban settings.</p>
+            <p class="text-neutral-300 max-w-sm">AVYUKT VIEW is a haven of luxury and tranquility, offering unparalleled experiences in stunning natural and urban settings.</p>
             <div class="flex items-center gap-3">
-              <a href="#" class="social-icon bg-white/8 hover:bg-white/12 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.88v-6.99H7.898v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
-              <a href="#" class="social-icon bg-white/8 hover:bg-white/12 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M22 5.924a8.349 8.349 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.998A4.107 4.107 0 0 0 16.616 4c-2.266 0-4.104 1.835-4.104 4.1 0 .322.036.636.106.936-3.41-.171-6.436-1.804-8.462-4.287a4.09 4.09 0 0 0-.556 2.063c0 1.423.725 2.678 1.827 3.413a4.086 4.086 0 0 1-1.859-.513v.052c0 1.987 1.414 3.644 3.291 4.019a4.135 4.135 0 0 1-1.853.07c.522 1.624 2.037 2.807 3.833 2.84A8.237 8.237 0 0 1 2 19.54 11.616 11.616 0 0 0 8.29 21c7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53A8.36 8.36 0 0 0 22 5.924z"/></svg></a>
-              <a href="#" class="social-icon bg-white/8 hover:bg-white/12 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3H4.385A1.385 1.385 0 0 0 3 4.385v15.23A1.385 1.385 0 0 0 4.385 21h15.23A1.385 1.385 0 0 0 21 19.615V4.385A1.385 1.385 0 0 0 19.615 3zM8.853 18.169H6.54V9.633h2.313v8.536zM7.697 8.496a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM18.169 18.169h-2.312v-4.176c0-1-.018-2.29-1.396-2.29-1.397 0-1.61 1.091-1.61 2.218v4.248h-2.312V9.633h2.22v1.167h.032c.31-.588 1.068-1.205 2.199-1.205 2.352 0 2.787 1.548 2.787 3.562v4.013z"/></svg></a>
+              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.88v-6.99H7.898v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
+              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 5.924a8.349 8.349 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.998A4.107 4.107 0 0 0 16.616 4c-2.266 0-4.104 1.835-4.104 4.1 0 .322.036.636.106.936-3.41-.171-6.436-1.804-8.462-4.287a4.09 4.09 0 0 0-.556 2.063c0 1.423.725 2.678 1.827 3.413a4.086 4.086 0 0 1-1.859-.513v.052c0 1.987 1.414 3.644 3.291 4.019a4.135 4.135 0 0 1-1.853.07c.522 1.624 2.037 2.807 3.833 2.84A8.237 8.237 0 0 1 2 19.54 11.616 11.616 0 0 0 8.29 21c7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53A8.36 8.36 0 0 0 22 5.924z"/></svg></a>
+              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3H4.385A1.385 1.385 0 0 0 3 4.385v15.23A1.385 1.385 0 0 0 4.385 21h15.23A1.385 1.385 0 0 0 21 19.615V4.385A1.385 1.385 0 0 0 19.615 3zM8.853 18.169H6.54V9.633h2.313v8.536zM7.697 8.496a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM18.169 18.169h-2.312v-4.176c0-1-.018-2.29-1.396-2.29-1.397 0-1.61 1.091-1.61 2.218v4.248h-2.312V9.633h2.22v1.167h.032c.31-.588 1.068-1.205 2.199-1.205 2.352 0 2.787 1.548 2.787 3.562v4.013z"/></svg></a>
             </div>
           </div>
 
           <div class="space-y-4">
-            <h4 class="text-xl font-semibold">Get in touch</h4>
+            <h4 class="text-xl font-semibold text-white">Get in touch</h4>
             <div class="space-y-4 text-neutral-300">
               <div class="flex items-start gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-400 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12v6M8 12v6M3 8h18M3 8l4-5h10l4 5M3 8v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"/></svg>
@@ -635,14 +641,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-400 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13 21.314l-4.657-4.657A8 8 0 1117.657 16.657z"/></svg>
                 <div>
                   <div class="text-sm opacity-80">Address</div>
-                  <div class="text-white">{{ contact.address }}</div>
+                  <div class="text-neutral-300">{{ contact.address }}</div>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="space-y-4">
-            <h4 class="text-xl font-semibold">Sign up our newsletter</h4>
+            <h4 class="text-xl font-semibold text-white">Sign up our newsletter</h4>
             <p class="text-neutral-300">Get update information, news and free insight.</p>
             {% if subscribe_success == '1' %}
             <div class="mb-2 rounded-3xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">Thanks! We'll keep you updated.</div>
@@ -650,9 +656,9 @@
             <div class="mb-2 rounded-3xl border border-rose-200 bg-rose-50 p-3 text-sm text-rose-700">Enter a valid email address to subscribe.</div>
             {% endif %}
             <form action="/subscribe" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
-              <input name="name" type="text" placeholder="Name" class="w-full border border-transparent rounded-md p-3 bg-white text-neutral-900" />
-              <input name="email" type="email" placeholder="Email" class="w-full border border-transparent rounded-md p-3 bg-white text-neutral-900" required />
-              <button type="submit" class="sm:col-span-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-md py-3 flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4"/></svg> Sign Up</button>
+              <input name="name" type="text" placeholder="Name" class="w-full border border-gray-200 rounded-md p-3 bg-gray-50 text-neutral-900" />
+              <input name="email" type="email" placeholder="Email" class="w-full border border-gray-200 rounded-md p-3 bg-gray-50 text-neutral-900" required />
+              <button type="submit" class="sm:col-span-2 bg-amber-600 hover:bg-amber-500 text-white rounded-md py-3 flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4"/></svg> Sign Up</button>
             </form>
             <p class="text-xs opacity-60 mt-2">We respect your privacy. Unsubscribe at any time.</p>
           </div>
@@ -661,8 +667,8 @@
     </section>
   </main>
 
-  <footer class="bg-neutral-900 text-white py-8">
-    <div class="max-w-6xl mx-auto px-6 text-center text-sm opacity-70">© 2026 THE ZENITH. All rights reserved.</div>
+  <footer class="bg-neutral-900 text-white py-5">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm opacity-70">© 2026 AVYUKT VIEW. All rights reserved.</div>
   </footer>
 
   <!-- Chat floating button -->
@@ -676,13 +682,13 @@
       <div class="flex items-center gap-3">
         <!-- Replace with your chatbot image at static/images/chatbot.png -->
         <img src="/static/images/chatbot.png" alt="chatbot" class="w-8 h-8 rounded-full object-cover" onerror="this.style.display='none'" />
-        <div class="font-semibold">The Zenith Assistant</div>
+        <div class="font-semibold">AVYUKT VIEW Assistant</div>
       </div>
       <button id="chat-close-btn" class="p-2 opacity-90 hover:opacity-100">✕</button>
     </div>
     <div id="chat-messages" class="p-4 h-64 overflow-auto bg-gray-50"></div>
     <form id="chat-form" class="p-3 border-t border-gray-100 bg-white flex gap-2">
-      <input id="chat-input" name="message" type="text" placeholder="Ask about bookings, policies..." class="flex-1 border border-gray-200 rounded-md p-2" />
+      <input id="chat-input" name="message" type="text" data-i18n-placeholder="chat_input_placeholder" placeholder="Ask about bookings, policies..." class="flex-1 border border-gray-200 rounded-md p-2" />
       <button type="submit" class="bg-emerald-600 text-white px-3 py-2 rounded-md">Send</button>
     </form>
   </div>

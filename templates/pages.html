@@ -1,106 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pages | THE ZENITH</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/style.css">
+  <title>Pages</title>
 </head>
-<body class="antialiased text-neutral-900 bg-gradient-to-b from-white to-gray-50">
-  <header class="bg-slate-900 text-white shadow-xl sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 md:p-6 gap-4">
-      <a href="/" class="flex items-center gap-3">
-        {% if logo_image %}
-        <img src="{{ logo_image }}" alt="THE ZENITH" class="h-10 object-contain logo-img" onerror="this.style.display='none'" />
-        {% else %}
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold">Z</div>
-          <span class="font-serif text-xl tracking-wide">THE ZENITH</span>
-        </div>
-        {% endif %}
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm uppercase tracking-wider">
-        <a href="/pages" class="text-white transition hover:text-amber-300">Pages</a>
-        <a href="/rooms" class="text-white transition hover:text-amber-300">Rooms</a>
-        <a href="#page-cards" class="text-white transition hover:text-amber-300">Page cards</a>
-        <a href="#preview" class="text-white transition hover:text-amber-300">Preview</a>
-      </nav>
-      <div class="flex items-center gap-4">
-        <a href="/" class="px-4 py-2 rounded-full text-sm md:text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 transition">Back to Home</a>
-        <a href="/rooms" class="book-now-btn px-6 py-3 rounded-full text-sm md:text-base font-semibold text-white bg-amber-500 hover:bg-amber-400 transition">Book Now!</a>
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-700 bg-slate-900">
-      <div class="p-4 flex flex-col gap-3">
-        <a href="/pages" class="uppercase text-white hover:text-amber-300">Pages</a>
-        <a href="/rooms" class="uppercase text-white hover:text-amber-300">Rooms</a>
-        <a href="#page-cards" class="uppercase text-white hover:text-amber-300">Page cards</a>
-        <a href="#preview" class="uppercase text-white hover:text-amber-300">Preview</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="relative overflow-hidden bg-slate-950 text-white py-24">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80" alt="Pages hero" class="absolute inset-0 w-full h-full object-cover opacity-40">
-      <div class="absolute inset-0 bg-black/65"></div>
-      <div class="relative z-20 max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] items-center">
-        <div>
-          <p class="uppercase tracking-[0.35em] text-amber-300 text-sm">Digital Pages Hub</p>
-          <h1 class="font-serif text-4xl md:text-5xl leading-tight mb-4">Browse polished hotel page previews with direct action links.</h1>
-          <p class="max-w-xl text-neutral-300">Every card opens a page section directly, with clear headlines and refined descriptions for real guest needs.</p>
-        </div>
-        <div class="rounded-[32px] border border-white/10 bg-white/10 p-8 shadow-xl backdrop-blur-md">
-          <h2 class="text-xl font-semibold mb-4">One button, one action</h2>
-          <p class="text-neutral-200 mb-6">Click the button below to open the page directly; no hover overlay is required.</p>
-          <a href="#page-cards" class="inline-flex items-center gap-2 rounded-full bg-amber-600 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-700">Explore page cards</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="page-cards" class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl font-serif">Pages with a single CTA button</h2>
-          <p class="text-neutral-600">Swipe or click to preview page cards and open the hotel content you need in one tap.</p>
-        </div>
-        <div class="horizontal-card-slider-wrapper">
-          <div class="horizontal-card-slider" id="page-card-slider">
-            {% for page in pages %}
-            <article class="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl min-w-[280px] md:min-w-[320px]">
-              <div class="p-8 h-full flex flex-col justify-between">
-                <div>
-                  <p class="text-sm uppercase tracking-[0.25em] text-amber-600 mb-3">{{ page.category }}</p>
-                  <h3 class="text-2xl font-semibold mb-3">{{ page.title }}</h3>
-                  <p class="text-neutral-600 mb-6">{{ page.summary }}</p>
-                </div>
-                <a href="{{ page.link }}" class="inline-flex items-center gap-2 rounded-full bg-amber-600 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-700">Open page</a>
-              </div>
-            </article>
-            {% endfor %}
-          </div>
-          <div class="carousel-dots mt-6 flex justify-center gap-2" id="page-card-dots"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="preview" class="py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6 rounded-3xl bg-white border border-gray-200 p-10 shadow-sm text-center">
-        <h3 class="text-3xl font-serif mb-4">Refined previews for every hotel page.</h3>
-        <p class="text-neutral-600 mb-6">Now the page cards use clear language, better visuals, and a direct action for a more polished browsing experience.</p>
-        <a href="/" class="inline-flex items-center gap-2 rounded-full bg-amber-600 px-8 py-4 text-white font-semibold hover:bg-amber-700">Return to Home</a>
-      </div>
-    </section>
+<body>
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <h1 class="font-serif text-3xl mb-4">Site Pages</h1>
+    <ul class="space-y-3">
+      {% for p in pages %}
+      <li class="glass-card p-4">
+        <a href="{{ p.link }}" class="font-semibold text-lg">{{ p.title }}</a>
+        <p class="text-sm text-neutral-600">{{ p.summary }}</p>
+      </li>
+      {% endfor %}
+    </ul>
   </main>
-
-  <footer class="bg-neutral-900 text-white py-8">
-    <div class="max-w-6xl mx-auto px-6 text-center text-sm opacity-70">© 2026 THE ZENITH. All rights reserved.</div>
-  </footer>
-
-  <script src="/static/js/carousel.js"></script>
-  <script src="/static/js/main.js"></script>
 </body>
 </html>

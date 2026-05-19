@@ -1,15 +1,70 @@
 ﻿from datetime import datetime
 import pathlib
 import os
+import shutil
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
+import re
+
+
+def _with_width(url: str, w: int) -> str:
+    """Return a URL with the requested width parameter applied.
+
+    If the URL already contains a `w=` query param, replace it. Otherwise append one.
+    """
+    if not url:
+        return url
+    # replace existing w=NUMBER
+    if re.search(r"w=\d+", url):
+        return re.sub(r"w=\d+", f"w={w}", url)
+    # append width preserving existing query string
+    if "?" in url:
+        return url + f"&w={w}"
+    return url + f"?auto=format&fit=crop&w={w}&q=80"
+
+
+def src_for(url: str, w: int = 800) -> str:
+    return _with_width(url, w)
+
+
+def srcset_for(url: str, widths=(480, 800, 1200, 1900)) -> str:
+    parts = [f"{_with_width(url, w)} {w}w" for w in widths]
+    return ", ".join(parts)
+
+
+# Make helpers available in Jinja templates
+app.jinja_env.globals['src_for'] = src_for
+app.jinja_env.globals['srcset_for'] = srcset_for
+
+LOGO_FALLBACK_PATHS = [
+    os.path.expanduser(r"~/Downloads/Avyukt Shape Logo-03.png"),
+    r"C:\Users\imanj\Downloads\Avyukt Shape Logo-03.png",
+]
+
+def get_logo_image():
+    static_images = pathlib.Path(os.path.join(app.root_path, 'static', 'images'))
+    static_images.mkdir(parents=True, exist_ok=True)
+    logo_static = static_images / 'navbar-logo.png'
+    if logo_static.exists():
+        return '/static/images/navbar-logo.png'
+    for candidate in LOGO_FALLBACK_PATHS:
+        if os.path.exists(candidate):
+            try:
+                shutil.copy(candidate, str(logo_static))
+                return '/static/images/navbar-logo.png'
+            except Exception:
+                break
+    return None
+
 ROOMS = [
     {
         "name": "Single Room",
+        "slug": "single-room",
+        "type": "single",
         "price": "6,500",
-        "img": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200",
+        "img": "/static/images/optimized/opt_2b7d00ef_photo-1505693416388-ac5ce068fe85.jpg",
         "area": "25 m2",
         "guests": 1,
         "beds": 1,
@@ -17,8 +72,10 @@ ROOMS = [
     },
     {
         "name": "Double Room",
+        "slug": "double-room",
+        "type": "double",
         "price": "10,000",
-        "img": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200",
+        "img": "/static/images/optimized/opt_2b7d00ef_photo-1505693416388-ac5ce068fe85.jpg",
         "area": "35 m2",
         "guests": 2,
         "beds": 2,
@@ -26,8 +83,10 @@ ROOMS = [
     },
     {
         "name": "Triple Room",
+        "slug": "triple-room",
+        "type": "suite",
         "price": "14,500",
-        "img": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200",
+        "img": "/static/images/optimized/opt_e1729fc3_photo-1542314831-068cd1dbfeeb.jpg",
         "area": "45 m2",
         "guests": 3,
         "beds": 3,
@@ -35,8 +94,10 @@ ROOMS = [
     },
     {
         "name": "Royal Duplex",
+        "slug": "royal-duplex",
+        "type": "suite",
         "price": "24,000",
-        "img": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200",
+        "img": "/static/images/optimized/opt_eea12cea_photo-1522708323590-d24dbb6b0267.jpg",
         "area": "120 m2",
         "guests": 4,
         "beds": 2,
@@ -52,10 +113,10 @@ OFFERS = [
 
 TESTIMONIALS = [
     {
-        "quote": "From the moment we arrived, we were treated like royalty. Celestia's attention to detail and tranquil ambiance are unmatched.",
+        "quote": "From the moment we arrived, we were treated like royalty. AVYUKT VIEW's attention to detail and tranquil ambiance are unmatched.",
         "author": "Laura Greene",
         "location": "Jakarta",
-        "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+        "image": "/static/images/optimized/opt_a9141a63_photo-1494790108377-be9c29b29330.jpg",
         "rating": 4.7,
         "badges": ["Excellent Point", "Top Company"],
         "rating_display": "4.7"
@@ -64,7 +125,7 @@ TESTIMONIALS = [
         "quote": "A wonderful, tranquil stay with warm service. The amenities exceeded our expectations and staff was incredibly attentive.",
         "author": "Priya Sharma",
         "location": "Mumbai",
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+        "image": "/static/images/optimized/opt_6a5ec629_photo-1507003211169-0a1dd7228f2d.jpg",
         "rating": 4.9,
         "badges": ["Client Feedback", "Top Company"],
         "rating_display": "4.9"
@@ -73,7 +134,7 @@ TESTIMONIALS = [
         "quote": "The rooms were beautiful and the location was perfect for our business retreat. Highly recommend for any occasion.",
         "author": "Arjun Kapoor",
         "location": "Bangalore",
-        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+        "image": "/static/images/optimized/opt_16d519c9_photo-1500648767791-00dcc994a43e.jpg",
         "rating": 4.8,
         "badges": ["Excellent Point", "Client Feedback"],
         "rating_display": "4.8"
@@ -82,18 +143,18 @@ TESTIMONIALS = [
         "quote": "We loved the dining options and the calm rooftop bar. Every moment here felt like a luxury getaway.",
         "author": "Maya Desai",
         "location": "Pune",
-        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
+        "image": "/static/images/optimized/opt_2d22f108_photo-1438761681033-6461ffad8d80.jpg",
         "rating": 4.6,
         "badges": ["Top Company", "Client Feedback"],
         "rating_display": "4.6"
     }
 ]
 
+# Updated amenities to the requested core list
 AMENITIES = [
     {"title": "High-Speed Wi-Fi", "description": "Stay connected with powerful Wi-Fi in every room and public space."},
     {"title": "Smart Entertainment Systems", "description": "Modern in-room entertainment with streaming and premium audio."},
     {"title": "Fitness Center", "description": "A fully equipped gym for active guests and wellness routines."},
-    {"title": "Spa and Wellness Center", "description": "Relaxation and recovery with spa treatments and tranquil spaces."},
     {"title": "In-Room Refreshments", "description": "Beverages and snacks delivered on demand to your suite."},
     {"title": "Gourmet Restaurants", "description": "Curated dining experiences with local and international menus."},
     {"title": "Grand Ballroom", "description": "Elegant event space for weddings, conferences, and celebrations."},
@@ -101,45 +162,81 @@ AMENITIES = [
     {"title": "Outdoor Event Spaces", "description": "Beautiful open-air venues for receptions and special events."},
     {"title": "Poolside Café", "description": "Casual poolside refreshments with a chic lounge atmosphere."}
 ]
+# Added 5G data amenity
+AMENITIES.append({"title": "5G Data", "description": "Ultra-fast 5G mobile data coverage across the property for streaming, video calls, and remote work."})
 
 SERVICE_FEATURES = [
     {
         "title": "Rooms",
         "slug": "rooms-feature",
         "description": "Luxurious guest rooms designed with comfort, style, and restful amenities.",
-        "img": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+        "img": "/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg"
     },
     {
         "title": "Restaurant",
         "slug": "restaurant",
         "description": "Premium dining with local flavours, curated menus, and elegant ambience.",
-        "img": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=900&q=80"
+        "img": "/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg"
     },
     {
         "title": "Hall",
         "slug": "hall",
         "description": "Grand event spaces for weddings, conferences, and private celebrations.",
-        "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
+        "img": "/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg"
     },
     {
         "title": "Bar",
         "slug": "bar",
         "description": "Stylish bar experiences with cocktails, lounge seating, and evening vibes.",
-        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+        "img": "/static/images/optimized/opt_f14943c4_photo-1517248135467-4c7edcad34c4.jpg"
+    }
+    ,
+    {
+        "title": "SwimmingPool",
+        "slug": "swimmingpool",
+        "description": "Refresh and relax in our scenic swimming pool with lounge seating and poolside service.",
+        "img": "/static/images/optimized/opt_3e3841d9_photo-1507484467451-1d9d6c0e3b98.jpg"
     }
 ]
 
 VALUE_ITEMS = [
     {"headline": "Indulge in World-Class Comfort and Convenience.", "description": "Every detail is designed to make your stay seamless and memorable."},
-    {"headline": "Experience the Celestia Difference: Unparalleled Hospitality.", "description": "From arrival to departure, our team delivers thoughtful service at every step."},
+    {"headline": "Experience the AVYUKT VIEW Difference: Unparalleled Hospitality.", "description": "From arrival to departure, our team delivers thoughtful service at every step."},
     {"headline": "Trusted by 25,000+ world-class brands and organizations.", "description": "We create inspiring moments for guests, events, and corporate stays of all sizes."}
 ]
 
 CONTACT_DETAILS = {
     "address": "123 MG Road, Central District, Bangalore, Karnataka 560001",
     "phone": "+91 80 1234 5678",
-    "email": "hello@thezenithhotel.com",
+    "email": "hello@avyuktview.com",
     "hours": "Open daily 8:00 AM – 11:00 PM"
+}
+
+BOOKING_LINK = "https://your-backend-booking-link.com/reserve"  # Update this with your backend booking URL
+
+ABOUT_US = {
+    "title": "About AVYUKT VIEW",
+    "tagline": "Where Luxury Meets Hospitality",
+    "description": "Welcome to AVYUKT VIEW, Bangalore's premier luxury hotel. Since our inception, we've been dedicated to delivering world-class hospitality and unforgettable experiences to every guest.",
+    "mission": "Our mission is to blend local charm with modern comfort, creating meaningful moments for every traveler who walks through our doors.",
+    "highlights": [
+        {
+            "title": "World-Class Comfort",
+            "description": "Experience luxurious rooms designed with every detail in mind for your utmost comfort and relaxation."
+        },
+        {
+            "title": "Exceptional Service",
+            "description": "Our dedicated team provides personalized service and attention that makes your stay truly memorable."
+        },
+        {
+            "title": "Prime Location",
+            "description": "Located in the heart of Bangalore with easy access to business districts, shopping, and cultural attractions."
+        },
+        {
+            "title": "Premium Amenities",
+            "description": "From world-class dining to spa and wellness centers, every amenity is crafted for your pleasure."
+        }
+    ]
 }
 
 ROOM_OVERVIEW_FEATURES = [
@@ -154,29 +251,6 @@ ROOM_RATING = {
     "experience": "4.8",
     "feedback": "4.7",
     "reviews": 384
-}
-
-PRESTIGE_SUITE = {
-    "name": "Prestige Suite",
-    "size": "600 m2",
-    "guests": 6,
-    "beds": 3,
-    "description": "A perfect blend of elegance and comfort, featuring expansive living spaces and breathtaking views. With luxurious furnishings, a private balcony, and exclusive amenities, it’s designed to provide an unparalleled retreat for discerning guests.",
-    "details": "Proin donec scelerisque risus sociosqu hac adipiscing. Hendrerit cursus nam fames eget sagittis hac sit diam aenean. Elit viverra mi imperdiet netus hendrerit malesuada morbi. Tempor finibus nibh cursus si mi magnis tellus taciti amet. Suscipit auctor integer dui euismod erat penatibus dignissim si pede.\n\nPenatibus magna velit aenean adipiscing semper pede. Turpis scelerisque ornare netus pretium interdum hac volutpat nisl ligula. Duis molestie habitant porttitor luctus enim ligula nisl. Proin duis hendrerit aenean neque nisl. In nibh leo non inceptos eget pede.",
-    "amenities": [
-        "High-Speed Wi-Fi",
-        "Smart Entertainment Systems",
-        "Fitness Center",
-        "Spa and Wellness Center",
-        "In-Room Refreshments",
-        "Gourmet Restaurants",
-        "Grand Ballroom",
-        "Meeting Rooms",
-        "Outdoor Event Spaces",
-        "Poolside Café"
-    ],
-    "discount": "Discount up to 35% for members",
-    "price": "$1,099 / night"
 }
 
 # Simple Terms & Conditions snippet used by the chat helper
@@ -240,16 +314,18 @@ FAQ_ITEMS = [
 ]
 
 PARTNERS = [
-    {"name": "MakeMyTrip", "url": "https://www.makemytrip.com", "logo": "https://upload.wikimedia.org/wikipedia/commons/3/36/Makemytrip_logo.svg"},
-    {"name": "Booking.com", "url": "https://www.booking.com", "logo": "https://upload.wikimedia.org/wikipedia/commons/6/69/Booking.com_logo.svg"},
-    {"name": "Expedia", "url": "https://www.expedia.com", "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Expedia_Logo.svg"},
-    {"name": "Cleartrip", "url": "https://www.cleartrip.com", "logo": "https://upload.wikimedia.org/wikipedia/commons/0/05/Cleartrip-logo.svg"},
-    {"name": "Airbnb", "url": "https://www.airbnb.com", "logo": "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"},
-    {"name": "Tripadvisor", "url": "https://www.tripadvisor.in", "logo": "https://upload.wikimedia.org/wikipedia/commons/7/73/Tripadvisor_logo.svg"}
+    {"name": "Accufirm", "url": "#", "logo": "/static/images/logo_accufirm.svg"},
+    {"name": "Bloomly", "url": "#", "logo": "/static/images/logo_bloomly.svg"},
+    {"name": "Brighto", "url": "#", "logo": "/static/images/logo_brighto.svg"},
+    {"name": "Digancy", "url": "#", "logo": "/static/images/logo_digancy.svg"},
+    {"name": "Ecoscape", "url": "#", "logo": "/static/images/Logo_ecoscape.svg"},
+    {"name": "Femmous", "url": "#", "logo": "/static/images/logo_femmous.svg"},
+    {"name": "Fincco D", "url": "#", "logo": "/static/images/logo_fincco_d.svg"},
+    {"name": "KeyGenie", "url": "#", "logo": "/static/images/logo_keygenie.svg"}
 ]
 
 PAGES = [
-    {"title": "About Us", "category": "Pages", "summary": "Discover our story, hospitality values, and the guest-first service philosophy behind The Zenith.", "hover_detail": "Learn how our hotel blends local charm with modern comfort for every stay.", "link": "/pages#about"},
+    {"title": "About Us", "category": "Pages", "summary": "Discover our story, hospitality values, and the guest-first service philosophy behind AVYUKT VIEW.", "hover_detail": "Learn how our hotel blends local charm with modern comfort for every stay.", "link": "/pages#about"},
     {"title": "Our Rooms", "category": "Pages", "summary": "Explore beautifully appointed rooms and suites designed for comfort, convenience, and elevated relaxation.", "hover_detail": "Browse room options that suit couples, families, and business travelers alike.", "link": "/pages#rooms"},
     {"title": "Amenities", "category": "Pages", "summary": "See our premium amenities including dining, wellness, business spaces, and leisure experiences.", "hover_detail": "Review the facilities that make every stay more convenient and memorable.", "link": "/pages#amenities"},
     {"title": "Dining & Bar", "category": "Pages", "summary": "Browse signature dining experiences, curated menus, and sophisticated bar settings.", "hover_detail": "Discover the restaurants, lounges, and bar experiences crafted for every mood.", "link": "/pages#dining"},
@@ -264,8 +340,8 @@ def index():
     static_images = pathlib.Path(os.path.join(app.root_path, 'static', 'images'))
     hero_static = static_images / 'hero.png'
     logo_static = static_images / 'navbar-logo.png'
-    hero_image = '/static/images/hero.png' if hero_static.exists() else 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1900&q=80'
-    logo_image = '/static/images/navbar-logo.png' if logo_static.exists() else None
+    hero_image = '/static/images/hero.png' if hero_static.exists() else '/static/images/optimized/opt_bb02fee9_photo-1566073771259-6a8506099945.jpg'
+    logo_image = get_logo_image()
     return render_template(
         'index.html',
         rooms=ROOMS,
@@ -279,6 +355,8 @@ def index():
         contact=CONTACT_DETAILS,
         faq_items=FAQ_ITEMS,
         partners=PARTNERS,
+        about_us=ABOUT_US,
+        booking_link=BOOKING_LINK,
         subscribe_success=subscribed
     )
 
@@ -286,7 +364,7 @@ def index():
 def rooms_page():
     static_images = pathlib.Path(os.path.join(app.root_path, 'static', 'images'))
     logo_static = static_images / 'navbar-logo.png'
-    logo_image = '/static/images/navbar-logo.png' if logo_static.exists() else None
+    logo_image = get_logo_image()
     return render_template(
         'rooms.html',
         rooms=ROOMS,
@@ -298,11 +376,113 @@ def rooms_page():
         logo_image=logo_image
     )
 
+
+@app.route('/room-details')
+def room_details_page():
+    logo_image = get_logo_image()
+    slug = request.args.get('slug')
+    enriched = []
+    selected_room = None
+    for r in ROOMS:
+        rcopy = r.copy()
+        rcopy['slug'] = rcopy.get('slug') or rcopy.get('name','').lower().replace(' ','-')
+        rcopy['amenities'] = ["High-Speed Wi-Fi", "Smart TV", "Mini Bar", "Air Conditioning", "Complimentary Breakfast"]
+        enriched.append(rcopy)
+        if slug and rcopy['slug'] == slug:
+            selected_room = rcopy
+
+    if not selected_room and enriched:
+        selected_room = enriched[0]
+
+    related_rooms = [room for room in enriched if room['slug'] != selected_room['slug']]
+    gallery_images = _load_gallery_images(selected_room.get('type'))
+
+    return render_template(
+        'room_details.html',
+        selected_room=selected_room,
+        related_rooms=related_rooms,
+        gallery_images=gallery_images,
+        logo_image=logo_image,
+        contact=CONTACT_DETAILS,
+        partners=PARTNERS,
+        booking_link=BOOKING_LINK
+    )
+
+def _normalize_gallery_type(value: str | None) -> str | None:
+    if not value:
+        return None
+    normalized = value.lower().replace('_', '-').strip()
+    mapping = {
+        'single-room': 'single',
+        'single': 'single',
+        'double-room': 'double',
+        'double': 'double',
+        'triple-room': 'suite',
+        'triple': 'suite',
+        'royal-duplex': 'suite',
+        'duplex': 'suite',
+        'suite': 'suite',
+        'all': 'all'
+    }
+    if normalized in mapping:
+        return mapping[normalized]
+    if 'single' in normalized:
+        return 'single'
+    if 'double' in normalized:
+        return 'double'
+    if 'triple' in normalized or 'duplex' in normalized or 'suite' in normalized:
+        return 'suite'
+    return None
+
+
+def _scan_folder(folder: pathlib.Path, img_type: str) -> list[dict]:
+    imgs = []
+    if folder.exists() and folder.is_dir():
+        for f in sorted(folder.iterdir()):
+            if f.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp'):
+                imgs.append({"src": f"/static/images/galleries/{img_type}/{f.name}", "alt": f.name, "type": img_type})
+    return imgs
+
+
+def _load_gallery_images(gallery_type: str | None) -> list[dict]:
+    static_galleries = pathlib.Path(os.path.join(app.root_path, 'static', 'images', 'galleries'))
+    images = []
+    if gallery_type:
+        folder = static_galleries / gallery_type
+        images = _scan_folder(folder, gallery_type)
+    if not images:
+        images = [
+            {"src": "/static/images/optimized/opt_2b7d00ef_photo-1505693416388-ac5ce068fe85.jpg&q=80", "alt": "Single bed room", "type": "single"},
+            {"src": "/static/images/optimized/opt_e1729fc3_photo-1542314831-068cd1dbfeeb.jpg&q=80", "alt": "Double bed room", "type": "double"},
+            {"src": "/static/images/optimized/opt_eea12cea_photo-1522708323590-d24dbb6b0267.jpg&q=80", "alt": "Suite room", "type": "suite"},
+            {"src": "/static/images/optimized/opt_2b7d00ef_photo-1505693416388-ac5ce068fe85.jpg&q=80", "alt": "Single bed room 2", "type": "single"},
+            {"src": "/static/images/optimized/opt_2b7d00ef_photo-1505693416388-ac5ce068fe85.jpg&q=80", "alt": "Double bed room 2", "type": "double"},
+            {"src": "/static/images/optimized/opt_e1729fc3_photo-1542314831-068cd1dbfeeb.jpg&q=80", "alt": "Suite room 2", "type": "suite"}
+        ]
+    if gallery_type and gallery_type != 'all':
+        images = [img for img in images if img['type'] == gallery_type]
+    return images
+
+
+@app.route('/gallery')
+def gallery_page():
+    requested = request.args.get('type')
+    gallery_type = _normalize_gallery_type(requested) or 'all'
+    gallery_images = []
+
+    if gallery_type == 'all':
+        for room_type in ['single', 'double', 'suite']:
+            gallery_images.extend(_scan_folder(pathlib.Path(os.path.join(app.root_path, 'static', 'images', 'galleries', room_type)), room_type))
+    else:
+        gallery_images = _load_gallery_images(gallery_type)
+
+    return render_template('gallery.html', gallery_images=gallery_images, contact=CONTACT_DETAILS, gallery_type=gallery_type)
+
 @app.route('/pages')
 def pages_page():
     static_images = pathlib.Path(os.path.join(app.root_path, 'static', 'images'))
     logo_static = static_images / 'navbar-logo.png'
-    logo_image = '/static/images/navbar-logo.png' if logo_static.exists() else None
+    logo_image = get_logo_image()
     return render_template(
         'pages.html',
         pages=PAGES,
@@ -311,14 +491,16 @@ def pages_page():
         logo_image=logo_image
     )
 
-@app.route('/detail-room')
-def detail_room():
+@app.route('/features')
+def features_page():
+    logo_image = get_logo_image()
     return render_template(
-        'detail_room.html',
-        suite=PRESTIGE_SUITE,
-        contact=CONTACT_DETAILS,
+        'features.html',
         partners=PARTNERS,
-        service_features=SERVICE_FEATURES
+        amenities=AMENITIES,
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK,
+        logo_image=logo_image
     )
 
 @app.route('/check_availability', methods=['POST'])
