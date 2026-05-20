@@ -1,22 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="/static/css/style.css">
-  <title>Pages</title>
-</head>
-<body>
-  <main class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="font-serif text-3xl mb-4">Site Pages</h1>
-    <ul class="space-y-3">
-      {% for p in pages %}
-      <li class="glass-card p-4">
-        <a href="{{ p.link }}" class="font-semibold text-lg">{{ p.title }}</a>
-        <p class="text-sm text-neutral-600">{{ p.summary }}</p>
-      </li>
+{% extends "base.html" %}
+{% block title %}Pages | AVYUKT VIEW{% endblock %}
+{% block content %}
+<main class="max-w-6xl mx-auto px-6 py-12">
+  <div class="space-y-10">
+    <div class="space-y-4">
+      <div>
+        <h1 class="font-serif text-3xl">Frequently Asked Questions</h1>
+        <p class="text-neutral-600">Find quick answers to common questions about bookings, policies, and on-site services.</p>
+      </div>
+      {% for item in faq_items %}
+      <details class="group rounded-2xl border border-slate-200 p-4 bg-white shadow-sm">
+        <summary class="cursor-pointer font-semibold">{{ item.question }}</summary>
+        <div class="mt-3 text-sm text-neutral-600">{{ item.answer }}</div>
+      </details>
       {% endfor %}
-    </ul>
-  </main>
-</body>
-</html>
+    </div>
+  </div>
+</main>
+{% endblock %}

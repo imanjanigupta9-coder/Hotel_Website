@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}About | AVYUKT VIEW{% endblock %}
+{% block content %}
+<main class="max-w-6xl mx-auto px-6 py-12">
+  <section class="rounded-[40px] border border-slate-200 bg-white p-10 shadow-sm">
+    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+      <div>
+        <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">About AVYUKT VIEW</p>
+        <h1 class="text-4xl font-serif mb-4">Our Story</h1>
+        <p class="text-lg text-slate-600 mb-6">Discover the values, comfort, and hospitality behind every guest experience at AVYUKT VIEW.</p>
+        <p class="text-neutral-600 mb-6 leading-relaxed">{{ about_us.description }}</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/services" class="crystal-btn">Explore services</a>
+          <a href="/contact" class="room-details-cta">Contact us</a>
+        </div>
+      </div>
+      <div class="rounded-[32px] overflow-hidden shadow-lg">
+        <img src="{{ src_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel lounge" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-10">
+      {% for highlight in about_us.highlights %}
+      <article class="glass-card rounded-3xl p-6 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+        <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-xl font-bold">✓</div>
+        <h4 class="text-lg font-semibold mb-2">{{ highlight.title }}</h4>
+        <p class="text-neutral-600 text-sm">{{ highlight.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

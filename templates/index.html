@@ -20,12 +20,21 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-3 text-[0.75rem] uppercase tracking-[0.24em]">
-        <a href="#rooms" class="text-white transition hover:text-amber-500 py-2" data-i18n="rooms_label">Rooms</a>
-        <a href="#partners" data-i18n="partners_label" class="text-white transition hover:text-amber-500 py-2">Partners</a>
-        <a href="#about" data-i18n="about_label" class="text-white transition hover:text-amber-500 py-2">About Us</a>
-        <a href="#services" data-i18n="services_label" class="text-white transition hover:text-amber-500 py-2">Services</a>
-        <a href="#offers" data-i18n="offers_label" class="text-white transition hover:text-amber-500 py-2">Offers</a>
-        <a href="#contact" data-i18n="contact_label" class="text-white transition hover:text-amber-500 py-2">Contact</a>
+        <a href="/rooms" class="text-white transition hover:text-amber-500 py-2" data-i18n="rooms_label">Rooms</a>
+        <a href="/about" data-i18n="about_label" class="text-white transition hover:text-amber-500 py-2">About Us</a>
+        <a href="/contact" data-i18n="contact_label" class="text-white transition hover:text-amber-500 py-2">Contact</a>
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-2 text-white transition hover:text-amber-500 py-2" aria-haspopup="true" aria-expanded="false">
+            MORE
+          </button>
+          <div class="nav-dropdown hidden group-hover:block group-focus-within:block absolute right-0 top-full rounded-3xl border border-white/10 bg-black/95 shadow-xl z-50">
+            <a href="/services" class="text-white hover:bg-white/10">Services</a>
+            <a href="/offers" class="text-white hover:bg-white/10">Offers</a>
+            <a href="/pages" class="text-white hover:bg-white/10">FAQ</a>
+            <a href="/gallery" class="text-white hover:bg-white/10">Gallery</a>
+            <a href="/partners" class="text-white hover:bg-white/10">Partners</a>
+          </div>
+        </div>
       </nav>
 
       <div class="flex items-center gap-2 md:gap-3">
@@ -49,14 +58,19 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black">
       <div class="p-4 flex flex-col gap-3">
-        <a href="#about" data-i18n="about_label" class="uppercase text-white hover:text-amber-500">About Us</a>
-        <a href="#rooms" data-i18n="rooms_label" class="uppercase text-white hover:text-amber-500">Rooms</a>
-        <a href="/rooms" class="uppercase text-white hover:text-amber-500">Browse rooms</a>
-        <a href="/gallery" class="uppercase text-white hover:text-amber-500">Gallery</a>
-        <a href="#services" data-i18n="services_label" class="uppercase text-white hover:text-amber-500">Services</a>
-        <a href="#offers" data-i18n="offers_label" class="uppercase text-white hover:text-amber-500">Offers</a>
-        <a href="#partners" data-i18n="partners_label" class="uppercase text-white hover:text-amber-500">Partners</a>
-        <a href="#contact" data-i18n="contact_label" class="uppercase text-white hover:text-amber-500">Contact</a>
+        <a href="/rooms" data-i18n="rooms_label" class="uppercase text-white hover:text-amber-500">Rooms</a>
+        <a href="/about" data-i18n="about_label" class="uppercase text-white hover:text-amber-500">About Us</a>
+        <a href="/contact" data-i18n="contact_label" class="uppercase text-white hover:text-amber-500">Contact</a>
+        <details class="group rounded-3xl bg-white/5 border border-white/10 p-3">
+          <summary class="uppercase text-white hover:text-amber-500 cursor-pointer py-2 px-3">More</summary>
+          <div class="mt-2 flex flex-col gap-2">
+            <a href="/services" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Services</a>
+            <a href="/offers" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Offers</a>
+            <a href="/pages" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">FAQ</a>
+            <a href="/gallery" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Gallery</a>
+            <a href="/partners" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Partners</a>
+          </div>
+        </details>
       </div>
     </div>
   </header>
@@ -71,8 +85,8 @@
           <p class="uppercase tracking-widest text-sm md:text-base opacity-90 mb-6" data-i18n="hero_tagline">A New Chapter of Luxury in Bangalore</p>
           <p data-i18n="hero_description" class="max-w-xl text-sm md:text-base opacity-80 mb-6">Premium luxury hotel with world-class amenities, fine dining, and exceptional service in the heart of Bangalore.</p>
           <div class="flex flex-wrap gap-4">
-            <a href="#rooms" data-i18n="explore_rooms" class="crystal-btn book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
-            <a href="#offers" class="inline-flex items-center gap-2 text-sm md:text-base bg-white/15 text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white/30 transition" data-i18n="offers_label">Offers</a>
+            <a href="/rooms" data-i18n="explore_rooms" class="crystal-btn book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
+            <a href="/offers" class="inline-flex items-center gap-2 text-sm md:text-base bg-white/15 text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white/30 transition" data-i18n="offers_label">Offers</a>
           </div>
         </div>
       </div>
@@ -132,6 +146,48 @@
       </div>
     </section>
 
+    <section id="rooms" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="rounded-[40px] border border-slate-200 bg-transparent shadow-none p-4 sm:p-8">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-serif" data-i18n="accommodation_title">Accommodation</h2>
+            <p class="text-neutral-600 mt-2">Comfort and style in every room.</p>
+          </div>
+          <div class="horizontal-card-slider-wrapper reveal-hidden">
+            <div class="horizontal-card-slider accommodation-slider px-4 sm:px-6" data-slider-name="accommodation">
+              {% for room in rooms %}
+              <article class="room-card glass-card rounded-[40px] overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                <div class="relative overflow-hidden">
+                  <img src="{{ src_for(room.img,800) }}" srcset="{{ srcset_for(room.img) }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="{{ room.name }}" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x560?text=Room+Image+Unavailable';">
+                <div class="absolute top-4 right-4 bg-amber-600 text-white px-3 py-2 rounded-md text-sm font-semibold room-price-badge">₹{{ room.price }}</div>
+              </div>
+              <div class="p-5 flex flex-col justify-between gap-4">
+                <div class="room-text-area">
+                  <h3 class="font-serif text-xl mb-2">{{ room.name }}</h3>
+                  <p class="text-sm text-neutral-600 mb-3">{{ room.description }}</p>
+                  <div class="grid gap-2 text-sm text-neutral-500 mb-4 sm:grid-cols-2">
+                    <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.area }}</div>
+                    <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.guests }} Guests</div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-amber-600 font-semibold">₹{{ room.price }}</span>
+                </div>
+                <div class="room-card-details">
+                  <div class="flex items-center gap-2 w-full">
+                    <a href="/room-details?slug={{ room.slug }}" class="room-details-cta inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">More details</a>
+                    <a href="{{ booking_link }}?room={{ room.slug }}" class="room-book-btn inline-flex items-center gap-2 rounded-full bg-amber-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">Book now</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
     <section id="partners" class="py-16 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
         <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-8 md:p-10">
@@ -170,6 +226,31 @@
       </div>
     </section>
 
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
+          <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">About AVYUKT VIEW</p>
+            <h2 class="text-4xl font-serif mb-4">{{ about_us.title }}</h2>
+            <p class="text-lg font-semibold text-neutral-600 mb-6">{{ about_us.tagline }}</p>
+            <p class="text-neutral-700 mb-6 leading-relaxed">{{ about_us.description }}</p>
+            <p class="text-neutral-700 mb-8 leading-relaxed italic">{{ about_us.mission }}</p>
+          </div>
+            <div class="overflow-hidden rounded-[32px] shadow-2xl">
+            <img src="{{ src_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel lounge" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x420?text=Hotel+Image+Coming+Soon';" />
+          </div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {% for highlight in about_us.highlights %}
+          <article class="glass-card rounded-3xl p-6 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-xl font-bold">✓</div>
+            <h4 class="text-lg font-semibold mb-2">{{ highlight.title }}</h4>
+            <p class="text-neutral-600 text-sm">{{ highlight.description }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
 
     <section id="services" class="py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
@@ -224,74 +305,6 @@
       </div>
     </section>
 
-    <section id="about" class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">About AVYUKT VIEW</p>
-            <h2 class="text-4xl font-serif mb-4">{{ about_us.title }}</h2>
-            <p class="text-lg font-semibold text-neutral-600 mb-6">{{ about_us.tagline }}</p>
-            <p class="text-neutral-700 mb-6 leading-relaxed">{{ about_us.description }}</p>
-            <p class="text-neutral-700 mb-8 leading-relaxed italic">{{ about_us.mission }}</p>
-          </div>
-            <div class="overflow-hidden rounded-[32px] shadow-2xl">
-            <img src="{{ src_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel lounge" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x420?text=Hotel+Image+Coming+Soon';" />
-          </div>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {% for highlight in about_us.highlights %}
-          <article class="glass-card rounded-3xl p-6 shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-xl font-bold">✓</div>
-            <h4 class="text-lg font-semibold mb-2">{{ highlight.title }}</h4>
-            <p class="text-neutral-600 text-sm">{{ highlight.description }}</p>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section id="rooms" class="py-20 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="rounded-[40px] border border-slate-200 bg-transparent shadow-none p-8">
-          <div class="text-center mb-8">
-            <h2 class="text-3xl font-serif" data-i18n="accommodation_title">Accommodation</h2>
-            <p class="text-neutral-600 mt-2">Comfort and style in every room.</p>
-          </div>
-          <div class="horizontal-card-slider-wrapper reveal-hidden">
-            <div class="horizontal-card-slider" data-slider-name="accommodation">
-              {% for room in rooms %}
-              <article class="room-card glass-card rounded-[40px] overflow-hidden hover:-translate-y-2 transition-transform duration-300">
-                <div class="relative overflow-hidden">
-                  <img src="{{ src_for(room.img,800) }}" srcset="{{ srcset_for(room.img) }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="{{ room.name }}" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x560?text=Room+Image+Unavailable';">
-                <div class="absolute top-4 right-4 bg-amber-600 text-white px-3 py-2 rounded-md text-sm font-semibold room-price-badge">₹{{ room.price }}</div>
-              </div>
-              <div class="p-5 flex flex-col justify-between gap-4">
-                <div class="room-text-area">
-                  <h3 class="font-serif text-xl mb-2">{{ room.name }}</h3>
-                  <p class="text-sm text-neutral-600 mb-3">{{ room.description }}</p>
-                  <div class="grid gap-2 text-sm text-neutral-500 mb-4 sm:grid-cols-2">
-                    <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.area }}</div>
-                    <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.guests }} Guests</div>
-                  </div>
-                </div>
-                <div class="flex items-center justify-between gap-3">
-                  <span class="text-amber-600 font-semibold">₹{{ room.price }}</span>
-                </div>
-                <div class="room-card-details">
-                  <div class="flex items-center gap-2 w-full">
-                    <a href="/room-details?slug={{ room.slug }}" class="room-details-cta inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">More details</a>
-                    <a href="{{ booking_link }}?room={{ room.slug }}" class="room-book-btn inline-flex items-center gap-2 rounded-full bg-amber-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">Book now</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            {% endfor %}
-          </div>
-          <div class="carousel-dots"></div>
-        </div>
-      </div>
-    </section>
-
     <section id="featured-experiences" class="py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-10">
@@ -304,6 +317,7 @@
             <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
               <img src="{{ src_for('/static/images/optimized/opt_b263daf1_photo-1507525428034-b723cf961d3e.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_b263daf1_photo-1507525428034-b723cf961d3e.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Private pool retreat" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
+                <div class="feature-card-icon"><i class="fa-solid fa-wifi"></i></div>
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Private escape</p>
                 <h4 class="text-2xl font-semibold mb-3">Private pool retreats</h4>
                 <p class="text-neutral-600">A distinct experience for guests seeking premium privacy and scenic waterside lounging.</p>
@@ -313,6 +327,7 @@
             <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
               <img src="{{ src_for('/static/images/optimized/opt_c9d85b09_photo-1512917774080-9991f1c4c750.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_c9d85b09_photo-1512917774080-9991f1c4c750.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="City culture stay" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
+                <div class="feature-card-icon"><i class="fa-solid fa-city"></i></div>
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">City culture</p>
                 <h4 class="text-2xl font-semibold mb-3">Sophisticated urban stays</h4>
                 <p class="text-neutral-600">Explore curated city escapes with modern interiors, local flavour, and effortless elegance.</p>
@@ -322,6 +337,7 @@
             <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
               <img src="{{ src_for('/static/images/optimized/opt_3c501f0f_photo-1484154218962-a197022b5858.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_3c501f0f_photo-1484154218962-a197022b5858.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Wellness sanctuary" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="p-6">
+                <div class="feature-card-icon"><i class="fa-solid fa-spa"></i></div>
                 <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Wellness journey</p>
                 <h4 class="text-2xl font-semibold mb-3">Spa & wellness journeys</h4>
                 <p class="text-neutral-600">Refresh body and mind with premium spa rituals, curated treatments, and tranquil lounge spaces.</p>
@@ -419,7 +435,9 @@
           <div class="horizontal-card-slider" data-slider-name="amenities">
             {% for amenity in amenities %}
             <article class="glass-card visual-card rounded-3xl p-6 shadow-sm">
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-700 text-xl">★</div>
+              <div class="amenity-icon mb-4">
+                <i class="{{ amenity.icon }}"></i>
+              </div>
               <h4 class="font-semibold mb-2">{{ amenity.title }}</h4>
               <p class="text-sm text-neutral-600">{{ amenity.description }}</p>
             </article>

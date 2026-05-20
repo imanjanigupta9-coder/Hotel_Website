@@ -152,18 +152,19 @@ TESTIMONIALS = [
 
 # Updated amenities to the requested core list
 AMENITIES = [
-    {"title": "High-Speed Wi-Fi", "description": "Stay connected with powerful Wi-Fi in every room and public space."},
-    {"title": "Smart Entertainment Systems", "description": "Modern in-room entertainment with streaming and premium audio."},
-    {"title": "Fitness Center", "description": "A fully equipped gym for active guests and wellness routines."},
-    {"title": "In-Room Refreshments", "description": "Beverages and snacks delivered on demand to your suite."},
-    {"title": "Gourmet Restaurants", "description": "Curated dining experiences with local and international menus."},
-    {"title": "Grand Ballroom", "description": "Elegant event space for weddings, conferences, and celebrations."},
-    {"title": "Meeting Rooms", "description": "Flexible workspaces with modern AV and support services."},
-    {"title": "Outdoor Event Spaces", "description": "Beautiful open-air venues for receptions and special events."},
-    {"title": "Poolside Café", "description": "Casual poolside refreshments with a chic lounge atmosphere."}
+    {"title": "High-Speed Wi-Fi", "icon_image": "https://img.icons8.com/color/48/000000/wifi.png", "description": "Stay connected with powerful Wi-Fi in every room and public space."},
+    {"title": "Smart Entertainment Systems", "icon_image": "https://img.icons8.com/color/48/000000/smart-tv.png", "description": "Modern in-room entertainment with streaming and premium audio."},
+    {"title": "Fitness Center", "icon_image": "https://img.icons8.com/color/48/000000/gym.png", "description": "A fully equipped gym for active guests and wellness routines."},
+    {"title": "In-Room Refreshments", "icon_image": "https://img.icons8.com/color/48/000000/room-service.png", "description": "Beverages and snacks delivered on demand to your suite."},
+    {"title": "Gourmet Restaurants", "icon_image": "https://img.icons8.com/color/48/000000/restaurant.png", "description": "Curated dining experiences with local and international menus."},
+    {"title": "Grand Ballroom", "icon": "fa-solid fa-gem", "description": "Elegant event space for weddings, conferences, and celebrations."},
+    {"title": "Meeting Rooms", "icon_image": "https://img.icons8.com/color/48/000000/meeting-room.png", "description": "Flexible workspaces with modern AV and support services."},
+    {"title": "Outdoor Event Spaces", "icon": "fa-solid fa-tree-city", "description": "Beautiful open-air venues for receptions and special events."},
+    {"title": "Poolside Café", "icon": "fa-solid fa-cocktail", "description": "Casual poolside refreshments with a chic lounge atmosphere."}
 ]
-# Added 5G data amenity
-AMENITIES.append({"title": "5G Data", "description": "Ultra-fast 5G mobile data coverage across the property for streaming, video calls, and remote work."})
+# Added 5G data and WhatsApp support amenities
+AMENITIES.append({"title": "5G Data", "icon": "fa-solid fa-signal", "icon_image": "https://img.icons8.com/color/48/000000/5g.png", "description": "Ultra-fast 5G mobile data coverage across the property for streaming, video calls, and remote work."})
+AMENITIES.append({"title": "WhatsApp Support", "icon_image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg", "description": "Connect with guest support instantly through WhatsApp for reservations, requests, and quick assistance."})
 
 SERVICE_FEATURES = [
     {
@@ -362,19 +363,7 @@ def index():
 
 @app.route('/rooms')
 def rooms_page():
-    static_images = pathlib.Path(os.path.join(app.root_path, 'static', 'images'))
-    logo_static = static_images / 'navbar-logo.png'
-    logo_image = get_logo_image()
-    return render_template(
-        'rooms.html',
-        rooms=ROOMS,
-        overview_features=ROOM_OVERVIEW_FEATURES,
-        rating=ROOM_RATING,
-        service_features=SERVICE_FEATURES,
-        contact=CONTACT_DETAILS,
-        partners=PARTNERS,
-        logo_image=logo_image
-    )
+    return room_details_page()
 
 
 @app.route('/room-details')
@@ -466,6 +455,7 @@ def _load_gallery_images(gallery_type: str | None) -> list[dict]:
 
 @app.route('/gallery')
 def gallery_page():
+    logo_image = get_logo_image()
     requested = request.args.get('type')
     gallery_type = _normalize_gallery_type(requested) or 'all'
     gallery_images = []
@@ -476,7 +466,7 @@ def gallery_page():
     else:
         gallery_images = _load_gallery_images(gallery_type)
 
-    return render_template('gallery.html', gallery_images=gallery_images, contact=CONTACT_DETAILS, gallery_type=gallery_type)
+    return render_template('gallery.html', gallery_images=gallery_images, contact=CONTACT_DETAILS, gallery_type=gallery_type, logo_image=logo_image, booking_link=BOOKING_LINK)
 
 @app.route('/pages')
 def pages_page():
@@ -486,8 +476,66 @@ def pages_page():
     return render_template(
         'pages.html',
         pages=PAGES,
+        faq_items=FAQ_ITEMS,
         contact=CONTACT_DETAILS,
         partners=PARTNERS,
+        logo_image=logo_image,
+        booking_link=BOOKING_LINK
+    )
+
+@app.route('/about')
+def about_page():
+    logo_image = get_logo_image()
+    return render_template(
+        'about.html',
+        about_us=ABOUT_US,
+        contact=CONTACT_DETAILS,
+        partners=PARTNERS,
+        booking_link=BOOKING_LINK,
+        logo_image=logo_image
+    )
+
+@app.route('/partners')
+def partners_page():
+    logo_image = get_logo_image()
+    return render_template(
+        'partners.html',
+        partners=PARTNERS,
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK,
+        logo_image=logo_image
+    )
+
+@app.route('/services')
+def services_page():
+    logo_image = get_logo_image()
+    return render_template(
+        'services.html',
+        partners=PARTNERS,
+        amenities=AMENITIES,
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK,
+        logo_image=logo_image
+    )
+
+@app.route('/offers')
+def offers_page():
+    logo_image = get_logo_image()
+    return render_template(
+        'offers.html',
+        offers=OFFERS,
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK,
+        logo_image=logo_image
+    )
+
+@app.route('/contact')
+def contact_page():
+    logo_image = get_logo_image()
+    return render_template(
+        'contact.html',
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK,
         logo_image=logo_image
     )
 

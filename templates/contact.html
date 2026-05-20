@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Contact | AVYUKT VIEW{% endblock %}
+{% block content %}
+<main class="max-w-6xl mx-auto px-6 py-12">
+  <section class="rounded-[40px] border border-slate-200 bg-white p-10 shadow-sm">
+    <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
+      <div>
+        <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Contact</p>
+        <h1 class="text-4xl font-serif mb-4">Let’s make your stay unforgettable</h1>
+        <p class="text-lg text-slate-600 mb-6">Reach out to our reservations team for room bookings, group packages, or any special request. We’re here to help you plan the perfect visit.</p>
+        <form action="/subscribe" method="POST" class="mt-8 space-y-5 max-w-xl">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <input name="name" type="text" placeholder="Name" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm" required />
+            <input name="email" type="email" placeholder="Email" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm" required />
+          </div>
+          <textarea name="message" rows="5" placeholder="Tell us how we can help" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm"></textarea>
+          <button type="submit" class="room-book-btn w-full">Send message</button>
+        </form>
+      </div>
+      <aside class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold">Visit us</h3>
+            <p class="text-slate-600 mt-3">{{ contact.address }}</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Reception hours</h3>
+            <p class="text-slate-600 mt-3">{{ contact.hours }}</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Need help now?</h3>
+            <p class="text-slate-600 mt-3">Call our reservations line for fast support.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mt-12 rounded-[40px] border border-slate-200 bg-white p-10 shadow-sm">
+    <h2 class="text-3xl font-semibold mb-5">Customer support & group bookings</h2>
+    <p class="text-slate-600">We offer tailored solutions for events, conferences, and group stays. Contact our events team for custom packages, menus, and room blocks.</p>
+    <div class="mt-6 grid gap-6 md:grid-cols-2">
+      <article class="glass-card rounded-3xl p-6 shadow-sm">
+        <h3 class="text-xl font-semibold mb-3">Events & Meetings</h3>
+        <p class="text-slate-600">Flexible meeting spaces with AV support, catering, and dedicated event coordinators to manage every detail.</p>
+      </article>
+      <article class="glass-card rounded-3xl p-6 shadow-sm">
+        <h3 class="text-xl font-semibold mb-3">Corporate & Group Rates</h3>
+        <p class="text-slate-600">Competitive group rates and negotiated contracts are available for corporate travel and long-stay bookings.</p>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock %}
