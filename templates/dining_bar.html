@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Dining & Bar | AVYUKT VIEW{% endblock %}
+{% block content %}
+<main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+  <section class="rounded-[40px] overflow-hidden bg-slate-950 text-white shadow-2xl">
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_0.8fr] items-center p-8 md:p-12">
+      <div class="space-y-6">
+        <span class="inline-flex items-center rounded-full bg-amber-500/20 px-4 py-2 text-sm uppercase tracking-[0.3em] text-amber-300">Dining & Bar</span>
+        <h1 class="text-4xl md:text-5xl font-serif leading-tight">Elevated dining and bar experiences at AVYUKT VIEW.</h1>
+        <p class="max-w-2xl text-base text-slate-300">Discover our signature restaurant and elegant bar. Enjoy curated menus, premium cocktails, and a relaxed atmosphere perfect for every occasion.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition">Book Dining & Bar</a>
+          <a href="#menu" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition">See the menu</a>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-[32px] overflow-hidden shadow-2xl">
+          <img src="/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg" alt="Dining interior" class="w-full object-cover h-80" onerror="this.src='https://via.placeholder.com/1200x800?text=Dining+Image'">
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
+            <h2 class="font-semibold text-xl text-white mb-3">Fine dining</h2>
+            <p class="text-sm text-slate-200">Savor chef-crafted menus with fresh local ingredients, elegant plating, and seamless service.</p>
+          </div>
+          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
+            <h2 class="font-semibold text-xl text-white mb-3">Signature bar</h2>
+            <p class="text-sm text-slate-200">Enjoy premium cocktails, wine pairings, and a stylish lounge setting for evening relaxation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
+    <div class="text-center mb-10">
+      <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Menu highlights</p>
+      <h2 class="text-3xl font-serif">A curated dining experience for every meal.</h2>
+      <p class="text-neutral-600 max-w-2xl mx-auto mt-3">From thoughtfully plated dinners to craft cocktails, our restaurant and bar are designed to delight guests throughout their stay.</p>
+    </div>
+    <div class="grid gap-6 lg:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="font-semibold text-xl mb-3">Chef's Signature Plates</h3>
+        <p class="text-neutral-600 mb-4">Enjoy menus built around the freshest seasonal produce and vibrant local flavors.</p>
+        <ul class="space-y-2 text-sm text-neutral-600">
+          <li>• Seasonal tasting menu</li>
+          <li>• Local and international favorites</li>
+          <li>• Comfortable table service</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="font-semibold text-xl mb-3">Cocktails & Wine</h3>
+        <p class="text-neutral-600 mb-4">Relax with handcrafted cocktails, curated wines, and premium spirits in a warm bar atmosphere.</p>
+        <ul class="space-y-2 text-sm text-neutral-600">
+          <li>• Premium cocktails</li>
+          <li>• Wine pairings</li>
+          <li>• Nightly lounge service</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="font-semibold text-xl mb-3">Private bookings</h3>
+        <p class="text-neutral-600 mb-4">Reserve a table for dinner, group dining, or a special celebration with tailored service.</p>
+        <ul class="space-y-2 text-sm text-neutral-600">
+          <li>• Table reservations</li>
+          <li>• Group dining support</li>
+          <li>• Direct booking link</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
+    <div class="grid gap-8 lg:grid-cols-[0.9fr_0.9fr] items-center">
+      <div class="space-y-6">
+        <span class="text-sm uppercase tracking-[0.3em] text-amber-600">Why choose dining with us</span>
+        <h2 class="text-3xl font-serif">A seamless dining experience for every guest.</h2>
+        <p class="text-neutral-600 max-w-2xl">Our restaurant and bar are built for travelers who value quality, comfort, and easy booking. Enjoy attentive service, refined menus, and a relaxed atmosphere.</p>
+        <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition">Reserve Dining & Bar</a>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-[32px] bg-slate-950 p-6 shadow-lg">
+          <h3 class="font-semibold text-xl text-white mb-3">Fast booking</h3>
+          <p class="text-slate-300 text-sm">Reserve your dining experience with one click and receive confirmation instantly.</p>
+        </div>
+        <div class="rounded-[32px] bg-slate-950 p-6 shadow-lg">
+          <h3 class="font-semibold text-xl text-white mb-3">Modern lounge</h3>
+          <p class="text-slate-300 text-sm">Enjoy our bar lounge with a relaxed vibe, premium drinks, and attentive service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

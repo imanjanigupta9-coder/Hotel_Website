@@ -34,45 +34,51 @@
 
       <section class="mb-8">
         <h2 class="text-xl font-semibold mb-4">Amenities</h2>
-        <div class="grid gap-4 sm:grid-cols-2">
-          {% for a in amenities %}
-          <article class="glass-card p-4 rounded-xl">
-            <h4 class="font-semibold">{{ a.title }}</h4>
-            <p class="text-sm text-neutral-600">{{ a.description }}</p>
-          </article>
-          {% endfor %}
+        <div class="horizontal-card-slider-wrapper">
+          <div class="horizontal-card-slider horizontal-card-slider-responsive grid gap-4 sm:grid-cols-2">
+            {% for a in amenities %}
+            <article class="glass-card p-4 rounded-xl">
+              <h4 class="font-semibold">{{ a.title }}</h4>
+              <p class="text-sm text-neutral-600">{{ a.description }}</p>
+            </article>
+            {% endfor %}
+          </div>
+          <div class="carousel-dots"></div>
         </div>
       </section>
 
       <section>
         <h2 class="text-xl font-semibold mb-4">Rooms & Galleries</h2>
-        <div class="grid gap-6 sm:grid-cols-2">
-          <div class="glass-card p-6">
-            <h3 class="font-semibold">1 Bed Options</h3>
-            <p class="text-sm text-neutral-600 mb-4">Compact, comfortable rooms for solo travelers.</p>
-            <div class="flex gap-3">
-              <a href="/gallery?type=single" class="room-book-btn">Gallery</a>
-              <a href="/rooms" class="room-details-cta">More details</a>
+        <div class="horizontal-card-slider-wrapper">
+          <div class="horizontal-card-slider horizontal-card-slider-responsive grid gap-6 sm:grid-cols-2">
+            <div class="glass-card p-6">
+              <h3 class="font-semibold">1 Bed Options</h3>
+              <p class="text-sm text-neutral-600 mb-4">Compact, comfortable rooms for solo travelers.</p>
+              <div class="flex gap-3">
+                <a href="/gallery?type=single" class="room-book-btn">Gallery</a>
+                <a href="/rooms" class="room-details-cta">More details</a>
+              </div>
             </div>
-          </div>
 
-          <div class="glass-card p-6">
-            <h3 class="font-semibold">2 Bed Options</h3>
-            <p class="text-sm text-neutral-600 mb-4">Rooms designed for couples or friends.</p>
-            <div class="flex gap-3">
-              <a href="/gallery?type=double" class="room-book-btn">Gallery</a>
-              <a href="/rooms" class="room-details-cta">More details</a>
+            <div class="glass-card p-6">
+              <h3 class="font-semibold">2 Bed Options</h3>
+              <p class="text-sm text-neutral-600 mb-4">Rooms designed for couples or friends.</p>
+              <div class="flex gap-3">
+                <a href="/gallery?type=double" class="room-book-btn">Gallery</a>
+                <a href="/rooms" class="room-details-cta">More details</a>
+              </div>
             </div>
-          </div>
 
-          <div class="glass-card p-6">
-            <h3 class="font-semibold">Suites & Large Rooms</h3>
-            <p class="text-sm text-neutral-600 mb-4">Suite-level comfort and space for families and groups.</p>
-            <div class="flex gap-3">
-              <a href="/gallery?type=suite" class="room-book-btn">Gallery</a>
-              <a href="/rooms" class="room-details-cta">More details</a>
+            <div class="glass-card p-6">
+              <h3 class="font-semibold">Suites & Large Rooms</h3>
+              <p class="text-sm text-neutral-600 mb-4">Suite-level comfort and space for families and groups.</p>
+              <div class="flex gap-3">
+                <a href="/gallery?type=suite" class="room-book-btn">Gallery</a>
+                <a href="/rooms" class="room-details-cta">More details</a>
+              </div>
             </div>
           </div>
+          <div class="carousel-dots"></div>
         </div>
       </section>
     </div>

@@ -152,19 +152,13 @@ TESTIMONIALS = [
 
 # Updated amenities to the requested core list
 AMENITIES = [
-    {"title": "High-Speed Wi-Fi", "icon_image": "https://img.icons8.com/color/48/000000/wifi.png", "description": "Stay connected with powerful Wi-Fi in every room and public space."},
-    {"title": "Smart Entertainment Systems", "icon_image": "https://img.icons8.com/color/48/000000/smart-tv.png", "description": "Modern in-room entertainment with streaming and premium audio."},
-    {"title": "Fitness Center", "icon_image": "https://img.icons8.com/color/48/000000/gym.png", "description": "A fully equipped gym for active guests and wellness routines."},
-    {"title": "In-Room Refreshments", "icon_image": "https://img.icons8.com/color/48/000000/room-service.png", "description": "Beverages and snacks delivered on demand to your suite."},
-    {"title": "Gourmet Restaurants", "icon_image": "https://img.icons8.com/color/48/000000/restaurant.png", "description": "Curated dining experiences with local and international menus."},
-    {"title": "Grand Ballroom", "icon": "fa-solid fa-gem", "description": "Elegant event space for weddings, conferences, and celebrations."},
-    {"title": "Meeting Rooms", "icon_image": "https://img.icons8.com/color/48/000000/meeting-room.png", "description": "Flexible workspaces with modern AV and support services."},
-    {"title": "Outdoor Event Spaces", "icon": "fa-solid fa-tree-city", "description": "Beautiful open-air venues for receptions and special events."},
-    {"title": "Poolside Café", "icon": "fa-solid fa-cocktail", "description": "Casual poolside refreshments with a chic lounge atmosphere."}
+    {"title": "High-Speed Wi-Fi", "icon": "fa-solid fa-wifi", "description": "Stay connected with powerful Wi-Fi in every room and throughout the hotel."},
+    {"title": "Smart Entertainment", "icon": "fa-solid fa-tv", "description": "Modern in-room entertainment with streaming and premium audio."},
+    {"title": "In-Room Refreshments", "icon": "fa-solid fa-mug-saucer", "description": "Beverages and snacks delivered to your room on request."},
+    {"title": "Gourmet Restaurant", "icon": "fa-solid fa-utensils", "description": "Curated dining experiences with local and international menus."},
+    {"title": "Dining & Bar", "icon": "fa-solid fa-wine-glass", "description": "A stylish restaurant and bar offering cocktails, small plates, and premium beverages."},
+    {"title": "24/7 Guest Support", "icon": "fa-solid fa-clock", "description": "Round-the-clock service for reservations, room requests, and dining assistance."}
 ]
-# Added 5G data and WhatsApp support amenities
-AMENITIES.append({"title": "5G Data", "icon": "fa-solid fa-signal", "icon_image": "https://img.icons8.com/color/48/000000/5g.png", "description": "Ultra-fast 5G mobile data coverage across the property for streaming, video calls, and remote work."})
-AMENITIES.append({"title": "WhatsApp Support", "icon_image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg", "description": "Connect with guest support instantly through WhatsApp for reservations, requests, and quick assistance."})
 
 SERVICE_FEATURES = [
     {
@@ -180,23 +174,10 @@ SERVICE_FEATURES = [
         "img": "/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg"
     },
     {
-        "title": "Hall",
-        "slug": "hall",
-        "description": "Grand event spaces for weddings, conferences, and private celebrations.",
-        "img": "/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg"
-    },
-    {
         "title": "Bar",
         "slug": "bar",
         "description": "Stylish bar experiences with cocktails, lounge seating, and evening vibes.",
         "img": "/static/images/optimized/opt_f14943c4_photo-1517248135467-4c7edcad34c4.jpg"
-    }
-    ,
-    {
-        "title": "SwimmingPool",
-        "slug": "swimmingpool",
-        "description": "Refresh and relax in our scenic swimming pool with lounge seating and poolside service.",
-        "img": "/static/images/optimized/opt_3e3841d9_photo-1507484467451-1d9d6c0e3b98.jpg"
     }
 ]
 
@@ -235,7 +216,7 @@ ABOUT_US = {
         },
         {
             "title": "Premium Amenities",
-            "description": "From world-class dining to spa and wellness centers, every amenity is crafted for your pleasure."
+            "description": "From world-class dining to refined bar service, every amenity is crafted for your pleasure."
         }
     ]
 }
@@ -293,8 +274,8 @@ def generate_chat_reply(message: str) -> str:
             "Cancellation terms depend on the rate you booked. Please review the terms attached to your reservation or contact us at "
             + CONTACT_DETAILS["email"] + " for assistance. " + TERMS_AND_CONDITIONS
         )
-    if any(k in msg for k in ("amenities", "spa", "pool", "restaurant", "dining")):
-        return "We offer spa & wellness, rooftop dining, meeting spaces, and more. See the ‘Featured Facilities’ section on the site for details."
+    if any(k in msg for k in ("amenities", "pool", "restaurant", "dining")):
+        return "We offer premium rooms, restaurant dining, and bar experiences. See the ‘Featured Facilities’ section on the site for details."
     if any(k in msg for k in ("policy", "terms", "conditions", "terms and conditions")):
         return TERMS_AND_CONDITIONS
 
@@ -328,7 +309,7 @@ PARTNERS = [
 PAGES = [
     {"title": "About Us", "category": "Pages", "summary": "Discover our story, hospitality values, and the guest-first service philosophy behind AVYUKT VIEW.", "hover_detail": "Learn how our hotel blends local charm with modern comfort for every stay.", "link": "/pages#about"},
     {"title": "Our Rooms", "category": "Pages", "summary": "Explore beautifully appointed rooms and suites designed for comfort, convenience, and elevated relaxation.", "hover_detail": "Browse room options that suit couples, families, and business travelers alike.", "link": "/pages#rooms"},
-    {"title": "Amenities", "category": "Pages", "summary": "See our premium amenities including dining, wellness, business spaces, and leisure experiences.", "hover_detail": "Review the facilities that make every stay more convenient and memorable.", "link": "/pages#amenities"},
+    {"title": "Amenities", "category": "Pages", "summary": "See our premium amenities including dining, bar, room comfort, and guest care.", "hover_detail": "Review the facilities that make every stay more convenient and memorable.", "link": "/pages#amenities"},
     {"title": "Dining & Bar", "category": "Pages", "summary": "Browse signature dining experiences, curated menus, and sophisticated bar settings.", "hover_detail": "Discover the restaurants, lounges, and bar experiences crafted for every mood.", "link": "/pages#dining"},
     {"title": "Events & Meetings", "category": "Pages", "summary": "Plan weddings, meetings, and celebrations in flexible venues with attentive event support.", "hover_detail": "View our event spaces, meeting packages, and tailored planning services.", "link": "/pages#events"},
     {"title": "Contact", "category": "Pages", "summary": "Reach our reservations and guest services team quickly for bookings and special requests.", "hover_detail": "Get direct contact details for reservations, inquiries, and guest support.", "link": "/pages#contact"}
@@ -513,6 +494,16 @@ def services_page():
         'services.html',
         partners=PARTNERS,
         amenities=AMENITIES,
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK,
+        logo_image=logo_image
+    )
+
+@app.route('/dining-bar')
+def dining_bar_page():
+    logo_image = get_logo_image()
+    return render_template(
+        'dining_bar.html',
         contact=CONTACT_DETAILS,
         booking_link=BOOKING_LINK,
         logo_image=logo_image
