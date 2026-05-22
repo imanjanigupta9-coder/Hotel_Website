@@ -2,6 +2,7 @@
 import pathlib
 import os
 import shutil
+import urllib.parse
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
@@ -434,6 +435,12 @@ def _load_gallery_images(gallery_type: str | None) -> list[dict]:
     return images
 
 
+@app.context_processor
+def inject_rooms():
+    # make room list available to all templates for header dropdown and selectors
+    return { 'all_rooms': ROOMS }
+
+
 @app.route('/gallery')
 def gallery_page():
     logo_image = get_logo_image()
@@ -590,14 +597,34 @@ def handle_booking():
     check_out = request.form.get('check_out')
     adults = request.form.get('adults', '1')
     children = request.form.get('children', '0')
-    name = request.form.get('name', '')
-    email = request.form.get('email', '')
+    name = request.form.get('name', '').strip()
+    room_type = request.form.get('room_type', '')
 
-    external_url = (
-        f"https://your-backend-link.com/reserve?in={check_in}"
-        f"&out={check_out}&adults={adults}&children={children}"
+    booking_params = {
+        'name': name,
+        'check_in': check_in,
+        'check_out': check_out,
+        'adults': adults,
+        'children': children,
+        'room_type': room_type,
+    }
+
+    if BOOKING_LINK and 'your-backend-booking-link.com' not in BOOKING_LINK:
+        params = urllib.parse.urlencode(booking_params, doseq=True)
+        return redirect(f"{BOOKING_LINK}?{params}")
+
+    return render_template(
+        'booking_confirmation.html',
+        name=name,
+        check_in=check_in,
+        check_out=check_out,
+        adults=adults,
+        children=children,
+        room_type=room_type,
+        logo_image=get_logo_image(),
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK
     )
-    return redirect(external_url)
 
 @app.route('/subscribe', methods=['POST'])
 def subscribe():

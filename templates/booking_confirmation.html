@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="antialiased text-neutral-900 bg-gradient-to-b from-white to-gray-50">
+  <header class="bg-black text-white shadow-sm sticky top-0 z-50 site-header">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:px-5 header-inner">
+      <a href="/" class="flex items-center gap-2">
+        {% if logo_image %}
+        <img src="{{ logo_image }}" alt="AVYUKT VIEW" class="h-14 md:h-16 object-contain nav-logo-img" onerror="this.style.display='none'" />
+        {% else %}
+        <span class="text-xl font-semibold uppercase tracking-widest">AVYUKT VIEW</span>
+        {% endif %}
+      </a>
+      <nav class="hidden md:flex items-center gap-5 text-[0.75rem] uppercase tracking-[0.24em]">
+        <a href="/rooms" class="nav-link text-white transition hover:text-amber-500 py-2">Rooms</a>
+        <a href="/about" class="nav-link text-white transition hover:text-amber-500 py-2">About Us</a>
+        <a href="/contact" class="nav-link text-white transition hover:text-amber-500 py-2">Contact</a>
+        <a href="/" class="nav-link text-white transition hover:text-amber-500 py-2">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <section class="rounded-3xl bg-slate-950/95 border border-amber-500/15 p-8 shadow-2xl text-white">
+      <h1 class="text-3xl font-semibold mb-4">Booking Confirmation</h1>
+      <p class="text-neutral-300 mb-6">We received your booking request. These details were submitted to the backend and are ready for processing.</p>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl bg-white/10 p-5">
+          <p class="text-xs uppercase tracking-[0.25em] text-amber-300 mb-2">Guest Name</p>
+          <p class="text-lg font-semibold">{{ name or 'Not provided' }}</p>
+        </div>
+        <div class="rounded-2xl bg-white/10 p-5">
+          <p class="text-xs uppercase tracking-[0.25em] text-amber-300 mb-2">Room Type</p>
+          <p class="text-lg font-semibold">{{ room_type or 'Standard' }}</p>
+        </div>
+        <div class="rounded-2xl bg-white/10 p-5">
+          <p class="text-xs uppercase tracking-[0.25em] text-amber-300 mb-2">Check In</p>
+          <p class="text-lg font-semibold">{{ check_in or '—' }}</p>
+        </div>
+        <div class="rounded-2xl bg-white/10 p-5">
+          <p class="text-xs uppercase tracking-[0.25em] text-amber-300 mb-2">Check Out</p>
+          <p class="text-lg font-semibold">{{ check_out or '—' }}</p>
+        </div>
+        <div class="rounded-2xl bg-white/10 p-5">
+          <p class="text-xs uppercase tracking-[0.25em] text-amber-300 mb-2">Adults</p>
+          <p class="text-lg font-semibold">{{ adults }}</p>
+        </div>
+        <div class="rounded-2xl bg-white/10 p-5">
+          <p class="text-xs uppercase tracking-[0.25em] text-amber-300 mb-2">Children</p>
+          <p class="text-lg font-semibold">{{ children }}</p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-4 items-center">
+        <a href="/" class="crystal-btn">Back to Home</a>
+        {% if booking_link %}
+        <a href="{{ booking_link }}" class="inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-400">Complete Booking</a>
+        {% endif %}
+      </div>
+    </section>
+  </main>
+</body>
+</html>
