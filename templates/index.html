@@ -20,9 +20,9 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-5 text-[0.75rem] uppercase tracking-[0.24em]">
-        <a href="/rooms" class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2" data-i18n="rooms_label">Rooms</a>
-        <a href="/about" data-i18n="about_label" class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">About Us</a>
-        <a href="/contact" data-i18n="contact_label" class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">Contact</a>
+        <a href="/rooms" class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">Rooms</a>
+        <a href="/about"  class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">About Us</a>
+        <a href="/contact"  class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">Contact</a>
         <div class="relative group">
           <button type="button" class="nav-link glass-nav-btn flex items-center gap-2 text-white transition hover:text-amber-500 py-2" aria-haspopup="true" aria-expanded="false">
             MORE
@@ -39,17 +39,17 @@
       </nav>
 
       <div class="flex items-center gap-2 md:gap-3">
-        <a href="{{ booking_link }}" data-i18n="book_now_button" class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-white bg-amber-500 hover:bg-amber-400 transition">Book Now!</a>
+        <a href="{{ booking_link }}"  class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-white bg-amber-500 hover:bg-amber-400 transition">Book Now!</a>
         <button id="mobile-menu-btn" class="md:hidden p-1.5 text-white" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black">
       <div class="p-4 flex flex-col gap-3">
-        <a href="/rooms" data-i18n="rooms_label" class="uppercase text-white hover:text-amber-500">Rooms</a>
-        <a href="/about" data-i18n="about_label" class="uppercase text-white hover:text-amber-500">About Us</a>
-        <a href="/contact" data-i18n="contact_label" class="uppercase text-white hover:text-amber-500">Contact</a>
+        <a href="/rooms"  class="uppercase text-white hover:text-amber-500">Rooms</a>
+        <a href="/about"  class="uppercase text-white hover:text-amber-500">About Us</a>
+        <a href="/contact"  class="uppercase text-white hover:text-amber-500">Contact</a>
         <details class="group rounded-3xl bg-white/5 border border-white/10 p-3">
-          <summary class="uppercase text-white hover:text-amber-500 cursor-pointer py-2 px-3">More</summary>
+          <summary class="uppercase text-white hover:text-amber-500 cursor-pointer py-2 px-3">EXPERIENC MORE</summary>
           <div class="mt-2 flex flex-col gap-2">
             <a href="/dining-bar" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Dinning\Bar</a>
             <a href="/services" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Services</a>
@@ -69,35 +69,33 @@
       <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40"></div>
       <div class="relative z-20 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div class="text-white">
-          <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-4" data-i18n="site_title_hero">AVYUKT VIEW</h1>
-          <p class="uppercase tracking-widest text-sm md:text-base opacity-90 mb-6" data-i18n="hero_tagline">A New Chapter of Luxury in Bangalore</p>
-          <p data-i18n="hero_description" class="max-w-xl text-sm md:text-base opacity-80 mb-6">Premium luxury hotel with world-class amenities, fine dining, and exceptional service in the heart of Bangalore.</p>
+          <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-4" >AVYUKT VIEW</h1>
+          <p class="uppercase tracking-widest text-sm md:text-base opacity-90 mb-6" >A New Chapter of Luxury in Bangalore</p>
+          <p  class="max-w-xl text-sm md:text-base opacity-80 mb-6">Premium luxury hotel with world-class amenities, fine dining, and exceptional service in the heart of Bangalore.</p>
           <div class="flex flex-wrap gap-4">
-            <a href="/rooms" data-i18n="explore_rooms" class="crystal-btn book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
-            <a href="/offers" class="inline-flex items-center gap-2 text-sm md:text-base bg-white/15 text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white/30 transition" data-i18n="offers_label">Offers</a>
+            <a href="/rooms"  class="crystal-btn  book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
+            <a href="/offers" class="inline-flex items-center gap-4 text-sm md:text-base bg-white/15 text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white/30 transition" ="offers_label">Offers</a>
           </div>
         </div>
       </div>
     </section>
-
     <section id="booking" class="relative -mt-16 z-20 px-6">
       <div class="max-w-7xl mx-auto rounded-2xl shadow-xl overflow-hidden grid gap-4 lg:grid-cols-1 items-center p-6" style="background: linear-gradient(135deg, rgba(18,14,10,0.95) 0%, rgba(28,22,17,0.95) 100%); border:1px solid rgba(212,175,55,0.15);">
-          <aside class="rounded-2xl bg-transparent p-0 text-white booking-panel w-full">
           <form id="booking-form" action="{{ booking_link or '/book' }}" method="POST" class="flex flex-wrap items-end gap-3">
             <div class="w-full sm:w-auto flex-1 min-w-[160px]">
-              <label data-i18n="name_label" class="text-xs uppercase text-white font-semibold block mb-1">Name</label>
-              <input id="booking-name" name="name" type="text" required data-i18n-placeholder="placeholder_name" placeholder="Name" class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;"/>
+              <label  class="text-xs uppercase text-white font-semibold block mb-1">Name</label>
+              <input id="booking-name" name="name" type="text" required placeholder="Name" class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;"/>
             </div>
             <div class="w-full sm:w-auto flex-1 min-w-[160px]">
-              <label class="text-xs uppercase text-white font-semibold block mb-1" data-i18n="check_in_label">Check In</label>
+              <label class="text-xs uppercase text-white font-semibold block mb-1" >Check In</label>
               <input id="booking-check-in" name="check_in" type="date" required class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;" />
             </div>
             <div class="w-full sm:w-auto flex-1 min-w-[160px]">
-              <label class="text-xs uppercase text-white font-semibold block mb-1" data-i18n="check_out_label">Check Out</label>
+              <label class="text-xs uppercase text-white font-semibold block mb-1" >Check Out</label>
               <input id="booking-check-out" name="check_out" type="date" required class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;" />
             </div>
             <div class="w-full sm:w-auto min-w-[120px]">
-              <label data-i18n="adults_label" class="text-xs uppercase text-white font-semibold block mb-1">Adults</label>
+              <label class="text-xs uppercase text-white font-semibold block mb-1">Adults</label>
               <div class="flex items-center gap-1 rounded-lg border border-white/30 bg-transparent px-2 py-2">
                 <button type="button" class="guest-button guest-decrement rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="adults">−</button>
                 <span id="adults-value" class="min-w-[1.5rem] text-center text-sm font-semibold text-white">1</span>
@@ -106,7 +104,7 @@
               </div>
             </div>
             <div class="w-full sm:w-auto min-w-[120px]">
-              <label data-i18n="children_label" class="text-xs uppercase text-white font-semibold block mb-1">Children</label>
+              <label  class="text-xs uppercase text-white font-semibold block mb-1">Children</label>
               <div class="flex items-center gap-1 rounded-lg border border-white/30 bg-transparent px-2 py-2">
                 <button type="button" class="guest-button guest-decrement rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="children">−</button>
                 <span id="children-value" class="min-w-[1.5rem] text-center text-sm font-semibold text-white">0</span>
@@ -115,7 +113,7 @@
               </div>
             </div>
             <div class="w-full sm:w-auto flex-1 min-w-[160px]">
-              <label data-i18n="room_label" class="text-xs uppercase text-white font-semibold block mb-1">Room</label>
+              <label  class="text-xs uppercase text-white font-semibold block mb-1">Room</label>
               <select name="room_type" required class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;">
                 {% for room in rooms %}
                 <option value="{{ room.name }}">{{ room.name }}</option>
@@ -145,7 +143,7 @@
       <div class="max-w-6xl mx-auto px-6">
         <div class="rounded-[40px] border border-slate-200 bg-transparent shadow-none p-4 sm:p-8">
           <div class="text-center mb-8">
-            <h2 class="text-3xl font-serif" data-i18n="accommodation_title">Accommodation</h2>
+            <h2 class="text-3xl font-serif" >Accommodation</h2>
             <p class="text-neutral-600 mt-2">Comfort and style in every room.</p>
           </div>
           <div class="horizontal-card-slider-wrapper reveal-hidden">
@@ -165,11 +163,11 @@
                     <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.guests }} Guests</div>
                   </div>
                 </div>
-                <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center justify-between gap-4">
                   <span class="text-amber-600 font-semibold">₹{{ room.price }}</span>
                 </div>
                 <div class="room-card-details">
-                  <div class="flex items-center gap-2 w-full">
+                  <div class="flex items-center gap-4 w-full">
                     <a href="/room-details?slug={{ room.slug }}" class="room-details-cta inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">More details</a>
                     <a href="{{ booking_link }}?room={{ room.slug }}" class="room-book-btn inline-flex items-center gap-2 rounded-full bg-amber-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">Book now</a>
                   </div>
@@ -303,9 +301,9 @@
     <section id="featured-experiences" class="py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-10">
-          <p data-i18n="featured_heading" class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Featured Experiences</p>
-          <h3 data-i18n="featured_title" class="text-3xl font-serif">Uplifted Page Features with Unique Imagery</h3>
-          <p data-i18n="featured_desc" class="text-neutral-600 max-w-2xl mx-auto mt-3">Each feature below uses its own image, bold styling, and visual dynamics to make the page feel more premium.</p>
+          <p  class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Featured Experiences</p>
+          <h3 class="text-3xl font-serif">Uplifted Page Features with Unique Imagery</h3>
+          <p  class="text-neutral-600 max-w-2xl mx-auto mt-3">Each feature below uses its own image, bold styling, and visual dynamics to make the page feel more premium.</p>
         </div>
         <div class="horizontal-card-slider-wrapper reveal-hidden">
           <div class="horizontal-card-slider" data-slider-name="featured-experiences">
@@ -386,8 +384,8 @@
     <section id="offers" class="py-20 bg-gray-50">
       <div class="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-start">
         <div class="space-y-6">
-          <h3 class="text-3xl font-serif" data-i18n="offers_heading">Curated Packages for Every Stay</h3>
-          <p class="text-neutral-600" data-i18n="offers_desc">Discover seasonal packages designed for romantic getaways, family retreats, and business travel.</p>
+          <h3 class="text-3xl font-serif" >Curated Packages for Every Stay</h3>
+          <p class="text-neutral-600" >Discover seasonal packages designed for romantic getaways, family retreats, and business travel.</p>
           <div class="group relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl transition-transform duration-500 hover:-translate-y-1 hover:shadow-2xl">
             <img src="{{ src_for('/static/images/optimized/opt_813f0942_photo-1505693416388-ac5ce068fe85.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_813f0942_photo-1505693416388-ac5ce068fe85.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Curated stay package" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1200x800?text=Package+Image+Unavailable';">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent opacity-90"></div>
@@ -449,7 +447,7 @@
       <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
       <div class="relative z-20 max-w-6xl mx-auto px-6 w-full">
         <div class="max-w-2xl">
-          <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-3" data-i18n="luxury_title">Luxury Living, Surrounded by Nature's Beauty</h2>
+          <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-3">Luxury Living, Surrounded by Nature's Beauty</h2>
            <p class="text-sm md:text-base text-white/90 mb-4 max-w-xl">Experience luxury, comfort, and world-class service designed for your perfect stay.</p>
           <div class="flex flex-col sm:flex-row gap-3 mb-6">
             <a href="#booking" class="crystal-btn px-8 py-3 text-sm md:text-base">Discover more</a>
@@ -701,7 +699,7 @@
     </div>
     <div id="chat-messages" class="p-4 h-64 overflow-auto bg-gray-50"></div>
     <form id="chat-form" class="p-3 border-t border-gray-100 bg-white flex gap-2">
-      <input id="chat-input" name="message" type="text" data-i18n-placeholder="chat_input_placeholder" placeholder="Ask about bookings, policies..." class="flex-1 border border-gray-200 rounded-md p-2" />
+      <input id="chat-input" name="message" type="text" placeholder="Ask about bookings, policies..." class="flex-1 border border-gray-200 rounded-md p-2" />
       <button type="submit" class="bg-emerald-600 text-white px-3 py-2 rounded-md">Send</button>
     </form>
   </div>

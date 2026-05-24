@@ -18,7 +18,7 @@ html{scroll-behavior:smooth; font-size:16px; background:radial-gradient(circle a
 
 .max-w-6xl,
 .max-w-7xl {
-  max-width:1200px !important;
+  max-width:1200px;
 }
 .max-w-6xl.mx-auto,
 .max-w-7xl.mx-auto {
@@ -157,7 +157,7 @@ h1.font-serif,h2.font-serif,h3.font-serif{font-family:'Cormorant Garamond', seri
 }
 .services-card > .relative,
 .services-card .relative {
-  height:auto !important;
+  height:auto ;
   max-height:240px;
   aspect-ratio:16/10;
 }
@@ -186,8 +186,8 @@ h1.font-serif,h2.font-serif,h3.font-serif{font-family:'Cormorant Garamond', seri
 .partner-grid{display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));}
 .partner-logo-card{display:flex; align-items:center; justify-content:center; min-height:120px; border-radius:1.75rem; border:1px solid #e5e7eb; background:#ffffff; transition:transform .3s ease, box-shadow .3s ease, border .3s ease, background .3s ease;}
 .partner-logo-card:hover {transform:translateY(-4px); box-shadow:0 20px 50px rgba(15,23,42,0.08); border-color:rgba(156,163,175,0.35);}
-.partner-logo{filter:grayscale(100%) brightness(0.72) opacity:0.82; transition:filter .3s ease, opacity .3s ease, transform .3s ease; max-width:140px; max-height:42px; object-fit:contain;}
-.partner-logo-card:hover .partner-logo{filter:grayscale(0%) brightness(1) opacity:1; transform:scale(1.05);}
+.partner-logo{filter:grayscale(100%) brightness(0.72); opacity:0.82; transition:filter .3s ease, opacity .3s ease, transform .3s ease; max-width:140px; max-height:42px; object-fit:contain;}
+.partner-logo-card:hover .partner-logo{filter:grayscale(0%) brightness(1); opacity : 1; transform:scale(1.05);}
 .partner-fallback{display:none;}
 .partner-logo-card.logo-missing .partner-fallback{display:block;}
 .partner-logo-card.logo-missing .partner-logo{display:none;}
@@ -283,13 +283,13 @@ form input[type="email"]:focus, form input[type="text"]:focus{box-shadow:0 6px 1
 .chat-message.bot .bubble{background:#f3f4f6; color:#111827}
 .chat-message.user .bubble{background:#10b981; color:white}
 .chat-message.typing .bubble{background:#f3f4f6}
-.chat-message.typing .dot{display:inline-block; width:6px; height:6px; margin-right:4px; background:#9ca3af; border-radius9999px; animation:blink 1s infinite}
+.chat-message.typing .dot{display:inline-block; width:6px; height:6px; margin-right:4px; background:#9ca3af; border-radius:9999 px; animation:blink 1s infinite}
 .chat-message.typing .dot:nth-child(2){animation-delay:.15s}
 .chat-message.typing .dot:nth-child(3){animation-delay:.3s}
 @keyframes blink{0%{opacity:.2;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}100%{opacity:.2;transform:translateY(0)}}
 
 .booking-panel{background:rgba(255,255,255,0.72); color:var(--text); backdrop-filter:blur(18px); border:1px solid rgba(212,175,55,0.14); box-shadow:0 28px 80px rgba(15,23,42,0.08);}
-.booking-panel input, .booking-panel select{border-radius:14px; background-color:#f8f7f1 !important; color:#111827 !important; border:1px solid rgba(148,163,184,0.18); padding:.95rem 1rem;}
+.booking-panel input, .booking-panel select{border-radius:14px; background-color:#f8f7f1 ; color:#111827 !important; border:1px solid rgba(148,163,184,0.18); padding:.95rem 1rem;}
 .booking-panel input:hover, .booking-panel input:focus, .booking-panel select:hover, .booking-panel select:focus{background-color:white !important; color:#111827 !important; outline:none; box-shadow:0 12px 30px rgba(15,23,42,0.08);}
 .booking-panel .bg-white{background:white}
 .booking-panel .text-neutral-200{color:#6b7280}
@@ -363,8 +363,8 @@ img[class*="min-h-"] {
 }
 
 #chat-messages.h-64, #chat-messages.h-64.p-4 {
-  max-height: 240px !important;
-  overflow: auto !important;
+  max-height: 240px ;
+  overflow: auto;
 }
 
 .horizontal-card-slider-wrapper{position:relative; width:100%;}
@@ -391,12 +391,12 @@ img[class*="min-h-"] {
 .logo-img{background:transparent; padding:6px; border-radius:8px; display:block; box-shadow:0 6px 18px rgba(2,6,23,0.06)}
 .nav-logo-img{height:3.5rem;}
 
-section.py-20{padding-top: 2.4rem !important; padding-bottom: 2.4rem !important}
-section.py-16{padding-top: 2rem !important; padding-bottom: 2rem !important}
-section.py-12{padding-top: 1.6rem !important; padding-bottom: 1.6rem !important}
-section.py-10{padding-top: 1.2rem !important; padding-bottom: 1.2rem !important}
-section.pt-16{padding-top: 1.75rem !important}
-section.pb-8{padding-bottom: 1.25rem !important}
+section.py-20{padding-top: 2.4rem; padding-bottom: 2.4rem }
+section.py-16{padding-top: 2rem ; padding-bottom: 2rem }
+section.py-12{padding-top: 1.6rem ; padding-bottom: 1.6rem }
+section.py-10{padding-top: 1.2rem ; padding-bottom: 1.2rem }
+section.pt-16{padding-top: 1.75rem }
+section.pb-8{padding-bottom: 1.25rem }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
@@ -416,8 +416,8 @@ input[type="date"]::-webkit-inner-spin-button { display: none; }
 
 @media (min-width:1024px){
   #booking-form{flex-wrap:nowrap}
-  #booking-form > .min-w-[120px]{min-width:120px}
-  #booking-form > .min-w-[140px]{min-width:140px}
+  #booking-form > .min-w-120px{min-width:120px}
+  #booking-form > .min-w-140px{min-width:140px}
 }
 
 @media (max-width:1024px){
@@ -430,10 +430,10 @@ input[type="date"]::-webkit-inner-spin-button { display: none; }
   .partner-grid{grid-template-columns:1fr;}
   .partner-logo-card{min-height:100px; padding:1rem;}
   .crystal-btn{padding:.55rem .9rem}
-  .hero-section{height:60vh !important}
+  .hero-section{height:60vh }
   .booking-panel{padding: 1.5rem}
   .footer-grid{grid-template-columns:1fr}
-  .services-card .p-8{padding:1rem !important}
+  .services-card .p-8{padding:1rem }
   .glass-card{padding:1rem}
   .booking-panel{padding:1rem}
 }
@@ -444,14 +444,14 @@ input[type="date"]::-webkit-inner-spin-button { display: none; }
     width:clamp(180px, 80vw, 260px);
   }
   .hero-section{min-height:58vh; height:55vh}
-  .crystal-btn, .book-now-btn{padding:.5rem .9rem; font-size:0.95rem}
+  .crystal-btn, .book-now-btn{padding:1.0rem .9rem; font-size:0.95rem}
   .max-w-6xl{padding-left: 1rem; padding-right: 1rem}
   h1.font-serif{font-size: 2rem}
   h2.font-serif{font-size: 1.75rem}
   h3.font-serif{font-size: 1.875rem}
   .glass-card{padding: 1.5rem}
   .booking-panel input, .booking-panel select{font-size: 16px}
-  section{padding-top: 3rem !important; padding-bottom: 3rem !important}
+  section{padding-top: 3rem ; padding-bottom: 3rem }
 }
 
 @media (min-width: 768px) and (max-width: 1024px){
@@ -483,3 +483,7 @@ input[type="date"]::-webkit-inner-spin-button { display: none; }
 .room-details-cta:hover, .room-book-btn:hover{transform:translateY(-2px);}
 .availability-dialog{border-radius:2rem; box-shadow:0 32px 90px rgba(15,23,42,0.18);}
 #booking-form .w-full button[type="submit"], #booking-form .w-full input[type="submit"]{border-radius:999px;}
+
+
+
+
