@@ -122,8 +122,10 @@ header .nav-link:hover{color:var(--accent); transform:translateY(-1px);}
 .reveal-hidden{opacity:0; transform:translateY(24px) scale(0.98); transition:opacity .9s ease, transform .9s ease;}
 .reveal-visible{opacity:1; transform:none;}
 
-.book-now-btn{padding:1rem 1.75rem; font-size:0.95rem; letter-spacing:0.04em; box-shadow:0 24px 50px rgba(245,158,11,0.22); display:inline-flex; align-items:center; justify-content:center; text-decoration:none; background:linear-gradient(135deg, rgba(212,175,55,0.95), rgba(250,232,173,0.95)); color:#111827; border-radius:999px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease;}
-.book-now-btn:hover{transform:translateY(-2px); box-shadow:0 28px 60px rgba(245,158,11,0.28);}
+.book-now-btn{padding:1rem 1.75rem; font-size:0.95rem; letter-spacing:0.04em; box-shadow:0 20px 46px rgba(212,175,55,0.18); display:inline-flex; align-items:center; justify-content:center; text-decoration:none; background:var(--accent); color:#ffffff; border-radius:999px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease;}
+.book-now-btn:hover{transform:translateY(-2px); box-shadow:0 28px 60px rgba(212,175,55,0.26); background:#b88617}
+
+#booking-form button#search-button[aria-disabled="true"]{opacity:0.55; cursor:not-allowed;}
 
 h1.font-serif,h2.font-serif,h3.font-serif{font-family:'Cormorant Garamond', serif;}
 #booking form input, #booking form select{background:white}
@@ -217,8 +219,10 @@ body, p, span, a, li, label{font-family:system-ui,-apple-system,Segoe UI,Roboto,
 .room-card:hover img{transform:scale(1.06);}
 .room-card .p-5{padding:1.25rem !important;}
 .room-card-details{position:absolute; left:0; right:0; bottom:0; transform:translateY(100%); transition:transform .35s ease, opacity .35s ease; padding:1rem 1.25rem; background:rgba(15,23,42,0.88); display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-start; gap:0.75rem; pointer-events:none; opacity:0;}
+.room-card .room-text-area{transition:transform .35s ease;}
 .room-card-details * {pointer-events:auto}
 .room-card:hover .room-card-details{transform:translateY(0); opacity:1;}
+.room-card:hover .room-text-area{transform:translateY(-0.75rem);}
 .room-details-cta{background:#0b1220; color:white; padding:.6rem 1rem; border-radius:999px; font-weight:700; text-decoration:none; transition:transform .22s ease, box-shadow .18s ease, background .18s ease; display:inline-flex; align-items:center; gap:.5rem;}
 .room-details-cta:hover{transform:translateY(-3px); background:#0f1724; box-shadow:0 10px 30px rgba(2,6,23,0.12);}
 .room-book-btn{transition:transform .25s ease, background .18s ease; background:var(--accent); padding:.6rem 1rem; border-radius:999px; font-weight:700; display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; color:white;}
@@ -454,6 +458,12 @@ input[type="date"]::-webkit-inner-spin-button { display: none; }
   section{padding-top: 3rem ; padding-bottom: 3rem }
 }
 
+/* Helper to center section content on small screens */
+.center-mobile{ text-align:left }
+@media (max-width: 640px) {
+  .center-mobile{ text-align:center }
+}
+
 @media (min-width: 768px) and (max-width: 1024px){
   h1.font-serif{font-size: 2.5rem}
   h2.font-serif{font-size: 2rem}
@@ -470,6 +480,36 @@ input[type="date"]::-webkit-inner-spin-button { display: none; }
   p{font-size: 1.05rem}
   .text-sm{font-size: 0.95rem}
   .text-base{font-size: 1.1rem}
+}
+
+/* Basic grid + gap helpers for templates using utility-like classes */
+.grid{display:grid}
+
+/* gap mapping (approximate sizes used in templates) */
+[class*="gap-4"]{gap:1rem}
+[class*="gap-6"]{gap:1.5rem}
+[class*="gap-8"]{gap:2rem}
+[class*="gap-10"]{gap:2.5rem}
+[class*="gap-12"]{gap:3rem}
+
+/* Responsive column helpers targeting utility-like class names used in templates */
+@media (min-width:640px){
+  [class*="sm:grid-cols-2"]{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:768px){
+  [class*="md:grid-cols-2"]{grid-template-columns:repeat(2,1fr)}
+  [class*="md:grid-cols-3"]{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:1024px){
+  [class*="lg:grid-cols-2"]{grid-template-columns:repeat(2,1fr)}
+  [class*="lg:grid-cols-3"]{grid-template-columns:repeat(3,1fr)}
+  /* fallback for custom fractional lg:grid-cols[...] usages: default to two columns */
+  [class*="lg:grid-cols["]{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Small-screen stacking for commonly used multi-column containers */
+@media (max-width: 640px){
+  .grid{grid-template-columns:1fr !important}
 }
 
 /* Premium UI helpers */

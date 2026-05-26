@@ -2,33 +2,33 @@
 {% block title %}Services | AVYUKT VIEW{% endblock %}
 {% block content %}
 <main class="max-w-7xl mx-auto px-6 py-12 space-y-16">
-  <section class="rounded-[40px] overflow-hidden bg-slate-950 text-white shadow-2xl">
+  <section class="rounded-[40px] overflow-hidden bg-white text-black shadow-2xl">
     <div class="grid gap-10 lg:grid-cols-[0.95fr_0.8fr] items-center p-8 md:p-12">
-      <div class="space-y-6">
-        <span class="inline-flex items-center rounded-full bg-amber-500/20 px-4 py-2 text-sm uppercase tracking-[0.3em] text-amber-300">Services</span>
-        <h1 class="text-4xl md:text-5xl font-serif leading-tight">Exceptional services for every guest at AVYUKT VIEW.</h1>
-        <p class="max-w-2xl text-base text-slate-300">From personalized concierge and event support to premium room experiences and trusted partner networks, our services are designed to make every stay seamless, luxurious, and unforgettable.</p>
+      <div class="space-y-6 center-mobile">
+<p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Services</p>
+        <h1 class="text-4xl md:text-5xl font-serif leading-tight left-mobile">Exceptional services for every guest at AVYUKT VIEW.</h1>
+        <p class="max-w-2xl text-base text-black">From personalized concierge and event support to premium room experiences and trusted partner networks, our services are designed to make every stay seamless, luxurious, and unforgettable.</p>
         <div class="flex flex-col gap-3 sm:flex-row">
-          <a href="{{ booking_link }}" class="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition">Book a room</a>
-          <a href="/dining-bar" class="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-6 py-3 text-sm font-semibold hover:bg-white/20 transition">Dining/Bar</a>
-          <a href="#amenities" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition">View amenities</a>
+          <a href="{{ booking_link }}" class="book-now-btn inline-flex items-center justify-center px-6 py-3 text-sm font-semibold">Book a room</a>
+          <a href="/dining-bar" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-slate-950 px-6 py-3 text-sm font-semibold hover:bg-slate-200 transition">Dining/Bar</a>
+          <a href="#amenities" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-slate-950 px-6 py-3 text-sm font-semibold hover:bg-slate-200 transition">View amenities</a>
         </div>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
-          <h2 class="font-semibold text-xl text-white mb-3">Guest services</h2>
-          <p class="text-sm text-slate-200 mb-4">Enjoy tailored support at every stage of your stay, including concierge, dining, and transport assistance.</p>
-          <ul class="space-y-3 text-sm text-slate-300">
+        <div class="rounded-[32px] bg-slate-50 p-6 shadow-sm border border-slate-200">
+          <h2 class="font-semibold text-xl text-slate-900 mb-3">Guest services</h2>
+          <p class="text-sm text-slate-600 mb-4">Enjoy tailored support at every stage of your stay, including concierge, dining, and transport assistance.</p>
+          <ul class="space-y-3 text-sm text-slate-600">
             <li>• Personalized concierge & reservations</li>
             <li>• Airport transfers & local logistics</li>
             <li>• In-room dining and curated experiences</li>
           </ul>
         </div>
-        <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
-          <h2 class="font-semibold text-xl text-white mb-3">Dining experiences</h2>
-          <p class="text-sm text-slate-200 mb-4">Create memorable meals and bar evenings with curated menus, private dining, and attentive service.</p>
-          <ul class="space-y-3 text-sm text-slate-300">
+        <div class="rounded-[32px] bg-slate-50 p-6 shadow-sm border border-slate-200">
+          <h2 class="font-semibold text-xl text-slate-900 mb-3">Dining experiences</h2>
+          <p class="text-sm text-slate-600 mb-4">Create memorable meals and bar evenings with curated menus, private dining, and attentive service.</p>
+          <ul class="space-y-3 text-sm text-slate-600">
             <li>• Private dining experiences and bar menus</li>
             <li>• Chef-curated meals and seasonal dishes</li>
             <li>• Group dining for guests and business meals</li>
@@ -68,7 +68,7 @@
         <img src="https://cdn.worldvectorlogo.com/logos/trivago.svg" alt="Trivago" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Trivago_logo.svg';} else {this.onerror=null;}" />
       </div>
       <div class="flex items-center justify-center">
-        <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out partner-logo" loading="lazy" />
+        <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" />
       </div>
     </div>
   </section>
@@ -160,7 +160,7 @@
       <div class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
         <h3 class="text-2xl font-semibold mb-4">Ready to book?</h3>
         <p class="text-neutral-600 mb-6">Reserve your room or plan a tailored stay with our dedicated team and secure your ideal travel experience.</p>
-        <a href="{{ booking_link }}" class="inline-flex w-full items-center justify-center rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition">Book now</a>
+        <a href="{{ booking_link }}" class="book-now-btn inline-flex w-full items-center justify-center px-6 py-3 text-sm font-semibold">Book now</a>
       </div>
       <div class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
         <h4 class="font-semibold text-xl mb-4">Contact</h4>

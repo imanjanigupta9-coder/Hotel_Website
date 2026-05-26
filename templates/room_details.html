@@ -10,7 +10,7 @@
     </div>
   </div>
   <section class="grid gap-8 lg:grid-cols-[1.4fr_0.85fr] items-start">
-    <div class="space-y-6">
+    <div class="space-y-6 center-mobile">
       <div class="overflow-hidden rounded-[40px] border border-slate-200 bg-white shadow-lg">
         <div class="relative overflow-hidden">
           <img src="{{ src_for(selected_room.img,1600) }}" srcset="{{ srcset_for(selected_room.img) }}" sizes="(max-width:640px)100vw, 45vw" alt="{{ selected_room.name }}" class="w-full h-[480px] object-cover" />
@@ -68,7 +68,7 @@
               <p class="mt-3 text-sm text-slate-600">Select your dates and book directly for the best rate.</p>
             </div>
             <div class="grid gap-3">
-              <a href="{{ booking_link }}?room={{ selected_room.slug }}" class="inline-flex items-center justify-center rounded-full bg-amber-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-500">Reserve now</a>
+              <a href="{{ booking_link }}?room={{ selected_room.slug }}" class="book-now-btn inline-flex items-center justify-center px-5 py-3 text-sm font-semibold">Reserve now</a>
               <a href="/gallery?type={{ selected_room.type }}" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100">View gallery</a>
             </div>
             <div class="space-y-4 rounded-3xl bg-slate-50 p-5">
@@ -102,9 +102,10 @@
             </div>
             <div>
               <label data-i18n="room_label" class="text-xs uppercase text-slate-500 font-semibold block mb-2">Room</label>
-              <select name="room_type" required class="w-full rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm">
-                <option value="{{ selected_room.name }}">{{ selected_room.name }}</option>
-              </select>
+              <div class="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+                <span class="font-semibold text-slate-900">{{ selected_room.name }}</span>
+              </div>
+              <input type="hidden" name="room_type" value="{{ selected_room.name }}" />
             </div>
           </div>
           <div class="grid gap-4 sm:grid-cols-2">
@@ -138,10 +139,10 @@
             </div>
           </div>
           <div class="w-full">
-            <button id="search-button" type="button" disabled class="w-full rounded-3xl bg-amber-600 py-3 text-sm font-semibold text-white transition hover:bg-amber-500 opacity-50 cursor-not-allowed">Check Availability</button>
+            <button id="search-button" type="button" disabled class="w-full rounded-3xl book-now-btn py-3 text-sm font-semibold transition opacity-50 cursor-not-allowed">Book Now</button>
           </div>
           <div class="space-y-2">
-            <div id="availability-status" class="rounded-3xl border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-700">Complete all fields to enable the button.</div>
+            <div id="availability-status" class="rounded-3xl border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-700"></div>
             <p id="validation-message" class="text-sm text-rose-500"></p>
           </div>
           <div id="availability-modal" class="availability-modal hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 py-6">

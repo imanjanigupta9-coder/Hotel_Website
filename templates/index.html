@@ -39,7 +39,7 @@
       </nav>
 
       <div class="flex items-center gap-2 md:gap-3">
-        <a href="{{ booking_link }}"  class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-white bg-amber-500 hover:bg-amber-400 transition">Book Now!</a>
+        <a href="{{ booking_link }}"  class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold">Book Now!</a>
         <button id="mobile-menu-btn" class="md:hidden p-1.5 text-white" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
@@ -49,7 +49,7 @@
         <a href="/about"  class="uppercase text-white hover:text-amber-500">About Us</a>
         <a href="/contact"  class="uppercase text-white hover:text-amber-500">Contact</a>
         <details class="group rounded-3xl bg-white/5 border border-white/10 p-3">
-          <summary class="uppercase text-white hover:text-amber-500 cursor-pointer py-2 px-3">EXPERIENC MORE</summary>
+          <summary class="uppercase text-white hover:text-amber-500 cursor-pointer py-2 px-3">Exprience More</summary>
           <div class="mt-2 flex flex-col gap-2">
             <a href="/dining-bar" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Dinning\Bar</a>
             <a href="/services" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Services</a>
@@ -68,18 +68,18 @@
       <img src="{{ hero_image }}" alt="hero" class="absolute inset-0 w-full h-full object-cover brightness-75">
       <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40"></div>
       <div class="relative z-20 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <div class="text-white">
+        <div class="text-white center-mobile">
           <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-4" >AVYUKT VIEW</h1>
           <p class="uppercase tracking-widest text-sm md:text-base opacity-90 mb-6" >A New Chapter of Luxury in Bangalore</p>
           <p  class="max-w-xl text-sm md:text-base opacity-80 mb-6">Premium luxury hotel with world-class amenities, fine dining, and exceptional service in the heart of Bangalore.</p>
-          <div class="flex flex-wrap gap-4">
+           <div class="flex flex-wrap gap-4">
             <a href="/rooms"  class="crystal-btn  book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
             <a href="/offers" class="inline-flex items-center gap-4 text-sm md:text-base bg-white/15 text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white/30 transition" ="offers_label">Offers</a>
           </div>
         </div>
       </div>
     </section>
-    <section id="booking" class="relative -mt-16 z-20 px-6">
+    <section id="booking" class="relative -mt-16 z-20 px-6 grid items-center py-12">
       <div class="max-w-7xl mx-auto rounded-2xl shadow-xl overflow-hidden grid gap-4 lg:grid-cols-1 items-center p-6" style="background: linear-gradient(135deg, rgba(18,14,10,0.95) 0%, rgba(28,22,17,0.95) 100%); border:1px solid rgba(212,175,55,0.15);">
           <form id="booking-form" action="{{ booking_link or '/book' }}" method="POST" class="flex flex-wrap items-end gap-3">
             <div class="w-full sm:w-auto flex-1 min-w-[160px]">
@@ -120,22 +120,11 @@
                 {% endfor %}
               </select>
             </div>
-            <div class="w-full sm:w-auto min-w-[140px]">
-              <button id="search-button" type="button" disabled class="w-full bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-3 font-semibold text-base opacity-50 cursor-not-allowed">Check Availability</button>
-            </div>
-            <div class="w-full mt-3">
-              <div id="availability-status" class="rounded-3xl border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-700">Complete all fields to enable the button.</div>
-              <p id="validation-message" class="mt-2 text-sm text-rose-200"></p>
-            </div>
-            <div id="availability-modal" class="availability-modal hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 py-6">
-              <div class="availability-dialog max-w-md w-full rounded-3xl bg-slate-950/95 border border-white/10 p-6 text-white shadow-2xl">
-                <h2 class="text-2xl font-semibold mb-3">Availability</h2>
-                <p id="availability-modal-message" class="text-sm leading-relaxed text-slate-200 mb-6">Checking room availability...</p>
-                <button id="availability-modal-close" type="button" class="mx-auto block rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-amber-400">Close</button>
-              </div>
+           <div class="flex flex-col items-start gap-3 md:gap-4 w-full sm:w-auto">
+              <button id="search-button" type="button" aria-disabled="true" class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold opacity-50 cursor-not-allowed">Book Now!</button>
+              <div id="validation-message" class="text-sm text-rose-300 min-h-[1.25rem]"></div>
             </div>
           </form>
-        </aside>
       </div>
     </section>
 
@@ -163,20 +152,16 @@
                     <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.guests }} Guests</div>
                   </div>
                 </div>
-                <div class="flex items-center justify-between gap-4">
-                  <span class="text-amber-600 font-semibold">₹{{ room.price }}</span>
-                </div>
                 <div class="room-card-details">
                   <div class="flex items-center gap-4 w-full">
                     <a href="/room-details?slug={{ room.slug }}" class="room-details-cta inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">More details</a>
-                    <a href="{{ booking_link }}?room={{ room.slug }}" class="room-book-btn inline-flex items-center gap-2 rounded-full bg-amber-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-amber-500">Book now</a>
+                    <a href="{{ booking_link }}?room={{ room.slug }}" class="book-now-btn inline-flex items-center gap-2 px-3 py-2 text-sm font-semibold">Book now</a>
                   </div>
                 </div>
               </div>
             </article>
             {% endfor %}
           </div>
-          <div class="carousel-dots"></div>
         </div>
       </div>
     </section>
@@ -212,7 +197,7 @@
               <img src="https://cdn.worldvectorlogo.com/logos/trivago.svg" alt="Trivago" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Trivago_logo.svg';} else {this.onerror=null;}" />
             </div>
             <div class="flex items-center justify-center">
-              <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out partner-logo" loading="lazy" />
+              <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" />
             </div>
           </div>
         </div>
@@ -338,7 +323,6 @@
               </div>
             </article>
           </div>
-          <div class="carousel-dots"></div>
         </div>
       </div>
     </section>
@@ -376,7 +360,7 @@
               </div>
             </article>
           </div>
-          <div class="carousel-dots"></div>
+    
         </div>
       </div>
     </section>
@@ -436,7 +420,6 @@
             </article>
             {% endfor %}
           </div>
-          <div class="carousel-dots"></div>
         </div>
       </div>
     </section>

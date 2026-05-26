@@ -295,18 +295,50 @@ function bindBookingForm() {
     field.onchange = updateBookingButtonState;
     field.oninput = updateBookingButtonState;
   });
+  const validationMessage = currentValidationMessage();
   const searchButton = currentSearchButton();
-  if (searchButton) searchButton.onclick = performAvailabilityCheck;
+  if (searchButton) {
+    searchButton.onclick = (event) => {
+      const nameInput = bookingForm.querySelector('[name="name"]');
+      const checkInInput = bookingForm.querySelector('[name="check_in"]');
+      const checkOutInput = bookingForm.querySelector('[name="check_out"]');
+      const roomSelect = bookingForm.querySelector('[name="room_type"]');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const checkIn = checkInInput ? checkInInput.value : '';
+      const checkOut = checkOutInput ? checkOutInput.value : '';
+      const roomType = roomSelect ? roomSelect.value : '';
+      const validDates = checkIn && checkOut && new Date(checkOut) >= new Date(checkIn);
+      const formIsValid = name && checkIn && checkOut && roomType && validDates;
+
+      if (!formIsValid) {
+        event.preventDefault();
+        if (validationMessage) {
+          validationMessage.textContent = 'Please fill all required booking details before booking.';
+        }
+        setStatus('Complete all fields to enable booking.', false);
+        return;
+      }
+
+      performAvailabilityCheck();
+    };
+
+    searchButton.addEventListener('mouseenter', () => {
+      if (searchButton.getAttribute('aria-disabled') === 'true' && validationMessage) {
+        validationMessage.textContent = 'Please fill all required booking details before booking.';
+      }
+    });
+  }
   bookingForm.onsubmit = (event) => {
     const sb = currentSearchButton();
-    if (sb && sb.disabled) event.preventDefault();
+    if (sb && sb.getAttribute('aria-disabled') === 'true') event.preventDefault();
   };
 }
 
 function initializePageComponents() {
   // set date mins
   const today = new Date().toISOString().split('T')[0];
-  document.querySelectorAll('input[type="date"]').forEach((d) => { d.min = today; if (!d.value) d.value = today; });
+  document.querySelectorAll('input[type="date"]').forEach((d) => { d.min = today; });
   bindGuestButtons();
   bindBookingForm();
   bindAvailabilityModalClose();
@@ -325,10 +357,7 @@ window.addEventListener('load', () => {
   const today = new Date().toISOString().split('T')[0];
   document.querySelectorAll('input[type="date"]').forEach((d) => {
     d.min = today;
-    // if empty, set to today so same-day booking is easier to test
-    if (!d.value) d.value = today;
   });
   updateBookingButtonState();
 });
-
 
