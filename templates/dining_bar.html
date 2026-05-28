@@ -1,190 +1,671 @@
 {% extends "base.html" %}
-{% block title %}Dining & Bar | AVYUKT VIEW{% endblock %}
+
+{% block title %}The Dining & Cocktail Lounge | AVYUKT VIEW{% endblock %}
+
+{% block extra_head %}
+<style>
+  body { background: #f8fafc ; color: #111827 ; }
+</style>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="/static/js/app.js"></script>
+{% endblock %}
+
 {% block content %}
-<main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-  <section class="rounded-[40px] overflow-hidden bg-white text-black shadow-2xl">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_0.8fr] items-center p-8 md:p-12">
-      <div class="space-y-6 center-mobile">
-<p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Dining & Bar</p>
-        <h1 class="text-4xl md:text-5xl font-serif leading-tight">Elevated dining and bar experiences at AVYUKT VIEW.</h1>
-        <p class="max-w-2xl text-base text-black">Discover our signature restaurant and elegant bar. Enjoy curated menus, premium cocktails, and a relaxed atmosphere perfect for every occasion.</p>
-        <div class="flex flex-wrap gap-3">
-          <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full book-now-btn px-6 py-3 text-sm font-semibold">Book Dining & Bar</a>
-          <a href="#menu" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition">See the menu</a>
-        </div>
-      </div>
-      <div class="space-y-4">
-        <div class="rounded-[32px] overflow-hidden shadow-2xl">
-          <img src="/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg" alt="Dining interior" class="w-full object-cover h-80" onerror="this.src='https://via.placeholder.com/1200x800?text=Dining+Image'">
-        </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
-            <h2 class="font-semibold text-xl text-white mb-3">Fine dining</h2>
-            <p class="text-sm text-black">Savor chef-crafted menus with fresh local ingredients, elegant plating, and seamless service.</p>
-          </div>
-          <div class="rounded-[32px] bg-white/10 p-6 shadow-lg backdrop-blur-sm">
-            <h2 class="font-semibold text-xl text-white mb-3">Signature bar</h2>
-            <p class="text-sm text-black">Enjoy premium cocktails, wine pairings, and a stylish lounge setting for evening relaxation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="bg-gradient-to-b from-[#fdfbf7] to-[#f1f5f9] min-h-screen text-neutral-900 antialiased">
 
-  <section id="menu" class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
-    <div class="text-center mb-10">
-      <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Menu highlights</p>
-      <h2 class="text-3xl font-serif">A curated dining experience for every meal.</h2>
-      <p class="text-neutral-600 max-w-2xl mx-auto mt-3">From thoughtfully plated dinners to craft cocktails, our restaurant and bar are designed to delight guests throughout their stay.</p>
-    </div>
-    <div class="grid gap-6 lg:grid-cols-3">
-      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
-        <h3 class="font-semibold text-xl mb-3">Chef's Signature Plates</h3>
-        <p class="text-neutral-600 mb-4">Enjoy menus built around the freshest seasonal produce and vibrant local flavors.</p>
-        <ul class="space-y-2 text-sm text-neutral-600">
-          <li>• Seasonal tasting menu</li>
-          <li>• Local and international favorites</li>
-          <li>• Comfortable table service</li>
-        </ul>
-      </article>
-      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
-        <h3 class="font-semibold text-xl mb-3">Cocktails & Wine</h3>
-        <p class="text-neutral-600 mb-4">Relax with handcrafted cocktails, curated wines, and premium spirits in a warm bar atmosphere.</p>
-        <ul class="space-y-2 text-sm text-neutral-600">
-          <li>• Premium cocktails</li>
-          <li>• Wine pairings</li>
-          <li>• Nightly lounge service</li>
-        </ul>
-      </article>
-      <article class="rounded-3xl border border-slate-200 p-6 shadow-sm">
-        <h3 class="font-semibold text-xl mb-3">Private bookings</h3>
-        <p class="text-neutral-600 mb-4">Reserve a table for dinner, group dining, or a special celebration with tailored service.</p>
-        <ul class="space-y-2 text-sm text-neutral-600">
-          <li>• Table reservations</li>
-          <li>• Group dining support</li>
-          <li>• Direct booking link</li>
-        </ul>
-      </article>
-    </div>
-  </section>
+<!-- ==========================================
+     CRYSTAL GLASS HERO INTRO MODULE (#home)
+     ========================================== -->
+<section id="home" class="relative min-h-[70vh] lg:min-h-[85vh] bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden border-b border-slate-200/80 flex items-center">
+    
+    <div class="absolute top-1/3 left-1/4 w-80 h-80 bg-amber-500/[0.06] rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+    <div class="absolute bottom-1/4 left-10 w-64 h-64 bg-amber-600/[0.04] rounded-full blur-[80px] pointer-events-none animate-pulse"></div>
 
-  <section id="gallery" class="mt-8 rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-8">
-        <h3 class="text-2xl font-serif">Cocktails & Bites</h3>
-        <p class="mt-2 text-slate-600/85">Exotic drinks and signature plates curated for sharing.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1514361892637-9dcd5aa1300d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Golden Negroni</h4>
-            <p class="text-sm text-slate-600">A luxurious twist on the classic, with a hint of saffron and citrus.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Smoked Old Fashioned</h4>
-            <p class="text-sm text-slate-600">Oak-smoked bourbon, demerara, orange bitters.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Truffle Mushroom Tart</h4>
-            <p class="text-sm text-slate-600">A savory bite with seasonal mushrooms and shaved truffle.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Citrus Breeze</h4>
-            <p class="text-sm text-slate-600">Refreshing tequila cocktail with yuzu and basil.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Seared Tuna Tataki</h4>
-            <p class="text-sm text-slate-600">Lightly seared tuna with sesame and ponzu.</p>
-          </div>
-        </article>
-        <article class="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
-          <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1525327644511-85c7c79f0c4b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=');"></div>
-          <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Dark Chocolate Mousse</h4>
-            <p class="text-sm text-slate-600">Velvety mousse with sea salt and orange zest.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="offers" class="mt-10 rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
-    <div class="text-center mb-8">
-      <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Offers</p>
-      <h2 class="text-3xl font-serif">What’s more with dining at AVYUKT VIEW</h2>
-      <p class="mx-auto mt-3 max-w-2xl text-slate-600">Special curated experiences, seasonal promotions, and exclusive dining offers designed for every occasion.</p>
-    </div>
-    <div class="grid gap-4 md:grid-cols-3 mb-10">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
-        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">✨</div>
-        <h3 class="font-semibold text-lg">Seasonal menus</h3>
-        <p class="mt-2 text-sm text-slate-600">Fresh, locally inspired dishes that change with the season.</p>
-      </div>
-      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
-        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">🍸</div>
-        <h3 class="font-semibold text-lg">Cocktail hour</h3>
-        <p class="mt-2 text-sm text-slate-600">Evening drinks and bar bites with curated happy hour perks.</p>
-      </div>
-      <div class="rounded-[32px] border border-slate-200 bg-white p-5 text-center shadow-sm">
-        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-xl">🎉</div>
-        <h3 class="font-semibold text-lg">Private events</h3>
-        <p class="mt-2 text-sm text-slate-600">Bespoke dining experiences for celebrations and small groups.</p>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Limited time</span>
-        <h3 class="mt-5 text-xl font-semibold">Weekend Tasting Menu</h3>
-        <p class="mt-3 text-sm text-slate-600">Enjoy a 5-course tasting journey with wine pairings every Friday and Saturday evening.</p>
-        <a href="{{ booking_link }}?offer=tasting-menu" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Reserve now</a>
-      </article>
-      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Exclusive</span>
-        <h3 class="mt-5 text-xl font-semibold">Cocktail Hour</h3>
-        <p class="mt-3 text-sm text-slate-600">Enjoy handcrafted cocktails and bar bites with 2-for-1 offers from 5pm to 7pm daily.</p>
-        <a href="{{ booking_link }}?offer=cocktail-hour" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Book a table</a>
-      </article>
-      <article class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-        <span class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-700">Special</span>
-        <h3 class="mt-5 text-xl font-semibold">Private Dining</h3>
-        <p class="mt-3 text-sm text-slate-600">Create a private dining experience for celebrations, events or small groups with bespoke menus.</p>
-        <a href="{{ booking_link }}?offer=private-dining" class="mt-6 inline-flex items-center justify-center rounded-full book-now-btn px-5 py-3 text-sm font-semibold">Enquire now</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="rounded-[40px] border border-slate-200 bg-white shadow-sm p-8 md:p-10">
-    <div class="grid gap-8 lg:grid-cols-[0.9fr_0.9fr] items-center">
-      <div class="space-y-6 center-mobile">
-        <span class="text-sm uppercase tracking-[0.3em] text-amber-600">Why choose dining with us</span>
-        <h2 class="text-3xl font-serif">A seamless dining experience for every guest.</h2>
-        <p class="text-neutral-600 max-w-2xl">Our restaurant and bar are built for travelers who value quality, comfort, and easy booking. Enjoy attentive service, refined menus, and a relaxed atmosphere.</p>
-        <a href="{{ booking_link }}?service=dining-bar" class="inline-flex items-center justify-center rounded-full book-now-btn px-6 py-3 text-sm font-semibold">Reserve Dining & Bar</a>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-[32px] bg-white p-6 shadow-sm border border-slate-200">
-          <h3 class="font-semibold text-xl text-slate-900 mb-3">Fast booking</h3>
-          <p class="text-slate-600 text-sm">Reserve your dining experience with one click and receive confirmation instantly.</p>
+    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="lg:col-span-6 space-y-5 md:space-y-6 text-left p-2 md:pr-12">
+            
+            <div class="inline-flex items-center gap-2 bg-amber-600/5 border border-amber-500/10 px-3 py-1 rounded-full">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+                </span>
+                <span class="text-amber-800 tracking-[0.25em] uppercase text-[8px] md:text-[9px] font-extrabold block">
+                    Epicurean Lounge & Mixology
+                </span>
+            </div>
+            
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 tracking-tight font-bold leading-[1.15]">
+                Where Flavor <br class="hidden md:block"/>Meets <span class="text-amber-700 font-normal italic font-serif relative">Sophistication</span>
+            </h1>
+            
+            <div class="flex items-center gap-3 opacity-90">
+                <div class="w-16 h-[2px] bg-amber-600/80 rounded-full"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-slate-900"></div>
+            </div>
+            
+            <p class="text-slate-700 font-medium md:font-normal text-xs sm:text-sm md:text-base max-w-md leading-relaxed opacity-95">
+                Experience masterfully crafted molecular mixology, custom-zoned dining setups, and premium real-time table seating allocation at AVYUKT VIEW.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                
+                <a href="#reservation-wizard" class="bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-bold text-xs px-6 py-4 rounded-xl tracking-wider text-center uppercase shadow-xl shadow-amber-700/10 hover:shadow-amber-600/30 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    Book An Elite Table
+                </a>
+                
+                <a href="#menu-catalog-section" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-4 rounded-xl text-xs tracking-wider text-center uppercase transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95 shadow-lg shadow-slate-900/10 border border-slate-950">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                    Explore Menu & Orders
+                </a>
+                
+            </div>
         </div>
-        <div class="rounded-[32px] bg-white p-6 shadow-sm border border-slate-200">
-          <h3 class="font-semibold text-xl text-slate-900 mb-3">Modern lounge</h3>
-          <p class="text-slate-600 text-sm">Enjoy our bar lounge with a relaxed vibe, premium drinks, and attentive service.</p>
+
+        <div class="lg:col-span-6 relative w-full h-56 sm:h-72 md:h-96 lg:h-[70vh] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-200/60 group">
+            
+            <div class="absolute top-3 left-3 w-4 h-4 border-t border-l border-white/40 pointer-events-none z-20"></div>
+            <div class="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-white/40 pointer-events-none z-20"></div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-10"></div>
+            
+            <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=1200&q=95" 
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
+                 alt="Avyukt View Modern Lounge Master Showcase" />
         </div>
-      </div>
+
     </div>
-  </section>
-</main>
+</section>
+ <!-- ==========================================
+         CORE EXPERIENCE 1 & 3: TABBED MENU & INTERACTIVE CART (#offers)
+         ========================================== -->
+    <section id="menu-catalog-section" class="py-12 md:py-24 bg-white border-t border-b border-slate-100">
+    <div id="menu-canvas" class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 md:mb-12 gap-6 text-left">
+            <div class="space-y-2">
+                <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block">
+                    <i class="fa-solid fa-book-open mr-1 text-[9px] md:text-[11px]"></i> Interactive Catalog
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl text-gray-900 font-semibold">
+                    Exploration & <span class="text-amber-600 font-normal italic">Online Pre-Ordering</span>
+                </h2>
+                <div class="w-12 h-0.5 bg-amber-500 mt-2"></div>
+            </div>
+            
+            <div class="flex flex-wrap gap-1.5 bg-slate-100 p-1 rounded-xl border border-slate-200/60 text-[11px] md:text-xs max-w-full overflow-x-auto custom-scroll">
+                <button onclick="toggleMenuCategory('all')" id="tab-all" class="filter-tab-active px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">All Selections</button>
+                <button onclick="toggleMenuCategory('spirits')" id="tab-spirits" class="px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">Curated Spirits</button>
+                <button onclick="toggleMenuCategory('cocktails')" id="tab-cocktails" class="px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">Signature Cocktails</button>
+                <button onclick="toggleMenuCategory('cuisine')" id="tab-cuisine" class="px-3 md:px-4 py-2 rounded-lg text-slate-600 font-medium transition-all whitespace-nowrap">Global Fusion</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            
+            <div class="lg:col-span-2 space-y-4">
+                
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="spirits">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">Glenfiddich Vintage Reserve</h4>
+                            <span class="w-2 h-2 rounded-full bg-red-500 shrink-0" title="Contains Alcohol"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Single malt scotch whiskey matured across 21 years in premium bourbon oak barrels.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹1,250 <span class="text-[10px] text-slate-400 font-normal">/ 30ml shot</span></span>
+                    </div>
+                    <button onclick="pushToBasket('Glenfiddich 21 Single Malt', 1250)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="cocktails">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">The Crimson Horizon</h4>
+                            <span class="w-2 h-2 rounded-full bg-red-500 shrink-0" title="Contains Alcohol"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Aged dark rum infused with artisanal hibiscus reductions and hand-charred rosemary smoke plumes.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹550</span>
+                    </div>
+                    <button onclick="pushToBasket('The Crimson Horizon', 550)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="cuisine">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">Gourmet Truffle Mushroom Sliders</h4>
+                            <span class="w-2 h-2 rounded-full bg-green-600 shrink-0" title="Vegetarian Item"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Shiitake mushroom steaks caramelized in rich truffle glaze, covered in aged melted provolone on fresh bakery brioche.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹420</span>
+                    </div>
+                    <button onclick="pushToBasket('Truffle Mushroom Sliders', 420)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="menu-display-card bg-slate-50/50 p-4 md:p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all text-left" data-cat="cuisine">
+                    <div class="flex-1 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-semibold text-gray-900 text-sm md:text-base tracking-tight">Peri-Peri Charred King Prawns</h4>
+                            <span class="w-2 h-2 rounded-full bg-red-600 shrink-0" title="Non-Veg Item"></span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">Giant gulf prawns flash-seared over glowing woodfire logs, basted in African bird's eye chili reductions.</p>
+                        <span class="text-amber-600 font-semibold text-sm block pt-1">₹580</span>
+                    </div>
+                    <button onclick="pushToBasket('Peri-Peri Charred Prawns', 580)" class="w-full sm:w-auto shrink-0 bg-white hover:bg-amber-500 border border-slate-200 hover:border-amber-500 text-gray-800 hover:text-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-1">
+                        Add <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:sticky lg:top-24 bg-white border border-slate-200 shadow-xl rounded-2xl p-5 space-y-4 mt-4 lg:mt-0 text-left">
+                <h3 class="font-serif text-lg text-gray-900 pb-3 border-b border-slate-100 flex items-center justify-between">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-basket-shopping text-amber-600 text-sm"></i> Pre-Order Basket</span>
+                    <span id="lbl-cart-count" class="bg-amber-100 text-amber-800 text-xs px-2.5 py-0.5 rounded-full font-bold">0 Items</span>
+                </h3>
+                
+                <div id="basket-dynamic-stack" class="space-y-2 text-xs text-slate-400 italic max-h-48 overflow-y-auto custom-scroll">
+                    Your pre-order collection is empty.
+                </div>
+
+                <div class="border-t border-slate-100 pt-3 space-y-2 text-xs text-slate-600">
+                    <div class="flex justify-between"><span>Subtotal</span><span id="lbl-subtotal" class="font-medium text-gray-900">₹0</span></div>
+                    <div class="flex justify-between"><span>GST & Service Charge (18%)</span><span id="lbl-tax" class="font-medium text-gray-900">₹0</span></div>
+                    <div class="flex justify-between text-gray-900 font-bold text-sm border-t border-dashed border-slate-200 pt-2">
+                        <span>Total Estimate</span><span id="lbl-total" class="text-amber-600 text-base">₹0</span>
+                    </div>
+                </div>
+
+                <form action="https://your-purchased-ordering-backend-checkout-url.com" method="GET" target="_blank" onsubmit="return verifyBasketData()">
+                    <input type="hidden" name="basket_payload" id="basket_hidden_field">
+                    <div class="mb-3">
+                        <input type="text" placeholder="Table Number (Leave blank if pre-ordering)" class="w-full text-xs bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:border-amber-500 text-gray-900">
+                    </div>
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-amber-600 text-white hover:text-black text-xs font-bold py-3.5 rounded-xl transition duration-300 uppercase tracking-wider shadow-md flex items-center justify-center gap-2">
+                        Forward Order to Backend <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="reservation-wizard" class="py-12 md:py-20 bg-white border-t border-b border-slate-200/80 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-48 h-48 bg-amber-500/[0.02] rounded-full blur-[80px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-amber-600/[0.02] rounded-full blur-[80px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
+            <span class="text-amber-700 tracking-[0.25em] md:tracking-[0.35em] uppercase text-[8px] md:text-[10px] font-extrabold block mb-1">
+                <i class="fa-solid fa-map-location-dot mr-1"></i> Floor Management Panel
+            </span>
+            <h2 class="font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight">
+                Table Layout & <span class="text-amber-700 font-normal italic">Live Desk Assignment</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3 rounded-full"></div>
+            <p class="text-xs sm:text-sm text-gray-700 max-w-xl md:mx-auto font-normal leading-relaxed">
+                Review our comprehensive 40-table layout across premium Rooftop, Bar Counter, and luxury Booth configurations. Select any active **Vacant** card to assign it to your booking wizard.
+            </p>
+            
+            <div class="flex items-center justify-start md:justify-center gap-2.5 mt-5 text-[10px] md:text-xs font-bold">
+                <span class="bg-emerald-50 text-emerald-800 px-3 py-1.5 rounded-xl border border-emerald-200/80 shadow-sm flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Vacant: <span id="vacant-count" class="font-extrabold">40</span>
+                </span>
+                <span class="bg-slate-50 text-slate-700 px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-400"></span> Full: <span id="booked-count" class="font-extrabold">0</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-6 text-[10px] md:text-xs justify-start md:justify-center">
+            <button onclick="filterFloorMap('all')" id="zone-btn-all" class="px-4 py-2.5 rounded-xl font-bold border border-slate-900 bg-slate-900 text-white shadow-sm transition-all">All Zones (40 Tables)</button>
+            <button onclick="filterFloorMap('rooftop')" id="zone-btn-rooftop" class="bg-white hover:bg-slate-50 text-slate-800 px-4 py-2.5 rounded-xl font-bold border border-slate-200 shadow-sm transition-all"><i class="fa-solid fa-cloud mr-1 text-amber-600"></i> Sky Rooftop</button>
+            <button onclick="filterFloorMap('bar_counter')" id="zone-btn-bar_counter" class="bg-white hover:bg-slate-50 text-slate-800 px-4 py-2.5 rounded-xl font-bold border border-slate-200 shadow-sm transition-all"><i class="fa-solid fa-glass-citrus mr-1 text-amber-600"></i> Bar Counter</button>
+            <button onclick="filterFloorMap('booths')" id="zone-btn-booths" class="bg-white hover:bg-slate-50 text-slate-800 px-4 py-2.5 rounded-xl font-bold border border-slate-200 shadow-sm transition-all"><i class="fa-solid fa-couch mr-1 text-amber-600"></i> Luxury Booths</button>
+        </div>
+
+        <div class="bg-slate-50 p-4 md:p-8 rounded-3xl border border-slate-200/80 shadow-inner mb-12 relative">
+            <div id="table-floor-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-h-[440px] overflow-y-auto pr-1.5 custom-scroll">
+                </div>
+            
+            <div class="text-[9px] md:text-[11px] text-slate-500 mt-4 flex items-center gap-1.5 justify-end font-semibold">
+                <i class="fa-solid fa-circle-info text-amber-600"></i> Tap any available desk card inside the live layout to hook it directly below.
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            
+            <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl shadow-md p-4 sm:p-8 text-left space-y-5 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-serif text-xl md:text-2xl text-gray-900 font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-amber-600"></i> Reserve Your Table
+                    </h3>
+                    <p class="text-[10px] md:text-xs text-slate-500 mt-1 font-medium">Your selected table layout details populate automatically on element selection.</p>
+                </div>
+                
+                <form id="live-booking-form" action="https://your-purchased-booking-backend-link.com" method="GET" target="_blank" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Selected Unit</label>
+                            <input type="text" name="assigned_table_id" id="assigned_table_id" placeholder="Tap a table card" class="w-full text-xs md:text-sm font-mono font-bold text-amber-700 border border-amber-300 bg-amber-50/20 p-3 rounded-xl shadow-sm focus:ring-4 focus:ring-amber-600/10 focus:outline-none" readonly required>
+                        </div>
+                        
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Floor Zone</label>
+                            <input type="text" name="assigned_zone" id="assigned_zone" placeholder="No zone mapped" class="w-full text-xs md:text-sm font-sans font-bold text-slate-800 bg-slate-100 border border-slate-200 p-3 rounded-xl shadow-sm focus:outline-none" readonly required>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Your Name</label>
+                            <input type="text" name="guest_name" placeholder="Enter full name" class="w-full text-xs md:text-sm p-3 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-600/10 focus:border-amber-600 font-medium shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Email Address</label>
+                            <input type="email" name="guest_email" placeholder="name@company.com" class="w-full text-xs md:text-sm p-3 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-600/10 focus:border-amber-600 font-medium shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Phone Number</label>
+                            <input type="tel" name="guest_phone" placeholder="Contact Mobile" class="w-full text-xs md:text-sm p-3 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-600/10 focus:border-amber-600 font-medium shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Total Guests</label>
+                            <select name="guest_count" class="w-full text-xs md:text-sm p-3 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-600/10 focus:border-amber-600 font-bold shadow-sm" required>
+                                <option value="2">2 Persons</option>
+                                <option value="4">4 Persons</option>
+                                <option value="6">6 Persons</option>
+                                <option value="8">8+ Vault</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Target Date</label>
+                            <input type="date" name="booking_date" class="w-full text-xs md:text-sm p-3 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-600/10 focus:border-amber-600 font-medium shadow-sm" required>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[9px] md:text-xs uppercase tracking-wider text-slate-600 font-extrabold truncate">Target Time</label>
+                            <input type="time" name="booking_time" class="w-full text-xs md:text-sm p-3 rounded-xl bg-white border border-slate-200 focus:ring-4 focus:ring-amber-600/10 focus:border-amber-600 font-medium shadow-sm" required>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-3">
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-bold py-3.5 px-6 rounded-xl text-xs md:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-amber-600/10 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-check text-xs md:text-base"></i> Confirm & Book Table Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="lg:col-span-5 bg-slate-50 p-5 sm:p-8 rounded-3xl border border-slate-200 flex flex-col justify-between text-left h-full">
+                <div class="space-y-4">
+                    <h4 class="font-serif text-lg md:text-xl text-gray-900 font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-amber-600"></i> Why Reserve With Us?
+                    </h4>
+                    <p class="text-xs text-slate-700 leading-relaxed font-normal">
+                        Our booking system checks table availability in real-time and assigns the best layout slot based on your preferred lounge zone.
+                    </p>
+                    <ul class="space-y-3 text-xs text-gray-800 pt-1 font-medium">
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-600 mt-0.5 shrink-0 text-sm"></i><span><strong>Instant Hold:</strong> We lock your selected unit layout space immediately.</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-600 mt-0.5 shrink-0 text-sm"></i><span><strong>Smart Layouts:</strong> Custom table scaling configured for your party capacity.</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-600 mt-0.5 shrink-0 text-sm"></i><span><strong>Zone Selection:</strong> Choose between Rooftop skylines, active Bars, or Vault booths.</span></li>
+                    </ul>
+                </div>
+                <p class="text-[10px] md:text-[11px] text-slate-400 italic pt-3 border-t border-slate-200 leading-relaxed mt-6">Current availability tracks live data. If your preferred slot shows occupied, select an alternative hour grid node.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="py-12 md:py-18 bg-white border-t border-b border-slate-200/80 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-48 h-48 bg-amber-500/[0.03] rounded-full blur-[80px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-amber-600/[0.03] rounded-full blur-[80px] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        
+        <div class="text-left md:text-center max-w-xl md:mx-auto mb-8 md:mb-12">
+            <span class="text-amber-700 tracking-[0.25em] md:tracking-[0.35em] uppercase text-[9px] md:text-[10px] font-bold block mb-1 flex items-center justify-start md:justify-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-600 inline-block"></span> Atmosphere Tour
+            </span>
+            <h2 class="font-serif text-2xl md:text-3xl text-gray-950 font-bold leading-tight tracking-wide">
+                Inside The <span class="text-amber-700 font-normal italic font-serif">AVYUKT Lounge</span>
+            </h2>
+            <div class="flex items-center justify-start md:justify-center gap-1.5 mt-2">
+                <div class="w-4 h-[1px] bg-gradient-to-r from-transparent to-amber-600"></div>
+                <div class="w-1 h-1 rotate-45 border border-amber-600 bg-amber-600/10"></div>
+                <div class="w-4 h-[1px] bg-gradient-to-l from-transparent to-amber-600"></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-6 lg:gap-8">
+            
+            <div class="col-span-1 md:col-span-7 gallery-card group overflow-hidden rounded-2xl border border-slate-200 shadow-md h-36 sm:h-44 md:h-56 relative cursor-pointer bg-slate-900">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10 flex flex-col justify-end p-3 md:p-6 text-left transition-all duration-500">
+                    <div class="transform translate-y-0 flex items-center justify-between">
+                        <div>
+                            <span class="text-[7px] md:text-xs text-amber-400 font-mono font-bold uppercase tracking-widest block mb-0.5">Premium Seating</span>
+                            <h3 class="text-white font-serif font-bold text-[11px] sm:text-sm md:text-xl tracking-wide [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">Main Lounge Ambiance</h3>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-md border border-white/40 text-white w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-90 transition-all duration-300 shrink-0 hidden sm:flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" 
+                     class="group-hover:scale-110 transition-all duration-1000 w-full h-full object-cover" alt="Bar Ambiance Layout">
+            </div>
+            
+            <div class="col-span-1 md:col-span-5 gallery-card group overflow-hidden rounded-2xl border border-slate-200 shadow-md h-36 sm:h-44 md:h-56 relative cursor-pointer bg-slate-900">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10 flex flex-col justify-end p-3 md:p-6 text-left transition-all duration-500">
+                    <div class="transform translate-y-0 flex items-center justify-between">
+                        <div>
+                            <span class="text-[7px] md:text-xs text-amber-400 font-mono font-bold uppercase tracking-widest block mb-0.5">Gourmet Experience</span>
+                            <h3 class="text-white font-serif font-bold text-[11px] sm:text-sm md:text-xl tracking-wide [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">Artisan Culinary</h3>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=800&q=80" 
+                     class="group-hover:scale-110 transition-all duration-1000 w-full h-full object-cover" alt="Premium Gourmet Platter">
+            </div>
+            
+            <div class="col-span-1 md:col-span-5 gallery-card group overflow-hidden rounded-2xl border border-slate-200 shadow-md h-36 sm:h-44 md:h-56 relative cursor-pointer bg-slate-900">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10 flex flex-col justify-end p-3 md:p-6 text-left transition-all duration-500">
+                    <div class="transform translate-y-0 flex items-center justify-between">
+                        <div>
+                            <span class="text-[7px] md:text-xs text-amber-400 font-mono font-bold uppercase tracking-widest block mb-0.5">Bespoke Setup</span>
+                            <h3 class="text-white font-serif font-bold text-[11px] sm:text-sm md:text-xl tracking-wide [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">Luxury Dining</h3>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                     class="group-hover:scale-110 transition-all duration-1000 w-full h-full object-cover" alt="Luxury Fine Dining Setup">
+            </div>
+
+            <div class="col-span-1 md:col-span-7 gallery-card group overflow-hidden rounded-2xl border border-slate-200 shadow-md h-36 sm:h-44 md:h-56 relative cursor-pointer bg-slate-900">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10 flex flex-col justify-end p-3 md:p-6 text-left transition-all duration-500">
+                    <div class="transform translate-y-0 flex items-center justify-between">
+                        <div>
+                            <span class="text-[7px] md:text-xs text-amber-400 font-mono font-bold uppercase tracking-widest block mb-0.5">VIP Lounges</span>
+                            <h3 class="text-white font-serif font-bold text-[11px] sm:text-sm md:text-xl tracking-wide [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">Private Luxury Vaults</h3>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=800&q=80" 
+                     class="group-hover:scale-110 transition-all duration-1000 w-full h-full object-cover" alt="Private Vault Seating Spaces">
+            </div>
+            
+        </div>
+    </div>
+</section>
+   
+   <section id="about" class="py-12 md:py-24 bg-white border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        
+        <div class="space-y-4 md:space-y-6 text-left">
+            <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block">
+                <i class="fa-solid fa-history mr-1 text-[9px] md:text-[11px]"></i> Our Legacy
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-900 leading-tight font-semibold">
+                Crafting Masterpieces in <span class="text-amber-600 font-normal italic">Absolute Ambiance</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-500"></div>
+            
+            <div class="space-y-3 md:space-y-4 text-slate-600 font-normal md:font-light text-xs sm:text-sm md:text-base leading-relaxed">
+                <p>
+                    At AVYUKT VIEW Dining & Bar, we blend gourmet molecular mixology with comfort. Every plate showcases fresh organic accents balanced with international culinary insights, explicitly prepared for the refined palate.
+                </p>
+                <p>
+                    Whether you are gathering next to our interactive counter for a handcrafted old-fashioned or dining on our sweeping rooftops, we transform every service entry into luxury hospitality.
+                </p>
+            </div>
+        </div>
+        
+        <div class="w-[85%] sm:w-[75%] md:w-full mx-auto grid grid-cols-2 gap-3 md:gap-4 pt-4 md:pt-0">
+            <div class="overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-md h-36 sm:h-44 md:h-56">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" 
+                     class="hover:scale-105 transition duration-500 w-full h-full object-cover" 
+                     alt="Interior lounge">
+            </div>
+            
+            <div class="overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-md mt-4 md:mt-8 h-36 sm:h-44 md:h-56">
+                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" 
+                     class="hover:scale-105 transition duration-500 w-full h-full object-cover" 
+                     alt="Platter preparation">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="partners" class="py-14 md:py-20 bg-white relative overflow-hidden">
+    
+    <div class="absolute top-0 left-0 right-0 h-[1px] bg-slate-200/60"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-slate-200/60"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-2xl mx-auto text-left md:text-center mb-10 md:mb-14">
+            <span class="text-amber-700 tracking-[0.25em] md:tracking-[0.35em] uppercase text-[8px] md:text-[10px] font-extrabold block mb-1">
+                Global Network
+            </span>
+            
+            <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl text-slate-900 font-bold tracking-tight leading-tight">
+                Our Elite <span class="text-amber-700 font-normal italic font-serif">Partners</span>
+            </h3>
+            
+            <div class="flex items-center justify-start md:justify-center gap-2.5 mt-3">
+                <div class="w-12 h-[1px] bg-amber-600/60"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-slate-900"></div>
+                <div class="w-12 h-[1px] bg-amber-600/60"></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-8 md:gap-x-12 md:gap-y-12 items-center">
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg" alt="Booking.com" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/booking.svg';" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/expedia.svg" alt="Expedia" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/d/df/Expedia_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/agoda-1.svg" alt="Agoda" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/c/ca/Agoda_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/airbnb.svg';" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hotelsdotcom.svg" alt="Hotels.com" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Hotels.com_Logo_2023.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/tripadvisor.svg" alt="TripAdvisor" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/0/02/Tripadvisor_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/trivago.svg" alt="Trivago" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Trivago_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" />
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    <section id="offers" class="py-12 md:py-20 bg-white border-t border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
+            <span class="text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1">
+                <i class="fa-solid fa-tags mr-1"></i> Seasonal Luxuries & Privileges
+            </span>
+            <h2 class="font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight">
+                Exclusive Packages & <span class="text-amber-700 font-normal italic">Limited Offers</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
+            <p class="text-xs sm:text-sm text-gray-700 max-w-lg md:mx-auto font-normal">
+                Take advantage of our curated privileges designed to elevate your stay, fine dining, or premium lounge experiences.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-left relative overflow-hidden">
+                <div class="absolute -top-6 -right-6 w-14 h-14 bg-amber-500/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                <div class="space-y-1 md:space-y-2 overflow-hidden">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+                    </div>
+                    <span class="text-[7px] md:text-[9px] font-mono tracking-wider font-bold uppercase text-amber-800 bg-amber-100/80 px-1.5 py-0.5 rounded border border-amber-300/40 inline-block">Happy Hour</span>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Pre-Order Privilege</h3>
+                    <p class="text-[9px] md:text-xs text-gray-800 leading-tight md:leading-normal font-normal line-clamp-3 md:line-clamp-none">Get <span class="font-bold text-amber-700">15% Off</span> your total basket sum when pre-ordering online.</p>
+                </div>
+                <div class="pt-1.5 md:pt-2 border-t border-slate-300/80 flex items-center justify-between shrink-0">
+                    <span class="text-[8px] md:text-xs font-mono font-bold text-gray-950 tracking-wider">AVY15</span>
+                    <span class="text-[8px] md:text-[9px] font-bold text-amber-700 group-hover:translate-x-1 transition-transform flex items-center gap-0.5">Active <i class="fa-solid fa-arrow-right text-[7px]"></i></span>
+                </div>
+            </div>
+
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-left relative overflow-hidden">
+                <div class="absolute -top-6 -right-6 w-14 h-14 bg-emerald-500/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                <div class="space-y-1 md:space-y-2 overflow-hidden">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg md:rounded-xl bg-emerald-100/60 flex items-center justify-center text-emerald-800 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <span class="text-[7px] md:text-[9px] font-mono tracking-wider font-bold uppercase text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300/40 inline-block">Weekend Special</span>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Luxury Getaway</h3>
+                    <p class="text-[9px] md:text-xs text-gray-800 leading-tight md:leading-normal font-normal line-clamp-3 md:line-clamp-none">Book a luxury suite stay on weekends and receive <span class="font-bold text-emerald-700">Free Rooftop Access</span>.</p>
+                </div>
+                <div class="pt-1.5 md:pt-2 border-t border-slate-300/80 flex items-center justify-between shrink-0">
+                    <span class="text-[8px] md:text-xs font-mono font-bold text-gray-950 tracking-wider">WEEKEND</span>
+                    <span class="text-[8px] md:text-[9px] font-bold text-emerald-700 group-hover:translate-x-1 transition-transform flex items-center gap-0.5">Active <i class="fa-solid fa-arrow-right text-[7px]"></i></span>
+                </div>
+            </div>
+
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-left relative overflow-hidden">
+                <div class="absolute -top-6 -right-6 w-14 h-14 bg-rose-500/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                <div class="space-y-1 md:space-y-2 overflow-hidden">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg md:rounded-xl bg-rose-100/60 flex items-center justify-center text-rose-800 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18z" /></svg>
+                    </div>
+                    <span class="text-[7px] md:text-[9px] font-mono tracking-wider font-bold uppercase text-rose-800 bg-rose-100 px-1.5 py-0.5 rounded border border-rose-300/40 inline-block">Celebration</span>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Birthday Toast</h3>
+                    <p class="text-[9px] md:text-xs text-gray-800 leading-tight md:leading-normal font-normal line-clamp-3 md:line-clamp-none">Celebrate your birthday week with us! Claim a <span class="font-bold text-rose-700">Complimentary Bottle</span> of wine.</p>
+                </div>
+                <div class="pt-1.5 md:pt-2 border-t border-slate-300/80 flex items-center justify-between shrink-0">
+                    <span class="text-[8px] md:text-xs font-mono font-bold text-gray-950 tracking-wider">PARTY</span>
+                    <span class="text-[8px] md:text-[9px] font-bold text-rose-700 group-hover:translate-x-1 transition-transform flex items-center gap-0.5">Active <i class="fa-solid fa-arrow-right text-[7px]"></i></span>
+                </div>
+            </div>
+
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-left relative overflow-hidden">
+                <div class="absolute -top-6 -right-6 w-14 h-14 bg-indigo-500/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                <div class="space-y-1 md:space-y-2 overflow-hidden">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg md:rounded-xl bg-indigo-100/60 flex items-center justify-center text-indigo-800 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    </div>
+                    <span class="text-[7px] md:text-[9px] font-mono tracking-wider font-bold uppercase text-indigo-800 bg-indigo-100 px-1.5 py-0.5 rounded border border-indigo-300/40 inline-block">Corporate</span>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Lounge Vault Special</h3>
+                    <p class="text-[9px] md:text-xs text-gray-800 leading-tight md:leading-normal font-normal line-clamp-3 md:line-clamp-none">Book a Lounge Vault table for 8+ persons and get <span class="font-bold text-indigo-700">Free Truffle Sliders</span>.</p>
+                </div>
+                <div class="pt-1.5 md:pt-2 border-t border-slate-300/80 flex items-center justify-between shrink-0">
+                    <span class="text-[8px] md:text-xs font-mono font-bold text-gray-950 tracking-wider">VAULT8</span>
+                    <span class="text-[8px] md:text-[9px] font-bold text-indigo-700 group-hover:translate-x-1 transition-transform flex items-center gap-0.5">Active <i class="fa-solid fa-arrow-right text-[7px]"></i></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+    
+  
+<section id="services" class="py-12 md:py-20 bg-white border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
+            <span class="text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1">
+                <i class="fa-solid fa-bell mr-1"></i> Signature Experiences
+            </span>
+            <h2 class="font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight">
+                World-Class Luxury & <span class="text-amber-700 font-normal italic">Bespoke Guest Care</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
+            <p class="text-xs sm:text-sm text-gray-700 max-w-lg md:mx-auto font-normal">
+                Enjoy first-class hospitality where every amenity is tailored to your comfort and leisure.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3 overflow-hidden">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 transition-colors group-hover:bg-amber-600 group-hover:text-white duration-300 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Sky Rooftop Lounge</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed font-normal line-clamp-3 md:line-clamp-none">Breathtaking panoramic horizons paired with premium spirits and molecular cocktails.</p>
+                </div>
+                <span class="text-[8px] md:text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">11 AM - 11 PM</span>
+            </div>
+
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3 overflow-hidden">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 transition-colors group-hover:bg-amber-600 group-hover:text-white duration-300 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Epicurean Dining</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed font-normal line-clamp-3 md:line-clamp-none">Savor woodfired gourmet culinary creations prepared live by global masters.</p>
+                </div>
+                <span class="text-[8px] md:text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">Live Kitchen</span>
+            </div>
+
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3 overflow-hidden">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 transition-colors group-hover:bg-amber-600 group-hover:text-white duration-300 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Luxury Hotel Stay</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed font-normal line-clamp-3 md:line-clamp-none">Immerse yourself in premium suites featuring scenic lookouts and smart layouts.</p>
+                </div>
+                <a href="https://hotel-website-uj63.onrender.com" target="_blank" rel="noopener noreferrer" class="text-[8px] md:text-[10px] font-bold text-amber-700 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 hover:underline shrink-0">Explore Suites →</a>
+            </div>
+
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3 overflow-hidden">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 transition-colors group-hover:bg-amber-600 group-hover:text-white duration-300 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight truncate">Private VIP Vaults</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed font-normal line-clamp-3 md:line-clamp-none">Exquisite secluded zones ideal for private celebrations or elite corporate meetings.</p>
+                </div>
+                <span class="text-[8px] md:text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">8+ Seating Plan</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+</div>
 {% endblock %}

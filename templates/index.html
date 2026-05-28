@@ -64,37 +64,85 @@
   </header>
 
   <main>
-    <section class="relative h-[78vh] grid items-center hero-section">
-      <img src="{{ hero_image }}" alt="hero" class="absolute inset-0 w-full h-full object-cover brightness-75">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40"></div>
-      <div class="relative z-20 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <div class="text-white center-mobile">
-          <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-4" >AVYUKT VIEW</h1>
-          <p class="uppercase tracking-widest text-sm md:text-base opacity-90 mb-6" >A New Chapter of Luxury in Bangalore</p>
-          <p  class="max-w-xl text-sm md:text-base opacity-80 mb-6">Premium luxury hotel with world-class amenities, fine dining, and exceptional service in the heart of Bangalore.</p>
-           <div class="flex flex-wrap gap-4">
-            <a href="/rooms"  class="crystal-btn  book-now-btn px-8 py-4 rounded-full text-base md:text-lg font-semibold">Explore Rooms</a>
-            <a href="/offers" class="inline-flex items-center gap-4 text-sm md:text-base bg-white/15 text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white/30 transition" ="offers_label">Offers</a>
-          </div>
+
+
+<section id="home" class="relative min-h-[70vh] lg:min-h-[85vh] bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden border-b border-slate-200/80 flex items-center">
+    
+    <div class="absolute top-1/3 left-1/4 w-80 h-80 bg-amber-500/[0.06] rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+    <div class="absolute bottom-1/4 left-10 w-64 h-64 bg-amber-600/[0.04] rounded-full blur-[80px] pointer-events-none animate-pulse"></div>
+
+    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="lg:col-span-6 space-y-5 md:space-y-6 text-left p-2 md:pr-12">
+            
+            <div class="inline-flex items-center gap-2 bg-amber-600/5 border border-amber-500/10 px-3 py-1 rounded-full">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+                </span>
+                <span class="text-amber-800 tracking-[0.25em] uppercase text-[8px] md:text-[9px] font-extrabold block">
+                    From pillows to plates, perfection awaits.
+                </span>
+            </div>
+            
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 tracking-tight font-bold leading-[1.15]">
+                AVYUKT  <span class="text-amber-700 font-normal italic font-serif relative"> VIEW</span>
+            </h1>
+            
+            <div class="flex items-center gap-3 opacity-90">
+                <div class="w-16 h-[2px] bg-amber-600/80 rounded-full"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-slate-900"></div>
+            </div>
+            
+            <p class="text-slate-700 font-medium md:font-normal text-xs sm:text-sm md:text-base max-w-md leading-relaxed opacity-95">
+A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors await.           </p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                
+                <a href="/rooms" class="bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-bold text-xs px-6 py-4 rounded-xl tracking-wider text-center uppercase shadow-xl shadow-amber-700/10 hover:shadow-amber-600/30 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    Explore Rooms
+                </a>
+                
+                <a href="/offers" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-4 rounded-xl text-xs tracking-wider text-center uppercase transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95 shadow-lg shadow-slate-900/10 border border-slate-950">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                    Offers
+                </a>
+                
+            </div>
         </div>
-      </div>
-    </section>
+
+        <div class="lg:col-span-6 relative w-full h-56 sm:h-72 md:h-96 lg:h-[70vh] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-200/60 group">
+            
+            <div class="absolute top-3 left-3 w-4 h-4 border-t border-l border-white/40 pointer-events-none z-20"></div>
+            <div class="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-white/40 pointer-events-none z-20"></div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-10"></div>
+            
+            <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=1200&q=95" 
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
+                 alt="Avyukt View Modern Lounge Master Showcase" />
+        </div>
+
+    </div>
+</section>
+
     <section id="booking" class="relative -mt-16 z-20 px-6 grid items-center py-12">
       <div class="max-w-7xl mx-auto rounded-2xl shadow-xl overflow-hidden grid gap-4 lg:grid-cols-1 items-center p-6" style="background: linear-gradient(135deg, rgba(18,14,10,0.95) 0%, rgba(28,22,17,0.95) 100%); border:1px solid rgba(212,175,55,0.15);">
-          <form id="booking-form" action="{{ booking_link or '/book' }}" method="POST" class="flex flex-wrap items-end gap-3">
-            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+          <form id="booking-form" action="{{ booking_link or '/book' }}" method="POST" class="grid grid-cols-2 gap-3 items-end lg:flex lg:flex-wrap lg:items-end lg:gap-3">
+            <div class="w-full col-span-2 lg:flex-1 lg:min-w-[160px] min-w-0">
               <label  class="text-xs uppercase text-white font-semibold block mb-1">Name</label>
               <input id="booking-name" name="name" type="text" required placeholder="Name" class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;"/>
             </div>
-            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+            <div class="w-full lg:flex-1 lg:min-w-[160px] min-w-0">
               <label class="text-xs uppercase text-white font-semibold block mb-1" >Check In</label>
               <input id="booking-check-in" name="check_in" type="date" required class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;" />
             </div>
-            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+            <div class="w-full lg:flex-1 lg:min-w-[160px] min-w-0">
               <label class="text-xs uppercase text-white font-semibold block mb-1" >Check Out</label>
               <input id="booking-check-out" name="check_out" type="date" required class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;" />
             </div>
-            <div class="w-full sm:w-auto min-w-[120px]">
+            <div class="w-full lg:min-w-[120px] min-w-0">
               <label class="text-xs uppercase text-white font-semibold block mb-1">Adults</label>
               <div class="flex items-center gap-1 rounded-lg border border-white/30 bg-transparent px-2 py-2">
                 <button type="button" class="guest-button guest-decrement rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="adults">−</button>
@@ -103,7 +151,7 @@
                 <input id="adults-input" name="adults" type="hidden" value="1" />
               </div>
             </div>
-            <div class="w-full sm:w-auto min-w-[120px]">
+            <div class="w-full lg:min-w-[120px] min-w-0">
               <label  class="text-xs uppercase text-white font-semibold block mb-1">Children</label>
               <div class="flex items-center gap-1 rounded-lg border border-white/30 bg-transparent px-2 py-2">
                 <button type="button" class="guest-button guest-decrement rounded-full bg-white/20 text-white w-7 h-7 flex items-center justify-center text-sm" data-target="children">−</button>
@@ -112,7 +160,7 @@
                 <input id="children-input" name="children" type="hidden" value="0" />
               </div>
             </div>
-            <div class="w-full sm:w-auto flex-1 min-w-[160px]">
+            <div class="w-full col-span-2 lg:flex-1 lg:min-w-[160px] min-w-0">
               <label  class="text-xs uppercase text-white font-semibold block mb-1">Room</label>
               <select name="room_type" required class="w-full px-3 py-2 rounded-lg bg-white text-neutral-900 text-sm" style="border: none;">
                 {% for room in rooms %}
@@ -120,7 +168,7 @@
                 {% endfor %}
               </select>
             </div>
-           <div class="flex flex-col items-start gap-3 md:gap-4 w-full sm:w-auto">
+           <div class="flex flex-col items-start gap-3 md:gap-4 w-full col-span-2 sm:flex-row sm:items-center sm:justify-between">
               <button id="search-button" type="button" aria-disabled="true" class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold opacity-50 cursor-not-allowed">Book Now!</button>
               <div id="validation-message" class="text-sm text-rose-300 min-h-[1.25rem]"></div>
             </div>
@@ -128,466 +176,581 @@
       </div>
     </section>
 
-    <section id="rooms" class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="rounded-[40px] border border-slate-200 bg-transparent shadow-none p-4 sm:p-8">
-          <div class="text-center mb-8">
-            <h2 class="text-3xl font-serif" >Accommodation</h2>
-            <p class="text-neutral-600 mt-2">Comfort and style in every room.</p>
+   <section id="rooms" class="py-20 w-full items-center max-w-none px-0">
+  <div class="w-full">
+    <div class="bg-transparent p-0">
+      <div class="text-center mb-8 px-6">
+        <div class="max-w-2xl mx-auto text-left md:text-center mb-10 md:mb-14">
+           <span class="text-amber-700 tracking-[0.25em] md:tracking-[0.35em] uppercase text-[8px] md:text-[10px] font-extrabold block mb-1">
+    Luxury Living
+</span>
+
+<h3 class="font-serif text-2xl sm:text-3xl md:text-4xl text-slate-900 font-bold tracking-tight leading-tight">
+    Our Elite <span class="text-amber-700 font-normal italic font-serif">Suites</span>
+</h3>
+
+            
+            <div class="flex items-center justify-start md:justify-center gap-2.5 mt-3">
+                <div class="w-12 h-[1px] bg-amber-600/60"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-slate-900"></div>
+                <div class="w-12 h-[1px] bg-amber-600/60"></div>
+            </div>
+        </div>
+      </div>
+      <div class="w-full overflow-x-auto pb-6 custom-scroll">
+  <div class="flex flex-nowrap justify-start md:justify-center gap-6 px-4 sm:px-6" data-slider-name="accommodation">
+    {% for room in rooms %}
+    <article class="room-card glass-card rounded-none overflow-hidden hover:-translate-y-2 transition-transform duration-300 w-[280px] sm:w-[340px] md:w-[350px] flex-shrink-0 border border-slate-200">
+      <div class="relative overflow-hidden rounded-none">
+        <img src="{{ src_for(room.img, 800) }}" srcset="{{ srcset_for(room.img) }}" alt="{{ room.name }}" class="w-full h-48 sm:h-56 object-cover rounded-none">
+        <div class="absolute top-4 right-4 bg-amber-600 text-white px-3 py-2 rounded-none text-sm font-semibold room-price-badge">₹{{ room.price }}</div>
+      </div>
+      <div class="p-5 flex flex-col justify-between gap-4 bg-white">
+        <div class="room-text-area">
+          <h3 class="font-serif text-lg sm:text-xl mb-2">{{ room.name }}</h3>
+          <p class="text-xs sm:text-sm text-neutral-600 mb-3 line-clamp-2">{{ room.description }}</p>
+          <div class="grid gap-2 text-xs sm:text-sm text-neutral-500 mb-4 grid-cols-2">
+            <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.area }}</div>
+            <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.guests }} Guests</div>
           </div>
-          <div class="horizontal-card-slider-wrapper reveal-hidden">
-            <div class="horizontal-card-slider accommodation-slider px-4 sm:px-6" data-slider-name="accommodation">
-              {% for room in rooms %}
-              <article class="room-card glass-card rounded-[40px] overflow-hidden hover:-translate-y-2 transition-transform duration-300">
-                <div class="relative overflow-hidden">
-                  <img src="{{ src_for(room.img,800) }}" srcset="{{ srcset_for(room.img) }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="{{ room.name }}" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x560?text=Room+Image+Unavailable';">
-                <div class="absolute top-4 right-4 bg-amber-600 text-white px-3 py-2 rounded-md text-sm font-semibold room-price-badge">₹{{ room.price }}</div>
-              </div>
-              <div class="p-5 flex flex-col justify-between gap-4">
-                <div class="room-text-area">
-                  <h3 class="font-serif text-xl mb-2">{{ room.name }}</h3>
-                  <p class="text-sm text-neutral-600 mb-3">{{ room.description }}</p>
-                  <div class="grid gap-2 text-sm text-neutral-500 mb-4 sm:grid-cols-2">
-                    <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.area }}</div>
-                    <div class="flex items-center gap-2"><span class="text-amber-600">•</span>{{ room.guests }} Guests</div>
-                  </div>
-                </div>
-                <div class="room-card-details">
-                  <div class="flex items-center gap-4 w-full">
-                    <a href="/room-details?slug={{ room.slug }}" class="room-details-cta inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">More details</a>
-                    <a href="{{ booking_link }}?room={{ room.slug }}" class="book-now-btn inline-flex items-center gap-2 px-3 py-2 text-sm font-semibold">Book now</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            {% endfor %}
+        </div>
+        <div class="room-card-details">
+          <div class="flex items-center gap-3 w-full justify-between">
+            <a href="/room-details?slug={{ room.slug }}" class="inline-flex items-center justify-center text-center gap-1 rounded-none bg-amber-600 px-3 py-2 text-xs sm:text-sm font-semibold text-white transition hover:bg-amber-300 flex-1">More details</a>
+            <a href="{{ booking_link }}?room={{ room.slug }}" class="inline-flex items-center justify-center text-center gap-1 rounded-none border border-slate-900 px-3 py-2 text-xs sm:text-sm font-semibold text-slate-900 transition hover:bg-slate-100 flex-1">Book now</a>
           </div>
         </div>
       </div>
-    </section>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+</div>
 
-    <section id="partners" class="py-16 bg-slate-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-8 md:p-10">
-          <div class="max-w-2xl mx-auto text-center">
-            <h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">Our partners</h3>
-            <p class="mt-3 text-sm md:text-base text-slate-500">Trusted by 25,000+ world-class brands and organizations of all sizes.</p>
-          </div>
+    </div>
+  </div>
+</section>
 
-          <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-12">
-            <div class="flex items-center justify-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg" alt="Booking.com" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/booking.svg';" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/expedia.svg" alt="Expedia" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/d/df/Expedia_Logo.svg';} else {this.onerror=null;}" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/agoda-1.svg" alt="Agoda" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/c/ca/Agoda_logo.svg';} else {this.onerror=null;}" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/airbnb.svg';" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hotelsdotcom.svg" alt="Hotels.com" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Hotels.com_Logo_2023.svg';} else {this.onerror=null;}" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/tripadvisor.svg" alt="TripAdvisor" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/0/02/Tripadvisor_Logo.svg';} else {this.onerror=null;}" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/trivago.svg" alt="Trivago" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Trivago_logo.svg';} else {this.onerror=null;}" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-9 md:h-10 w-auto object-contain grayscale transition duration-300 ease-out hover:grayscale-0 partner-logo" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="about" class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">About AVYUKT VIEW</p>
-            <h2 class="text-4xl font-serif mb-4">{{ about_us.title }}</h2>
-            <p class="text-lg font-semibold text-neutral-600 mb-6">{{ about_us.tagline }}</p>
-            <p class="text-neutral-700 mb-6 leading-relaxed">{{ about_us.description }}</p>
-            <p class="text-neutral-700 mb-8 leading-relaxed italic">{{ about_us.mission }}</p>
-          </div>
-            <div class="overflow-hidden rounded-[32px] shadow-2xl">
-            <img src="{{ src_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_505afd41_photo-1522708323590-d24dbb6b0267.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel lounge" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/900x420?text=Hotel+Image+Coming+Soon';" />
-          </div>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {% for highlight in about_us.highlights %}
-          <article class="glass-card rounded-3xl p-6 shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-xl font-bold">✓</div>
-            <h4 class="text-lg font-semibold mb-2">{{ highlight.title }}</h4>
-            <p class="text-neutral-600 text-sm">{{ highlight.description }}</p>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="py-20 bg-slate-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <h3 class="text-4xl font-serif mb-4">Modern Hotel Experiences</h3>
-          <p class="text-neutral-600 max-w-3xl mx-auto">Enjoy a seamless blend of stylish rooms, signature dining, and premium event hospitality.</p>
-        </div>
-
-        <div class="grid gap-8 md:grid-cols-3">
-          <!-- Luxurious Rooms Card -->
-          <article class="services-card glass-card rounded-[28px] overflow-hidden shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="relative overflow-hidden h-40">
-              <img src="{{ src_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg', 800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Luxurious room" class="w-full object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/900x560?text=Room+Unavailable';">
-            </div>
-            <div class="p-8">
-              <p class="uppercase tracking-[0.28em] text-xs text-amber-600 font-semibold mb-2">Luxurious room</p>
-              <h4 class="text-2xl font-semibold mb-2">Rooms</h4>
-              <h5 class="text-lg font-semibold text-neutral-800 mb-3">Stylish Guest Rooms</h5>
-              <p class="text-neutral-600 mb-6">Relax in thoughtfully designed guest rooms with premium amenities, modern comfort, and sleek style.</p>
-              <a href="/rooms" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700">Explore rooms →</a>
-            </div>
-          </article>
-
-          <!-- Restaurant Card -->
-          <article class="services-card glass-card rounded-[28px] overflow-hidden shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="relative overflow-hidden h-40">
-              <img src="{{ src_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Restaurant" class="w-full object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/900x560?text=Restaurant+Unavailable';">
-            </div>
-            <div class="p-8">
-              <p class="uppercase tracking-[0.28em] text-xs text-amber-600 font-semibold mb-2">Restaurant</p>
-              <h4 class="text-2xl font-semibold mb-2">Restaurant</h4>
-              <h5 class="text-lg font-semibold text-neutral-800 mb-3">Elevated Dining</h5>
-              <p class="text-neutral-600 mb-6">Enjoy premium cuisine and bar experiences crafted for every mood, from day to evening.</p>
-              <a href="#booking" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700">Discover dining →</a>
-            </div>
-          </article>
-
-          <!-- Events Hall Card -->
-          <article class="services-card glass-card rounded-[28px] overflow-hidden shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="relative overflow-hidden h-40">
-              <img src="{{ src_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Event hall" class="w-full object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/900x560?text=Events+Unavailable';">
-            </div>
-            <div class="p-8">
-              <p class="uppercase tracking-[0.28em] text-xs text-amber-600 font-semibold mb-2">Event hall</p>
-              <h4 class="text-2xl font-semibold mb-2">Events</h4>
-              <h5 class="text-lg font-semibold text-neutral-800 mb-3">Grand Events</h5>
-              <p class="text-neutral-600 mb-6">Host weddings and meetings with flexible venues, modern styling, and attentive planning support.</p>
-              <a href="#booking" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700">Plan events →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="featured-experiences" class="py-20 bg-slate-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10">
-          <p  class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Featured Experiences</p>
-          <h3 class="text-3xl font-serif">Uplifted Page Features with Unique Imagery</h3>
-          <p  class="text-neutral-600 max-w-2xl mx-auto mt-3">Each feature below uses its own image, bold styling, and visual dynamics to make the page feel more premium.</p>
-        </div>
-        <div class="horizontal-card-slider-wrapper reveal-hidden">
-          <div class="horizontal-card-slider" data-slider-name="featured-experiences">
-            <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
-              <img src="{{ src_for('/static/images/optimized/opt_b263daf1_photo-1507525428034-b723cf961d3e.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_b263daf1_photo-1507525428034-b723cf961d3e.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Private pool retreat" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="p-6">
-                <div class="feature-card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Private escape</p>
-                <h4 class="text-2xl font-semibold mb-3">Private pool retreats</h4>
-                <p class="text-neutral-600">A distinct experience for guests seeking premium privacy and scenic waterside lounging.</p>
-                <a href="#booking" class="mt-6 inline-flex items-center gap-2 text-amber-600 font-semibold">Learn more</a>
-              </div>
-            </article>
-            <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
-              <img src="{{ src_for('/static/images/optimized/opt_c9d85b09_photo-1512917774080-9991f1c4c750.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_c9d85b09_photo-1512917774080-9991f1c4c750.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="City culture stay" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="p-6">
-                <div class="feature-card-icon"><i class="fa-solid fa-city"></i></div>
-                <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">City culture</p>
-                <h4 class="text-2xl font-semibold mb-3">Sophisticated urban stays</h4>
-                <p class="text-neutral-600">Explore curated city escapes with modern interiors, local flavour, and effortless elegance.</p>
-                <a href="#booking" class="mt-6 inline-flex items-center gap-2 text-amber-600 font-semibold">Learn more</a>
-              </div>
-            </article>
-            <article class="group glass-card visual-card rounded-3xl overflow-hidden shadow-sm">
-              <img src="{{ src_for('/static/images/optimized/opt_3c501f0f_photo-1484154218962-a197022b5858.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_3c501f0f_photo-1484154218962-a197022b5858.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Wellness sanctuary" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="p-6">
-                <div class="feature-card-icon"><i class="fa-solid fa-spa"></i></div>
-                <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Wellness journey</p>
-                <h4 class="text-2xl font-semibold mb-3">Spa & wellness journeys</h4>
-                <p class="text-neutral-600">Refresh body and mind with premium spa rituals, curated treatments, and tranquil lounge spaces.</p>
-                <a href="#booking" class="mt-6 inline-flex items-center gap-2 text-amber-600 font-semibold">Learn more</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="discover" class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10">
-          <h3 class="text-3xl font-serif">Discover More</h3>
-          <p class="text-neutral-600">Experience iconic rooms, dining, and curated moments designed for memorable stays.</p>
-        </div>
-        <div class="horizontal-card-slider-wrapper reveal-hidden">
-          <div class="horizontal-card-slider" data-slider-name="discover-more">
-            <article class="group glass-card visual-card overflow-hidden rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-2">
-              <img src="{{ src_for('/static/images/optimized/opt_09a59c3e_photo-1542314831-068cd1dbfeeb.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_09a59c3e_photo-1542314831-068cd1dbfeeb.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Luxury suite" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="p-6">
-                <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Discover more</p>
-                <h4 class="text-xl font-semibold mb-3">Signature Suites</h4>
-                <p class="text-neutral-600">Indulge in spacious suites with luxurious amenities, private seating, and panoramic views.</p>
-              </div>
-            </article>
-            <article class="group glass-card visual-card overflow-hidden rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-2">
-              <img src="{{ src_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Fine dining" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="p-6">
-                <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Featured Facilities</p>
-                <h4 class="text-xl font-semibold mb-3">Rooftop Dining</h4>
-                <p class="text-neutral-600">Savor signature meals in a stunning rooftop setting with city skyline views.</p>
-              </div>
-            </article>
-            <article class="group glass-card visual-card overflow-hidden rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-2">
-              <img src="{{ src_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)50vw, 33vw" alt="Spa and wellness" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="p-6">
-                <p class="text-sm uppercase tracking-[0.2em] text-amber-600 mb-3">Client Feedback</p>
-                <h4 class="text-xl font-semibold mb-3">Spa & Wellness</h4>
-                <p class="text-neutral-600">Relax in our wellness sanctuary with bespoke treatments and serene spaces.</p>
-              </div>
-            </article>
-          </div>
+   <section id="partners" class="py-14 md:py-20 bg-white relative overflow-hidden">
     
-        </div>
-      </div>
-    </section>
+    <div class="absolute top-0 left-0 right-0 h-[1px] bg-slate-200/60"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-slate-200/60"></div>
 
-    <section id="offers" class="py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-start">
-        <div class="space-y-6">
-          <h3 class="text-3xl font-serif" >Curated Packages for Every Stay</h3>
-          <p class="text-neutral-600" >Discover seasonal packages designed for romantic getaways, family retreats, and business travel.</p>
-          <div class="group relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl transition-transform duration-500 hover:-translate-y-1 hover:shadow-2xl">
-            <img src="{{ src_for('/static/images/optimized/opt_813f0942_photo-1505693416388-ac5ce068fe85.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_813f0942_photo-1505693416388-ac5ce068fe85.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Curated stay package" class="w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1200x800?text=Package+Image+Unavailable';">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent opacity-90"></div>
-            <div class="absolute bottom-6 left-6 text-white max-w-xs">
-              <p class="uppercase tracking-[0.35em] text-sm text-amber-300 mb-2">Exclusive stay</p>
-              <h4 class="text-2xl font-semibold">Packages tailored for your journey.</h4>
-              <p class="mt-2 text-sm text-white/85">Enjoy thoughtful extras, flexible dates, and exceptional value across every booking.</p>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-2xl mx-auto text-left md:text-center mb-10 md:mb-14">
+            <span class="text-amber-700 tracking-[0.25em] md:tracking-[0.35em] uppercase text-[8px] md:text-[10px] font-extrabold block mb-1">
+                Global Network
+            </span>
+            
+            <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl text-slate-900 font-bold tracking-tight leading-tight">
+                Our Elite <span class="text-amber-700 font-normal italic font-serif">Partners</span>
+            </h3>
+            
+            <div class="flex items-center justify-start md:justify-center gap-2.5 mt-3">
+                <div class="w-12 h-[1px] bg-amber-600/60"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-slate-900"></div>
+                <div class="w-12 h-[1px] bg-amber-600/60"></div>
             </div>
-          </div>
         </div>
-        <div class="grid gap-4">
-          {% for offer in offers %}
-          <article class="glass-card visual-card rounded-3xl p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl reveal-hidden">
-            <h4 class="font-semibold text-xl mb-2">{{ offer.title }}</h4>
-            <p class="text-neutral-600 mb-4">{{ offer.description }}</p>
-            <a href="#booking" class="inline-flex items-center gap-2 text-amber-600 font-semibold">{{ offer.cta }}</a>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
 
-    <section id="amenities" class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10">
-          <h3 class="text-3xl font-serif">Featured Facilities</h3>
-          <p class="text-neutral-600">Indulge in World-Class Comfort and Convenience.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-8 md:gap-x-12 md:gap-y-12 items-center">
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg" alt="Booking.com" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/booking.svg';" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/expedia.svg" alt="Expedia" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/d/df/Expedia_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/agoda-1.svg" alt="Agoda" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/c/ca/Agoda_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.worldvectorlogo.com/logos/airbnb.svg';" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hotelsdotcom.svg" alt="Hotels.com" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Hotels.com_Logo_2023.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/tripadvisor.svg" alt="TripAdvisor" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/0/02/Tripadvisor_Logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="https://cdn.worldvectorlogo.com/logos/trivago.svg" alt="Trivago" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" onerror="if(this.src.indexOf('upload.wikimedia.org')===-1){this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Trivago_logo.svg';} else {this.onerror=null;}" />
+            </div>
+            
+            <div class="flex items-center justify-start md:justify-center p-2 group cursor-pointer">
+                <img src="/static/images/makemytrip-logo.svg" alt="MakeMyTrip" class="h-7 sm:h-8 w-auto object-contain opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-102" loading="lazy" />
+            </div>
+            
         </div>
-        <div class="grid gap-6 lg:grid-cols-[1fr_0.95fr] items-center mb-10">
-          <div class="overflow-hidden rounded-[32px] border border-slate-200 shadow-lg">
-            <img src="/static/images/optimized/opt_19c1ebcd_photo-1512917774080-9991f1c4c750.jpg" alt="Featured Facilities" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x800?text=Facilities+Image+Unavailable';">
-          </div>
-          <div class="space-y-4">
-            <p class="text-sm uppercase tracking-[0.28em] text-amber-600">Featured Facilities</p>
-            <h4 class="text-3xl font-serif">Explore our signature spaces</h4>
-            <p class="text-neutral-600">From gourmet dining to wellness escapes, every facility is designed for comfort, connection, and memorable stays.</p>
-          </div>
+    </div>
+</section>
+
+   <section id="about" class="py-12 md:py-24 bg-white border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        
+        <div class="space-y-4 md:space-y-6 text-left">
+            <span class="text-amber-600 tracking-widest uppercase text-[10px] md:text-xs font-bold block">
+                <i class="fa-solid fa-history mr-1 text-[9px] md:text-[11px]"></i> Our Legacy
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-900 leading-tight font-semibold">
+                Crafting Masterpieces in <span class="text-amber-600 font-normal italic">Absolute Ambiance</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-500"></div>
+            
+            <div class="space-y-3 md:space-y-4 text-slate-600 font-normal md:font-light text-xs sm:text-sm md:text-base leading-relaxed">
+                <p>
+                    At AVYUKT VIEW Dining & Bar, we blend gourmet molecular mixology with comfort. Every plate showcases fresh organic accents balanced with international culinary insights, explicitly prepared for the refined palate.
+                </p>
+                <p>
+                    Whether you are gathering next to our interactive counter for a handcrafted old-fashioned or dining on our sweeping rooftops, we transform every service entry into luxury hospitality.
+                </p>
+            </div>
         </div>
-        <div class="horizontal-card-slider-wrapper reveal-hidden">
-          <div class="horizontal-card-slider" data-slider-name="amenities">
-            {% for amenity in amenities %}
-            <article class="glass-card visual-card rounded-3xl p-6 shadow-sm">
-              <div class="amenity-icon mb-4">
-                <i class="{{ amenity.icon }}"></i>
-              </div>
-              <h4 class="font-semibold mb-2">{{ amenity.title }}</h4>
-              <p class="text-sm text-neutral-600">{{ amenity.description }}</p>
+        
+        <div class="w-[85%] sm:w-[75%] md:w-full mx-auto grid grid-cols-2 gap-3 md:gap-4 pt-4 md:pt-0">
+            <div class="overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-md h-36 sm:h-44 md:h-56">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" 
+                     class="hover:scale-105 transition duration-500 w-full h-full object-cover" 
+                     alt="Interior lounge">
+            </div>
+            
+            <div class="overflow-hidden rounded-xl md:rounded-2xl border border-slate-100 shadow-md mt-4 md:mt-8 h-36 sm:h-44 md:h-56">
+                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" 
+                     class="hover:scale-105 transition duration-500 w-full h-full object-cover" 
+                     alt="Platter preparation">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+   <section id="services" class="py-12 md:py-20 bg-white border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
+            <span class="text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1">
+                <i class="fa-solid fa-hotel mr-1"></i> Our Signature Hospitality
+            </span>
+            <h2 class="font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight">
+                An Elegant <span class="text-amber-700 font-normal italic">Sanctuary of Luxury</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
+            <p class="text-xs sm:text-sm text-gray-700 max-w-lg md:mx-auto font-normal">
+                From curated epicurean journeys to refined residential comfort, experience the pinnacle of bespoke hospitality.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            
+            <!-- Hotel Component -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-bed text-[14px]"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Luxury Accommodations</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">Designer suites offering panoramic urban vistas, smart automation, and serene comfort.</p>
+                </div>
+                <a href="/rooms" class="text-[8px] md:text-[10px] font-bold text-amber-700 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">View Suites →</a>
+            </div>
+
+            <!-- Dining Component -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-utensils text-[14px]"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Gourmet Dining</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">A refined culinary theatre featuring global flavors and locally sourced seasonal ingredients.</p>
+                </div>
+                <span class="text-[8px] md:text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">Open Daily: 8am - 11pm</span>
+            </div>
+
+            <!-- Bar Component -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-martini-glass-citrus text-[14px]"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Skyline Bar & Lounge</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">Craft cocktails, premium spirits, and an extensive reserve list in a sophisticated setting.</p>
+                </div>
+                <span class="text-[8px] md:text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">Evening Socials</span>
+            </div>
+
+            <!-- Event Component -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
+                <div class="space-y-1 md:space-y-3">
+                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-champagne-glasses text-[14px]"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Events & Celebrations</h3>
+                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">Flexible spaces and bespoke planning for weddings, elite corporate meets, and private gala.</p>
+                </div>
+                <a href="/contact" class="text-[8px] md:text-[10px] font-bold text-amber-700 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 hover:underline shrink-0">Book Venue →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <section id="discover" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Header -->
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-12 md:mb-16">
+            <span class="text-amber-700 tracking-widest uppercase text-[10px] md:text-xs font-bold block mb-2">
+                Beyond the Stay
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
+                Discover More, <span class="text-amber-700 font-normal italic">Experience More</span>
+            </h2>
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
+        </div>
+
+        <!-- 4-Column Grid (Consistent with Offers section) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            
+            <!-- Card 1: Local Tours -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
+                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1540541338287-417002076214?w=400&h=300&fit=crop" alt="Tours" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">Local Tours</h3>
+                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Explore hidden gems and iconic landmarks with our curated city guides.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
+            </div>
+
+            <!-- Card 2: Cultural Heritage -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
+                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&h=300&fit=crop" alt="Heritage" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">Cultural Sites</h3>
+                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Visit historic monuments and galleries just minutes from our doorstep.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
+            </div>
+
+            <!-- Card 3: Dining Out -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
+                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&fit=crop" alt="Dining" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">City Dining</h3>
+                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Experience the best local flavors at our neighborhood's premier restaurants.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
+            </div>
+
+            <!-- Card 4: Artisan Markets -->
+            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
+                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1533900298647-6b60e447936a?w=400&h=300&fit=crop" alt="Markets" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">Artisan Markets</h3>
+                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Shop for handcrafted goods and authentic local treasures nearby.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="offers" class="py-12 md:py-20 bg-white border-t border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
+            <!-- Added the 'header-hover' class for the hover color change effect -->
+            <span class="header-hover text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1 transition-colors duration-300">
+                <i class="fa-solid fa-tags mr-1"></i> Seasonal Luxuries & Privileges
+            </span>
+            <h2 class="header-hover font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight transition-colors duration-300">
+                Exclusive Packages & <span class="text-amber-700 font-normal italic">Limited Offers</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            <!-- Card: Room Upgrade -->
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
+                <div class="space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-800"><i class="fa-solid fa-bed text-xs"></i></div>
+                    <h3 class="font-serif font-bold text-gray-950 text-lg">Room Upgrade</h3>
+                    <p class="text-xs text-gray-800">Enjoy a complimentary upgrade to our Executive Suite on mid-week stays.</p>
+                </div>
+            </div>
+            <!-- Card: Dining Discount -->
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
+                <div class="space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-orange-800"><i class="fa-solid fa-utensils text-xs"></i></div>
+                    <h3 class="font-serif font-bold text-gray-950 text-lg">Gourmet Credit</h3>
+                    <p class="text-xs text-gray-800">Receive 20% credit on all dining orders at our signature restaurant.</p>
+                </div>
+            </div>
+            <!-- Card: Bar Social -->
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
+                <div class="space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-800"><i class="fa-solid fa-martini-glass text-xs"></i></div>
+                    <h3 class="font-serif font-bold text-gray-950 text-lg">Bar Social</h3>
+                    <p class="text-xs text-gray-800">Buy one, get one on classic cocktails every evening from 6pm to 8pm.</p>
+                </div>
+            </div>
+            <!-- Card: Stay & Dine -->
+            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
+                <div class="space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-800"><i class="fa-solid fa-champagne-glasses text-xs"></i></div>
+                    <h3 class="font-serif font-bold text-gray-950 text-lg">Stay & Dine</h3>
+                    <p class="text-xs text-gray-800">Book any room and receive a breakfast and dinner package included.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="amenities" class="py-12 md:py-20 bg-white border-t border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <!-- Section Header -->
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
+            <span class="text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1">
+                <i class="fa-solid fa-star mr-1"></i> Our Signature Spaces
+            </span>
+            <h2 class="font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight">
+                Featured <span class="text-amber-700 font-normal italic">Facilities</span>
+            </h2>
+            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
+        </div>
+
+        <!-- Amenities Row (No slider, one row, scrollable on mobile) -->
+        <!-- Amenities Row: Added 'no-scrollbar' class to hide the bar -->
+<div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-4 no-scrollbar">
+    {% for amenity in amenities %}
+    <article class="group min-w-[220px] md:min-w-[280px] bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
+        <div class="space-y-2">
+            <!-- Amenity Icon -->
+            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-800">
+                <i class="{{ amenity.icon }} text-xs"></i>
+            </div>
+            <!-- Title & Description -->
+            <h3 class="font-serif font-bold text-gray-950 text-lg">{{ amenity.title }}</h3>
+            <p class="text-xs text-gray-800">{{ amenity.description }}</p>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+        
+    </div>
+</section>
+   
+<section id="hotel-experiences" class="py-16 md:py-24 bg-white border-t border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <!-- Header -->
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-12 md:mb-16">
+            <span class="text-amber-700 tracking-widest uppercase text-[10px] md:text-xs font-bold block mb-2">
+                Curated Stays
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
+                Modern Hotel <span class="text-amber-700 font-normal italic">Experiences</span>
+            </h2>
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
+        </div>
+
+        <!-- Single Row Container (No Wrapping) -->
+        <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-6 no-scrollbar">
+            
+            <!-- Room Card -->
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                <div class="relative overflow-hidden aspect-[16/10]">
+                    <img src="/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg" alt="Rooms" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-amber-700 font-bold mb-2">Rooms</p>
+                        <h4 class="text-xl font-serif font-bold text-gray-950 mb-2">Stylish Guest Rooms</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">Relax in thoughtfully designed rooms with premium comfort and sleek style.</p>
+                    </div>
+                    <a href="#booking" class="mt-4 inline-flex items-center gap-1 text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">Explore →</a>
+                </div>
+            </article>
+
+            <!-- Dining Card -->
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                <div class="relative overflow-hidden aspect-[16/10]">
+                    <img src="/static/images/optimized/opt_f14943c4_photo-1517248135467-4c7edcad34c4.jpg" alt="Dining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-amber-700 font-bold mb-2">Restaurant</p>
+                        <h4 class="text-xl font-serif font-bold text-gray-950 mb-2">Elevated Dining</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">Premium cuisine and bar experiences crafted for every mood, day or evening.</p>
+                    </div>
+                    <a href="#booking" class="mt-4 inline-flex items-center gap-1 text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">Discover →</a>
+                </div>
+            </article>
+
+            <!-- Events Card -->
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                <div class="relative overflow-hidden aspect-[16/10]">
+                    <img src="/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg" alt="Events" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-amber-700 font-bold mb-2">Events</p>
+                        <h4 class="text-xl font-serif font-bold text-gray-950 mb-2">Grand Events</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">Host weddings and meetings with flexible venues and attentive planning.</p>
+                    </div>
+                    <a href="#booking" class="mt-4 inline-flex items-center gap-1 text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">Plan →</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+    <section id="values" class="py-16 md:py-24 bg-white border-t border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <!-- Header -->
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-16">
+            <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3">
+                The AVYUKT Promise
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
+                Designed for <span class="text-amber-700 font-normal italic">Refined Living</span>
+            </h2>
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
+        </div>
+
+        <!-- Redesigned Main Feature Section -->
+        <div class="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center mb-20">
+            <!-- Left: Feature Image -->
+            <div class="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80" alt="Refined Living" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/70 to-transparent w-full">
+                    <h4 class="text-white text-xl font-serif font-bold">Uncompromising Quality</h4>
+                </div>
+            </div>
+            
+            <!-- Right: Content -->
+            <div class="space-y-6">
+                <h3 class="text-3xl font-serif font-bold text-gray-950">Where Every Detail Finds Meaning</h3>
+                <p class="text-gray-600 leading-relaxed text-lg">At AVYUKT VIEW, we believe that true luxury is found in the subtle balance between comfort and elegance. Our promise is to transform your stay into an effortless journey of rejuvenation and discovery.</p>
+                <div class="pt-4">
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-800 font-medium"><i class="fa-solid fa-check text-amber-700"></i> Bespoke Concierge Services</li>
+                        <li class="flex items-center gap-3 text-gray-800 font-medium"><i class="fa-solid fa-check text-amber-700"></i> Sustainable Luxury Practices</li>
+                        <li class="flex items-center gap-3 text-gray-800 font-medium"><i class="fa-solid fa-check text-amber-700"></i> Tailored Guest Experiences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Square Cards Grid (Values) -->
+        <div class="flex flex-nowrap overflow-x-auto gap-6 pb-6 no-scrollbar">
+            
+            <!-- Card 1 -->
+            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
+                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Wellness Focus</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Prioritizing your mental and physical restoration.</p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
+                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Seamless Tech</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Modern connectivity integrated into every corner.</p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
+                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Culinary Art</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Fresh, locally sourced ingredients in every dish.</p>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
+                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Total Privacy</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Your sanctuary, guarded and secure 24/7.</p>
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+    <section id="testimonials" class="py-16 md:py-24 bg-slate-50 border-t border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Header -->
+        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-16">
+            <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3">Guest Voices</span>
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">Stories of <span class="text-amber-700 font-normal italic">Excellence</span></h2>
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
+        </div>
+
+        <!-- Horizontal Row -->
+        <div class="flex flex-nowrap overflow-x-auto gap-6 pb-8 no-scrollbar">
+            {% for item in testimonials %}
+            <article class="min-w-[320px] md:min-w-[400px] bg-white border border-slate-200 rounded-[2rem] p-8 flex flex-col hover:shadow-xl transition-all duration-300">
+                <div class="text-amber-400 text-2xl mb-4">★★★★★</div>
+                <p class="text-gray-600 italic leading-relaxed mb-8 flex-1">"{{ item.quote }}"</p>
+                <div class="flex items-center gap-4">
+                    <img src="{{ item.image }}" alt="{{ item.author }}" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h4 class="font-bold text-gray-950 text-sm">{{ item.author }}</h4>
+                        <p class="text-[10px] uppercase tracking-wider text-amber-700 font-bold">{{ item.location }}</p>
+                    </div>
+                </div>
             </article>
             {% endfor %}
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Luxury Living Hero Section -->
-    <section class="relative h-[60vh] md:h-[70vh] lg:h-[78vh] grid items-center hero-section overflow-hidden">
-      <img src="/static/images/optimized/opt_bb02fee9_photo-1566073771259-6a8506099945.jpg" alt="Luxury Living" class="absolute inset-0 w-full h-full object-cover brightness-60">
-      <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
-      <div class="relative z-20 max-w-6xl mx-auto px-6 w-full">
-        <div class="max-w-2xl">
-          <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-3">Luxury Living, Surrounded by Nature's Beauty</h2>
-           <p class="text-sm md:text-base text-white/90 mb-4 max-w-xl">Experience luxury, comfort, and world-class service designed for your perfect stay.</p>
-          <div class="flex flex-col sm:flex-row gap-3 mb-6">
-            <a href="#booking" class="crystal-btn px-8 py-3 text-sm md:text-base">Discover more</a>
-          </div>
-          <p class="text-lg md:text-xl text-white font-semibold mb-2">Your Journey to Relaxation Starts Here.</p>
-          <a href="#booking" class="inline-flex items-center gap-2 text-sm md:text-base bg-white/15 text-white px-6 py-3 rounded-full border border-white/30 hover:bg-white/25 transition">Make an Appointment!</a>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section id="hotel-experiences" class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10">
-          <h3 class="text-3xl font-serif">Modern Hotel Experiences</h3>
-          <p class="text-neutral-600">Enjoy a seamless blend of stylish rooms, signature dining, and premium event hospitality.</p>
-        </div>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
-          <article class="glass-card rounded-3xl overflow-hidden shadow-sm group flex flex-col h-full">
-            <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg" alt="Luxurious room" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Room+Image+Unavailable';">
+<section id="faq" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+        
+        <!-- Left: Image & Text -->
+        <div class="space-y-6">
+            <h3 class="text-3xl font-serif font-bold text-gray-950">Guest Information <br><span class="text-amber-700 font-normal italic">& FAQ</span></h3>
+            <p class="text-gray-600">Answers to common questions regarding stays, dining, and our amenities.</p>
+            <div class="rounded-[2rem] overflow-hidden border border-slate-200 shadow-lg">
+                <img src="/static/images/optimized/opt_19c1ebcd_photo-1512917774080-9991f1c4c750.jpg" alt="Guest Support" class="w-full h-full object-cover">
             </div>
-            <div class="p-8 flex flex-col justify-between flex-1">
-              <div>
-                <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Rooms</p>
-                <h4 class="text-2xl font-semibold mb-4">Stylish Guest Rooms</h4>
-                <p class="text-neutral-600">Relax in thoughtfully designed guest rooms with premium amenities, modern comfort, and sleek style.</p>
-              </div>
-              <a href="#booking" class="mt-6 inline-flex items-center gap-2 text-amber-600 font-semibold">Explore rooms</a>
-            </div>
-          </article>
-          <article class="glass-card rounded-3xl overflow-hidden shadow-sm group flex flex-col h-full">
-            <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="/static/images/optimized/opt_f14943c4_photo-1517248135467-4c7edcad34c4.jpg" alt="Restaurant" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Restaurant+Image+Unavailable';">
-            </div>
-            <div class="p-8 flex flex-col justify-between flex-1">
-              <div>
-                <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Restaurant</p>
-                <h4 class="text-2xl font-semibold mb-4">Elevated Dining</h4>
-                <p class="text-neutral-600">Enjoy premium cuisine and bar experiences crafted for every mood, from day to evening.</p>
-              </div>
-              <a href="#booking" class="mt-6 inline-flex items-center gap-2 text-amber-600 font-semibold">Discover dining</a>
-            </div>
-          </article>
-          <article class="glass-card rounded-3xl overflow-hidden shadow-sm group flex flex-col h-full">
-            <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg" alt="Event hall" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/900x720?text=Event+Image+Unavailable';">
-            </div>
-            <div class="p-8 flex flex-col justify-between flex-1">
-              <div>
-                <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Events</p>
-                <h4 class="text-2xl font-semibold mb-4">Grand Events</h4>
-                <p class="text-neutral-600">Host weddings and meetings with flexible venues, modern styling, and attentive planning support.</p>
-              </div>
-              <a href="#booking" class="mt-6 inline-flex items-center gap-2 text-amber-600 font-semibold">Plan events</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="values" class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <h3 class="text-4xl font-serif mb-4">Our Values</h3>
-          <p class="text-neutral-600 max-w-2xl mx-auto">Experience the AVYUKT VIEW difference with service, comfort, and thoughtful design in every stay.</p>
         </div>
 
-        <div class="grid gap-10 lg:grid-cols-[1fr_1fr] items-stretch mb-12">
-          <div class="relative overflow-hidden rounded-[32px] border border-slate-200 shadow-lg">
-            <img src="{{ src_for('/static/images/optimized/opt_c4e5397d_photo-1494526585095-c41746248156.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_c4e5397d_photo-1494526585095-c41746248156.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Warm hospitality" class="w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x800?text=Hospitality+Image+Unavailable';">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <p class="uppercase tracking-[0.35em] text-xs text-amber-300 mb-2">Core promise</p>
-              <h4 class="text-2xl font-semibold leading-tight">Memorable stays designed around you.</h4>
-            </div>
-          </div>
-
-          <div class="values-feature glass-card rounded-[32px] p-10 shadow-lg flex flex-col justify-between">
-            <div>
-              <p class="uppercase tracking-[0.35em] text-xs text-amber-600 mb-3">Warm Hospitality</p>
-              <h4 class="text-2xl font-semibold mb-4">Comfort Beyond Expectations</h4>
-              <p class="text-neutral-600 leading-relaxed">Every moment at AVYUKT VIEW is crafted to exceed your expectations. From our attentive staff to our thoughtfully designed spaces, we ensure your stay is not just comfortable, but truly memorable.</p>
-            </div>
-          </div>
+        <!-- Right: Accordion -->
+        <div class="space-y-4">
+            {% for item in faq_items %}
+            <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-6 transition-all duration-300 open:border-amber-500/50">
+                <summary class="font-bold text-gray-950 cursor-pointer list-none flex justify-between items-center">
+                    {{ item.question }}
+                    <span class="text-amber-700 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div class="mt-4 text-sm text-gray-600 leading-relaxed border-t border-slate-200 pt-4">
+                    {{ item.answer }}
+                </div>
+            </details>
+            {% endfor %}
         </div>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          <article class="values-card glass-card rounded-[28px] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-lg font-bold">◆</div>
-            <h4 class="font-semibold text-lg mb-3">Indulge in World-Class Comfort and Convenience.</h4>
-            <p class="text-neutral-600 text-sm leading-relaxed">Every detail is designed to make your stay seamless and memorable. From luxurious amenities to personalized service, we prioritize your comfort.</p>
-          </article>
-
-          <article class="values-card glass-card rounded-[28px] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-lg font-bold">◆</div>
-            <h4 class="font-semibold text-lg mb-3">Experience the AVYUKT VIEW Difference: Unparalleled Hospitality.</h4>
-            <p class="text-neutral-600 text-sm leading-relaxed">From arrival to departure, our team delivers thoughtful service at every step. Your satisfaction is our success.</p>
-          </article>
-
-          <article class="values-card glass-card rounded-[28px] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 text-lg font-bold">◆</div>
-            <h4 class="font-semibold text-lg mb-3">Trusted by 25,000+ world-class brands and organizations.</h4>
-            <p class="text-neutral-600 text-sm leading-relaxed">We create inspiring moments for guests, partners, and corporate clients of all sizes, earning trust through excellence.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="py-12 bg-slate-50">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="testimonial-card flex flex-col md:flex-row items-stretch gap-6">
-          <div class="testimonial-content flex-1 rounded-2xl p-8 bg-gradient-to-r from-violet-400 to-fuchsia-400 text-white relative overflow-hidden">
-            <div class="quote-mark text-6xl opacity-20">“</div>
-            <div class="testimonial-quote mt-2 text-lg md:text-xl font-medium">{{ testimonials[0].quote if testimonials|length > 0 else "From the moment we arrived, we were treated like royalty. AVYUKT VIEW's attention to detail and tranquil ambiance are unmatched." }}</div>
-            <div class="testimonial-meta flex items-center gap-4 mt-6">
-              <div class="meta-text">
-                <div class="text-sm opacity-90 font-semibold">{{ testimonials[0].author if testimonials|length > 0 else 'Laura Greene' }}</div>
-                <div class="text-xs opacity-80">{{ testimonials[0].location if testimonials|length > 0 else 'Jakarta' }}</div>
-              </div>
-              <div class="rating ml-auto text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">{{ testimonials[0].rating_display if testimonials|length > 0 else '4.7' }} • Excellent Point</div>
-            </div>
-          </div>
-
-          <div class="testimonial-side w-full md:w-64 flex flex-col items-center justify-center gap-4">
-            <div class="avatar w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
-              <img src="{{ testimonials[0].image if testimonials|length > 0 else '/static/images/avatar-placeholder.png' }}" alt="{{ testimonials[0].author if testimonials|length > 0 else 'Laura Greene' }}" class="w-full h-full object-cover" />
-            </div>
-            <div class="company-badges text-center">
-              <div class="text-sm font-semibold">Top Company</div>
-              <div class="text-xs opacity-80">Client Feedback</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="py-12 bg-white">
-      <div class="max-w-5xl mx-auto px-6 grid gap-8 md:grid-cols-2 items-start">
-        <div class="faq-left">
-          <h3 class="text-2xl font-serif">Guest Information (FAQ)</h3>
-          <p class="text-neutral-600 mt-2">Answers to the most common questions about your stay, dining, and reservations.</p>
-          <div class="mt-4 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
-            <img src="{{ src_for('/static/images/optimized/opt_19c1ebcd_photo-1512917774080-9991f1c4c750.jpg',800) }}" srcset="{{ srcset_for('/static/images/optimized/opt_19c1ebcd_photo-1512917774080-9991f1c4c750.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel service" class="w-full object-cover" onerror="this.src='https://via.placeholder.com/1200x640?text=FAQ+Image+Unavailable';">
-          </div>
-        </div>
-        <div class="faq-right space-y-3">
-          {% for item in faq_items %}
-          <details class="faq-item rounded-xl border border-gray-200 bg-gray-50 p-4">
-            <summary class="font-semibold">{{ item.question }}</summary>
-            <div class="mt-2 text-neutral-600">{{ item.answer }}</div>
-          </details>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
+        
+    </div>
+</section>
 
     <section id="contact" class="pt-16 pb-8 bg-black text-white">
       <div class="max-w-6xl mx-auto px-6">
