@@ -1,67 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body class="antialiased text-neutral-900 bg-gradient-to-b from-white to-gray-50">
-  <header class="bg-black text-white shadow-sm sticky top-0 z-50 site-header">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2 md:px-5 md:py-3 header-inner">
-      <a href="/" class="flex items-center gap-2">
-        {% if logo_image %}
-        <img src="{{ logo_image or '/static/images/avyukt_logo_transparent.png' }}" alt="AVYUKT VIEW" class="h-14 md:h-16 object-contain logo-img nav-logo-img" onerror="this.style.display='none'" />
-        {% else %}
-        <img src="/static/images/avyukt_logo_transparent.png" alt="AVYUKT VIEW" class="h-14 md:h-16 object-contain logo-img nav-logo-img" onerror="this.style.display='none'" />
-        {% endif %}
-      </a>
-
-      <nav class="hidden md:flex items-center gap-5 text-[0.75rem] uppercase tracking-[0.24em]">
-        <a href="/rooms" class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">Rooms</a>
-        <a href="/about"  class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">About Us</a>
-        <a href="/contact"  class="nav-link glass-nav-btn text-white transition hover:text-amber-500 py-2">Contact</a>
-        <div class="relative group">
-          <button type="button" class="nav-link glass-nav-btn flex items-center gap-2 text-white transition hover:text-amber-500 py-2" aria-haspopup="true" aria-expanded="false">
-            MORE
-          </button>
-          <div class="nav-dropdown hidden group-hover:block group-focus-within:block absolute right-0 top-full rounded-3xl border border-white/10 bg-black/95 shadow-xl z-50">
-            <a href="/services" class="text-white hover:bg-white/10">Services</a>
-            <a href="/dining-bar" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Dinning\Bar</a>
-            <a href="/offers" class="text-white hover:bg-white/10">Offers</a>
-            <a href="/pages" class="text-white hover:bg-white/10">FAQ</a>
-            <a href="/gallery" class="text-white hover:bg-white/10">Gallery</a>
-            <a href="/partners" class="text-white hover:bg-white/10">Partners</a>
-          </div>
-        </div>
-      </nav>
-
-      <div class="flex items-center gap-2 md:gap-3">
-        <a href="{{ booking_link }}"  class="book-now-btn px-3 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold">Book Now!</a>
-        <button id="mobile-menu-btn" class="md:hidden p-1.5 text-white" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black">
-      <div class="p-4 flex flex-col gap-3">
-        <a href="/rooms"  class="uppercase text-white hover:text-amber-500">Rooms</a>
-        <a href="/about"  class="uppercase text-white hover:text-amber-500">About Us</a>
-        <a href="/contact"  class="uppercase text-white hover:text-amber-500">Contact</a>
-        <details class="group rounded-3xl bg-white/5 border border-white/10 p-3">
-          <summary class="uppercase text-white hover:text-amber-500 cursor-pointer py-2 px-3">Exprience More</summary>
-          <div class="mt-2 flex flex-col gap-2">
-            <a href="/dining-bar" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Dinning\Bar</a>
-            <a href="/services" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Services</a>
-            <a href="/offers" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Offers</a>
-            <a href="/pages" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">FAQ</a>
-            <a href="/gallery" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Gallery</a>
-            <a href="/partners" class="block rounded-2xl px-4 py-2 text-white hover:bg-white/10">Partners</a>
-          </div>
-        </details>
-      </div>
-    </div>
-  </header>
+﻿{% extends "base.html" %}
+{% block title %}Services | AVYUKT VIEW{% endblock %}
+{% block content %}
 
   <main>
 
@@ -232,7 +171,7 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
 </section>
 
 
-   <section id="partners" class="py-14 md:py-20 bg-white relative overflow-hidden">
+   <section id="partners" class="py-14 md:py-20 bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
     
     <div class="absolute top-0 left-0 right-0 h-[1px] bg-slate-200/60"></div>
     <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-slate-200/60"></div>
@@ -332,81 +271,77 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
     </div>
 </section>
 
-   <section id="services" class="py-12 md:py-20 bg-white border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section id="services" class="py-16 md:py-24 bg-gradient-to-br from-white via-slate-50 to-white border-b border-slate-200/60 overflow-hidden">
+    <div class="pl-4 md:pl-6">
         
-        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
-            <span class="text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 text-left md:text-center mb-12 md:mb-16">
+            <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3">
                 <i class="fa-solid fa-hotel mr-1"></i> Our Signature Hospitality
             </span>
-            <h2 class="font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight">
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
                 An Elegant <span class="text-amber-700 font-normal italic">Sanctuary of Luxury</span>
             </h2>
-            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
-            <p class="text-xs sm:text-sm text-gray-700 max-w-lg md:mx-auto font-normal">
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto mb-6"></div>
+            <p class="text-sm text-gray-600 max-w-lg md:mx-auto font-normal">
                 From curated epicurean journeys to refined residential comfort, experience the pinnacle of bespoke hospitality.
             </p>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+        <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-8 no-scrollbar pr-6 md:pr-12">
             
-            <!-- Hotel Component -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
-                <div class="space-y-1 md:space-y-3">
-                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-bed text-[14px]"></i>
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-bed text-xl"></i>
                     </div>
-                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Luxury Accommodations</h3>
-                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">Designer suites offering panoramic urban vistas, smart automation, and serene comfort.</p>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl leading-tight">Luxury Accommodations</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Designer suites offering panoramic urban vistas, smart automation, and serene comfort.</p>
                 </div>
-                <a href="/rooms" class="text-[8px] md:text-[10px] font-bold text-amber-700 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">View Suites →</a>
-            </div>
+                <a href="/rooms" class="mt-6 text-[10px] font-bold text-amber-700 tracking-wider uppercase block pt-4 border-t border-slate-100 hover:underline">View Suites →</a>
+            </article>
 
-            <!-- Dining Component -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
-                <div class="space-y-1 md:space-y-3">
-                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-utensils text-[14px]"></i>
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-utensils text-xl"></i>
                     </div>
-                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Gourmet Dining</h3>
-                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">A refined culinary theatre featuring global flavors and locally sourced seasonal ingredients.</p>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl leading-tight">Gourmet Dining</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">A refined culinary theatre featuring global flavors and locally sourced seasonal ingredients.</p>
                 </div>
-                <span class="text-[8px] md:text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">Open Daily: 8am - 11pm</span>
-            </div>
+                <span class="mt-6 text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-4 border-t border-slate-100">Open Daily: 8am - 11pm</span>
+            </article>
 
-            <!-- Bar Component -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
-                <div class="space-y-1 md:space-y-3">
-                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-martini-glass-citrus text-[14px]"></i>
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-martini-glass-citrus text-xl"></i>
                     </div>
-                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Skyline Bar & Lounge</h3>
-                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">Craft cocktails, premium spirits, and an extensive reserve list in a sophisticated setting.</p>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl leading-tight">Skyline Bar & Lounge</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Craft cocktails, premium spirits, and an extensive reserve list in a sophisticated setting.</p>
                 </div>
-                <span class="text-[8px] md:text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 shrink-0">Evening Socials</span>
-            </div>
+                <span class="mt-6 text-[10px] font-bold text-amber-700 opacity-75 tracking-wider uppercase block pt-4 border-t border-slate-100">Evening Socials</span>
+            </article>
 
-            <!-- Event Component -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 aspect-square md:aspect-auto flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 text-left relative overflow-hidden">
-                <div class="space-y-1 md:space-y-3">
-                    <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-amber-600/10 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-champagne-glasses text-[14px]"></i>
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-champagne-glasses text-xl"></i>
                     </div>
-                    <h3 class="font-serif font-bold text-gray-950 text-xs md:text-lg leading-tight">Events & Celebrations</h3>
-                    <p class="text-[9px] md:text-xs text-gray-600 leading-tight md:leading-relaxed">Flexible spaces and bespoke planning for weddings, elite corporate meets, and private gala.</p>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl leading-tight">Events & Celebrations</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Flexible spaces and bespoke planning for weddings, elite corporate meets, and private gala.</p>
                 </div>
-                <a href="/contact" class="text-[8px] md:text-[10px] font-bold text-amber-700 tracking-wider uppercase block pt-1.5 md:pt-2 border-t border-slate-100 hover:underline shrink-0">Book Venue →</a>
-            </div>
+                <a href="/contact" class="mt-6 text-[10px] font-bold text-amber-700 tracking-wider uppercase block pt-4 border-t border-slate-100 hover:underline">Book Venue →</a>
+            </article>
 
         </div>
     </div>
 </section>
 
-  <section id="discover" class="py-16 md:py-24 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <!-- Header -->
-        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-12 md:mb-16">
-            <span class="text-amber-700 tracking-widest uppercase text-[10px] md:text-xs font-bold block mb-2">
+<section id="discover" class="py-16 md:py-24 bg-slate-50 overflow-hidden">
+    <div class="pl-4 md:pl-6">
+        
+        <div class="max-w-6xl mx-auto px-4 md:px-0 text-left md:text-center mb-12 md:mb-16">
+            <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3">
                 Beyond the Stay
             </span>
             <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
@@ -415,157 +350,153 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
             <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
         </div>
 
-        <!-- 4-Column Grid (Consistent with Offers section) -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-8 no-scrollbar pr-6 md:pr-12">
             
-            <!-- Card 1: Local Tours -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
-                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
-                    <img src="https://images.unsplash.com/photo-1540541338287-417002076214?w=400&h=300&fit=crop" alt="Tours" class="w-full h-full object-cover">
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300 group flex flex-col">
+                <div class="w-full h-48 mb-4 rounded-2xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1540541338287-417002076214?w=800&q=80" alt="Tours" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">Local Tours</h3>
-                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Explore hidden gems and iconic landmarks with our curated city guides.</p>
-                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
-            </div>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">Explore hidden gems and iconic landmarks with our curated city guides.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline pt-4 border-t border-slate-100 block">View Details →</a>
+            </article>
 
-            <!-- Card 2: Cultural Heritage -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
-                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&h=300&fit=crop" alt="Heritage" class="w-full h-full object-cover">
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300 group flex flex-col">
+                <div class="w-full h-48 mb-4 rounded-2xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="Heritage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">Cultural Sites</h3>
-                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Visit historic monuments and galleries just minutes from our doorstep.</p>
-                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
-            </div>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">Visit historic monuments and galleries just minutes from our doorstep.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline pt-4 border-t border-slate-100 block">View Details →</a>
+            </article>
 
-            <!-- Card 3: Dining Out -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
-                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
-                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&fit=crop" alt="Dining" class="w-full h-full object-cover">
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300 group flex flex-col">
+                <div class="w-full h-48 mb-4 rounded-2xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80" alt="Dining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">City Dining</h3>
-                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Experience the best local flavors at our neighborhood's premier restaurants.</p>
-                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
-            </div>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">Experience the best local flavors at our neighborhood's premier restaurants.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline pt-4 border-t border-slate-100 block">View Details →</a>
+            </article>
 
-            <!-- Card 4: Artisan Markets -->
-            <div class="group bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300">
-                <div class="w-full h-32 mb-4 rounded-xl overflow-hidden bg-slate-200">
-                    <img src="https://images.unsplash.com/photo-1533900298647-6b60e447936a?w=400&h=300&fit=crop" alt="Markets" class="w-full h-full object-cover">
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-5 hover:border-amber-500/50 hover:shadow-lg transition-all duration-300 group flex flex-col">
+                <div class="w-full h-48 mb-4 rounded-2xl overflow-hidden bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1533900298647-6b60e447936a?w=800&q=80" alt="Markets" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <h3 class="font-serif font-bold text-gray-950 text-lg mb-1">Artisan Markets</h3>
-                <p class="text-xs text-gray-600 mb-3 leading-relaxed">Shop for handcrafted goods and authentic local treasures nearby.</p>
-                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline">View Details →</a>
-            </div>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed flex-1">Shop for handcrafted goods and authentic local treasures nearby.</p>
+                <a href="#" class="text-amber-700 font-bold text-[10px] uppercase tracking-wider hover:underline pt-4 border-t border-slate-100 block">View Details →</a>
+            </article>
 
         </div>
     </div>
 </section>
 
-    <section id="offers" class="py-12 md:py-20 bg-white border-t border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
-            <!-- Added the 'header-hover' class for the hover color change effect -->
-            <span class="header-hover text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1 transition-colors duration-300">
+   <section id="offers" class="py-16 md:py-24 bg-white border-t border-b border-slate-200/60 overflow-hidden">
+    <div class="pl-4 md:pl-6">
+        
+        <div class="max-w-6xl mx-auto px-4 md:px-0 text-left md:text-center mb-12 md:mb-16">
+            <span class="header-hover text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3 transition-colors duration-300">
                 <i class="fa-solid fa-tags mr-1"></i> Seasonal Luxuries & Privileges
             </span>
-            <h2 class="header-hover font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight transition-colors duration-300">
+            <h2 class="header-hover font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight transition-colors duration-300">
                 Exclusive Packages & <span class="text-amber-700 font-normal italic">Limited Offers</span>
             </h2>
-            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
-            <!-- Card: Room Upgrade -->
-            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                <div class="space-y-2">
-                    <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-800"><i class="fa-solid fa-bed text-xs"></i></div>
-                    <h3 class="font-serif font-bold text-gray-950 text-lg">Room Upgrade</h3>
-                    <p class="text-xs text-gray-800">Enjoy a complimentary upgrade to our Executive Suite on mid-week stays.</p>
+        <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-8 no-scrollbar pr-6 md:pr-12">
+            
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-800">
+                        <i class="fa-solid fa-bed text-xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl">Room Upgrade</h3>
+                    <p class="text-xs text-gray-800 leading-relaxed">Enjoy a complimentary upgrade to our Executive Suite on mid-week stays.</p>
                 </div>
-            </div>
-            <!-- Card: Dining Discount -->
-            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                <div class="space-y-2">
-                    <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-orange-800"><i class="fa-solid fa-utensils text-xs"></i></div>
-                    <h3 class="font-serif font-bold text-gray-950 text-lg">Gourmet Credit</h3>
-                    <p class="text-xs text-gray-800">Receive 20% credit on all dining orders at our signature restaurant.</p>
+            </article>
+
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-800">
+                        <i class="fa-solid fa-utensils text-xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl">Gourmet Credit</h3>
+                    <p class="text-xs text-gray-800 leading-relaxed">Receive 20% credit on all dining orders at our signature restaurant.</p>
                 </div>
-            </div>
-            <!-- Card: Bar Social -->
-            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                <div class="space-y-2">
-                    <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-800"><i class="fa-solid fa-martini-glass text-xs"></i></div>
-                    <h3 class="font-serif font-bold text-gray-950 text-lg">Bar Social</h3>
-                    <p class="text-xs text-gray-800">Buy one, get one on classic cocktails every evening from 6pm to 8pm.</p>
+            </article>
+
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-800">
+                        <i class="fa-solid fa-martini-glass text-xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl">Bar Social</h3>
+                    <p class="text-xs text-gray-800 leading-relaxed">Buy one, get one on classic cocktails every evening from 6pm to 8pm.</p>
                 </div>
-            </div>
-            <!-- Card: Stay & Dine -->
-            <div class="group bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-                <div class="space-y-2">
-                    <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-800"><i class="fa-solid fa-champagne-glasses text-xs"></i></div>
-                    <h3 class="font-serif font-bold text-gray-950 text-lg">Stay & Dine</h3>
-                    <p class="text-xs text-gray-800">Book any room and receive a breakfast and dinner package included.</p>
+            </article>
+
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-800">
+                        <i class="fa-solid fa-champagne-glasses text-xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl">Stay & Dine</h3>
+                    <p class="text-xs text-gray-800 leading-relaxed">Book any room and receive a breakfast and dinner package included.</p>
                 </div>
-            </div>
+            </article>
+
         </div>
     </div>
 </section>
 
-<section id="amenities" class="py-12 md:py-20 bg-white border-t border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section id="amenities" class="py-16 md:py-24 bg-gradient-to-br from-white via-slate-50 to-white border-t border-b border-slate-200/60 overflow-hidden">
+    <div class="pl-4 md:pl-6">
         
-        <!-- Section Header -->
-        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-10 md:mb-14">
-            <span class="text-amber-700 tracking-widest uppercase text-[9px] md:text-xs font-bold block mb-1">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 text-left md:text-center mb-12 md:mb-16">
+            <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3">
                 <i class="fa-solid fa-star mr-1"></i> Our Signature Spaces
             </span>
-            <h2 class="font-serif text-2xl md:text-4xl text-gray-950 font-bold leading-tight">
+            <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
                 Featured <span class="text-amber-700 font-normal italic">Facilities</span>
             </h2>
-            <div class="w-12 h-0.5 bg-amber-600 mt-3 md:mx-auto mb-3"></div>
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
         </div>
 
-        <!-- Amenities Row (No slider, one row, scrollable on mobile) -->
-        <!-- Amenities Row: Added 'no-scrollbar' class to hide the bar -->
-<div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-4 no-scrollbar">
-    {% for amenity in amenities %}
-    <article class="group min-w-[220px] md:min-w-[280px] bg-slate-50 border border-slate-300 rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all">
-        <div class="space-y-2">
-            <!-- Amenity Icon -->
-            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-800">
-                <i class="{{ amenity.icon }} text-xs"></i>
-            </div>
-            <!-- Title & Description -->
-            <h3 class="font-serif font-bold text-gray-950 text-lg">{{ amenity.title }}</h3>
-            <p class="text-xs text-gray-800">{{ amenity.description }}</p>
+        <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-8 no-scrollbar pr-6 md:pr-12">
+            {% for amenity in amenities %}
+            <article class="min-w-[280px] md:min-w-[320px] bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                        <i class="{{ amenity.icon }} text-xl"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-gray-950 text-xl leading-tight">{{ amenity.title }}</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">{{ amenity.description }}</p>
+                </div>
+            </article>
+            {% endfor %}
         </div>
-    </article>
-    {% endfor %}
-</div>
         
     </div>
 </section>
-   
-<section id="hotel-experiences" class="py-16 md:py-24 bg-white border-t border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+<section id="hotel-experiences" class="py-16 md:py-24 bg-white border-t border-b border-slate-200/60 overflow-hidden">
+    <div class="pl-4 md:pl-6">
         
-        <!-- Header -->
-        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-12 md:mb-16">
-            <span class="text-amber-700 tracking-widest uppercase text-[10px] md:text-xs font-bold block mb-2">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 text-left md:text-center mb-12 md:mb-16">
+            <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3">
                 Curated Stays
             </span>
             <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
                 Modern Hotel <span class="text-amber-700 font-normal italic">Experiences</span>
             </h2>
-            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
+            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto mb-6"></div>
         </div>
 
-        <!-- Single Row Container (No Wrapping) -->
-        <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-6 no-scrollbar">
+        <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 pb-8 no-scrollbar pr-6 md:pr-12">
             
-            <!-- Room Card -->
-            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
                 <div class="relative overflow-hidden aspect-[16/10]">
                     <img src="/static/images/optimized/opt_5993971e_photo-1505693416388-ac5ce068fe85.jpg" alt="Rooms" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
@@ -579,8 +510,7 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
                 </div>
             </article>
 
-            <!-- Dining Card -->
-            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
                 <div class="relative overflow-hidden aspect-[16/10]">
                     <img src="/static/images/optimized/opt_f14943c4_photo-1517248135467-4c7edcad34c4.jpg" alt="Dining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
@@ -594,8 +524,7 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
                 </div>
             </article>
 
-            <!-- Events Card -->
-            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-300 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+            <article class="min-w-[280px] md:min-w-[320px] bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
                 <div class="relative overflow-hidden aspect-[16/10]">
                     <img src="/static/images/optimized/opt_44b76f06_photo-1524758631624-e2822e304c36.jpg" alt="Events" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
@@ -613,88 +542,52 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
     </div>
 </section>
 
-    <section id="values" class="py-16 md:py-24 bg-white border-t border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        
-        <!-- Header -->
-        <div class="text-left md:text-center max-w-2xl md:mx-auto mb-16">
-            <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold block mb-3">
-                The AVYUKT Promise
-            </span>
-            <h2 class="font-serif text-3xl md:text-5xl text-gray-950 font-bold leading-tight">
-                Designed for <span class="text-amber-700 font-normal italic">Refined Living</span>
-            </h2>
-            <div class="w-16 h-1 bg-amber-600 mt-6 md:mx-auto"></div>
-        </div>
-
-        <!-- Redesigned Main Feature Section -->
-        <div class="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center mb-20">
-            <!-- Left: Feature Image -->
-            <div class="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80" alt="Refined Living" class="w-full h-full object-cover">
-                <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/70 to-transparent w-full">
-                    <h4 class="text-white text-xl font-serif font-bold">Uncompromising Quality</h4>
-                </div>
+<section id="guest-journey" class="py-12 bg-white overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-6 md:px-12 mb-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+            <div class="space-y-2">
+                <span class="text-amber-700 tracking-[0.2em] uppercase text-[10px] font-bold block">
+                    <i class="fa-solid fa-star mr-1"></i> A Legacy of Care
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl text-gray-950 font-bold leading-tight">
+                    Your Journey,<br><span class="text-amber-700 font-normal italic">Refined</span>
+                </h2>
             </div>
-            
-            <!-- Right: Content -->
-            <div class="space-y-6">
-                <h3 class="text-3xl font-serif font-bold text-gray-950">Where Every Detail Finds Meaning</h3>
-                <p class="text-gray-600 leading-relaxed text-lg">At AVYUKT VIEW, we believe that true luxury is found in the subtle balance between comfort and elegance. Our promise is to transform your stay into an effortless journey of rejuvenation and discovery.</p>
-                <div class="pt-4">
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-gray-800 font-medium"><i class="fa-solid fa-check text-amber-700"></i> Bespoke Concierge Services</li>
-                        <li class="flex items-center gap-3 text-gray-800 font-medium"><i class="fa-solid fa-check text-amber-700"></i> Sustainable Luxury Practices</li>
-                        <li class="flex items-center gap-3 text-gray-800 font-medium"><i class="fa-solid fa-check text-amber-700"></i> Tailored Guest Experiences</li>
-                    </ul>
-                </div>
+
+            <div class="border-t border-slate-200 pt-4">
+                <p class="text-xs text-gray-600 mb-3 max-w-xs">Join our exclusive circle for priority bookings and curated privileges.</p>
+                <a href="#join" class="text-[10px] uppercase tracking-wider font-bold text-amber-700 border-b border-amber-700 pb-0.5 hover:opacity-80 transition-all">
+                    Become A Member &rarr;
+                </a>
             </div>
-        </div>
-
-        <!-- Square Cards Grid (Values) -->
-        <div class="flex flex-nowrap overflow-x-auto gap-6 pb-6 no-scrollbar">
-            
-            <!-- Card 1 -->
-            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
-                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
-                    <i class="fa-solid fa-heart-pulse"></i>
-                </div>
-                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Wellness Focus</h4>
-                <p class="text-xs text-gray-600 leading-relaxed">Prioritizing your mental and physical restoration.</p>
-            </article>
-
-            <!-- Card 2 -->
-            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
-                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
-                    <i class="fa-solid fa-wifi"></i>
-                </div>
-                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Seamless Tech</h4>
-                <p class="text-xs text-gray-600 leading-relaxed">Modern connectivity integrated into every corner.</p>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
-                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
-                    <i class="fa-solid fa-utensils"></i>
-                </div>
-                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Culinary Art</h4>
-                <p class="text-xs text-gray-600 leading-relaxed">Fresh, locally sourced ingredients in every dish.</p>
-            </article>
-
-            <!-- Card 4 -->
-            <article class="min-w-[280px] w-[280px] h-[280px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col justify-center hover:border-amber-500/50 hover:shadow-lg transition-all">
-                <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-800 text-2xl">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h4 class="font-serif font-bold text-gray-950 text-lg mb-2">Total Privacy</h4>
-                <p class="text-xs text-gray-600 leading-relaxed">Your sanctuary, guarded and secure 24/7.</p>
-            </article>
-            
         </div>
     </div>
-</section>
 
-    <section id="testimonials" class="py-16 md:py-24 bg-slate-50 border-t border-b border-slate-200/60">
+    <div class="flex flex-nowrap overflow-x-auto gap-4 md:gap-6 px-6 md:px-12 no-scrollbar">
+        {% set journey = [
+            {'img': 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80', 'step': '01', 'title': 'Arrival', 'desc': 'A seamless transition.'},
+            {'img': 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80', 'step': '02', 'title': 'The Retreat', 'desc': 'Timeless comfort.'},
+            {'img': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80', 'step': '03', 'title': 'Gourmet', 'desc': 'Culinary stories.'},
+            {'img': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80', 'step': '04', 'title': 'Social', 'desc': 'Skyline spirits.'},
+            {'img': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80', 'step': '05', 'title': 'Restore', 'desc': 'Holistic wellness.'},
+            {'img': 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80', 'step': '06', 'title': 'Departure', 'desc': 'Warm memories.'}
+        ] %}
+
+        {% for item in journey %}
+        <article class="min-w-[220px] md:min-w-[260px] h-[320px] relative rounded-2xl overflow-hidden flex flex-col bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <img src="{{ item.img }}" alt="{{ item.title }}" class="w-full h-2/3 object-cover">
+            <div class="p-5 flex flex-col justify-center h-1/3">
+                <span class="text-amber-700 font-mono text-[8px] uppercase tracking-widest mb-0.5">{{ item.step }}</span>
+                <h4 class="font-serif text-base font-bold text-gray-950 mb-0.5">{{ item.title }}</h4>
+                <p class="text-gray-600 text-[9px] leading-relaxed">{{ item.desc }}</p>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+   
+    <section id="testimonials" class="py-16 md:py-24 bg-gradient-to-br from-white via-slate-50 to-white border-t border-b border-slate-200/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <!-- Header -->
         <div class="text-left md:text-center max-w-2xl md:mx-auto mb-16">
@@ -706,7 +599,7 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
         <!-- Horizontal Row -->
         <div class="flex flex-nowrap overflow-x-auto gap-6 pb-8 no-scrollbar">
             {% for item in testimonials %}
-            <article class="min-w-[320px] md:min-w-[400px] bg-white border border-slate-200 rounded-[2rem] p-8 flex flex-col hover:shadow-xl transition-all duration-300">
+            <article class="min-w-[320px] md:min-w-[400px] bg-slate-50 border border-slate-200 rounded-[2rem] p-8 flex flex-col hover:shadow-xl transition-all duration-300">
                 <div class="text-amber-400 text-2xl mb-4">★★★★★</div>
                 <p class="text-gray-600 italic leading-relaxed mb-8 flex-1">"{{ item.quote }}"</p>
                 <div class="flex items-center gap-4">
@@ -751,106 +644,5 @@ A new chapter of luxury in Bangalore.Impeccable stays and unforgettable flavors 
         
     </div>
 </section>
-
-    <section id="contact" class="pt-16 pb-8 bg-black text-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid gap-8 lg:grid-cols-3 items-start">
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <a href="#" class="flex items-center gap-3">
-                {% if logo_image %}
-                <img src="{{ logo_image or '/static/images/avyukt_logo_transparent.png' }}" alt="AVYUKT VIEW" class="h-20 object-contain logo-img" onerror="this.style.display='none'" />
-                {% else %}
-                <img src="/static/images/avyukt_logo_transparent.png" alt="AVYUKT VIEW" class="h-20 object-contain logo-img" onerror="this.style.display='none'" />
-                {% endif %}
-              </a>
-              <div>
-                <div class="font-serif text-xl text-white">AVYUKT VIEW</div>
-                <div class="text-sm text-neutral-300">Hotel & Resort</div>
-              </div>
-            </div>
-            <p class="text-neutral-300 max-w-sm">AVYUKT VIEW is a haven of luxury and tranquility, offering unparalleled experiences in stunning natural and urban settings.</p>
-            <div class="flex items-center gap-3">
-              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.88v-6.99H7.898v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
-              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 5.924a8.349 8.349 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.998A4.107 4.107 0 0 0 16.616 4c-2.266 0-4.104 1.835-4.104 4.1 0 .322.036.636.106.936-3.41-.171-6.436-1.804-8.462-4.287a4.09 4.09 0 0 0-.556 2.063c0 1.423.725 2.678 1.827 3.413a4.086 4.086 0 0 1-1.859-.513v.052c0 1.987 1.414 3.644 3.291 4.019a4.135 4.135 0 0 1-1.853.07c.522 1.624 2.037 2.807 3.833 2.84A8.237 8.237 0 0 1 2 19.54 11.616 11.616 0 0 0 8.29 21c7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53A8.36 8.36 0 0 0 22 5.924z"/></svg></a>
-              <a href="#" class="social-icon bg-white text-black hover:bg-slate-200 rounded-full p-3 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3H4.385A1.385 1.385 0 0 0 3 4.385v15.23A1.385 1.385 0 0 0 4.385 21h15.23A1.385 1.385 0 0 0 21 19.615V4.385A1.385 1.385 0 0 0 19.615 3zM8.853 18.169H6.54V9.633h2.313v8.536zM7.697 8.496a1.34 1.34 0 1 1 0-2.68 1.34 1.34 0 0 1 0 2.68zM18.169 18.169h-2.312v-4.176c0-1-.018-2.29-1.396-2.29-1.397 0-1.61 1.091-1.61 2.218v4.248h-2.312V9.633h2.22v1.167h.032c.31-.588 1.068-1.205 2.199-1.205 2.352 0 2.787 1.548 2.787 3.562v4.013z"/></svg></a>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <h4 class="text-xl font-semibold text-white">Get in touch</h4>
-            <div class="space-y-4 text-neutral-300">
-              <div class="flex items-start gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-400 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12v6M8 12v6M3 8h18M3 8l4-5h10l4 5M3 8v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"/></svg>
-                <div>
-                  <div class="text-sm opacity-80">Email</div>
-                  <a href="mailto:{{ contact.email }}" class="text-white hover:underline">{{ contact.email }}</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-400 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l.4 2M7 13h10l1 4H6l1-4zM16 5l1 3M8 5l1 3M3 8h18"/></svg>
-                <div>
-                  <div class="text-sm opacity-80">Phone</div>
-                  <a href="tel:{{ contact.phone | replace(' ', '') }}" class="text-white hover:underline">{{ contact.phone }}</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-400 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13 21.314l-4.657-4.657A8 8 0 1117.657 16.657z"/></svg>
-                <div>
-                  <div class="text-sm opacity-80">Address</div>
-                  <div class="text-neutral-300">{{ contact.address }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <h4 class="text-xl font-semibold text-white">Sign up our newsletter</h4>
-            <p class="text-neutral-300">Get update information, news and free insight.</p>
-            {% if subscribe_success == '1' %}
-            <div class="mb-2 rounded-3xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">Thanks! We'll keep you updated.</div>
-            {% elif subscribe_success == '0' %}
-            <div class="mb-2 rounded-3xl border border-rose-200 bg-rose-50 p-3 text-sm text-rose-700">Enter a valid email address to subscribe.</div>
-            {% endif %}
-            <form action="/subscribe" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
-              <input name="name" type="text" placeholder="Name" class="w-full border border-gray-200 rounded-md p-3 bg-gray-50 text-neutral-900" />
-              <input name="email" type="email" placeholder="Email" class="w-full border border-gray-200 rounded-md p-3 bg-gray-50 text-neutral-900" required />
-              <button type="submit" class="sm:col-span-2 bg-amber-600 hover:bg-amber-500 text-white rounded-md py-3 flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4"/></svg> Sign Up</button>
-            </form>
-            <p class="text-xs opacity-60 mt-2">We respect your privacy. Unsubscribe at any time.</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
-
-  <footer class="bg-neutral-900 text-white py-5">
-    <div class="max-w-6xl mx-auto px-6 text-center text-sm opacity-70">© 2026 AVYUKT VIEW. All rights reserved.</div>
-  </footer>
-
-  <!-- Chat floating button -->
-  <div id="chat-open-btn" class="fixed right-6 bottom-10 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center cursor-pointer" title="Chat with us">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.97-4.03 9-9 9a9.003 9.003 0 01-6.32-2.54L3 21l1.54-2.68A8.964 8.964 0 003 12c0-4.97 4.03-9 9-9s9 4.03 9 9z"/></svg>
-  </div>
-
-  <!-- Chat widget -->
-    <div id="chat-widget" class="hidden fixed right-6 bottom-10 z-50 w-80 max-w-full md:w-96 bg-white rounded-2xl shadow-2xl overflow-hidden">
-    <div class="flex items-center justify-between p-4 bg-emerald-600 text-white">
-      <div class="flex items-center gap-3">
-        <!-- Replace with your chatbot image at static/images/chatbot.png -->
-        <img src="/static/images/chatbot.png" alt="chatbot" class="w-8 h-8 rounded-full object-cover" onerror="this.style.display='none'" />
-        <div class="font-semibold">AVYUKT VIEW Assistant</div>
-      </div>
-      <button id="chat-close-btn" class="p-2 opacity-90 hover:opacity-100">✕</button>
-    </div>
-    <div id="chat-messages" class="p-4 h-64 overflow-auto bg-gray-50"></div>
-    <form id="chat-form" class="p-3 border-t border-gray-100 bg-white flex gap-2">
-      <input id="chat-input" name="message" type="text" placeholder="Ask about bookings, policies..." class="flex-1 border border-gray-200 rounded-md p-2" />
-      <button type="submit" class="bg-emerald-600 text-white px-3 py-2 rounded-md">Send</button>
-    </form>
-  </div>
-
-  <script src="/static/js/main.js"></script>
-  <script src="/static/js/carousel.js"></script>
-</body>
-</html>
+ {% endblock %}
