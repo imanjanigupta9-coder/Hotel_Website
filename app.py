@@ -549,6 +549,16 @@ def features_page():
         logo_image=logo_image
     )
 
+@app.route('/join')
+def join_page():
+    logo_image = get_logo_image()
+    return render_template(
+        'join.html',
+        contact=CONTACT_DETAILS,
+        booking_link=BOOKING_LINK,
+        logo_image=logo_image
+    )
+
 @app.route('/check_availability', methods=['POST'])
 def check_availability():
     check_in = request.form.get('check_in')

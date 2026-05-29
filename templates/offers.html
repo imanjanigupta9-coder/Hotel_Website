@@ -1,39 +1,110 @@
 {% extends "base.html" %}
 {% block title %}Offers | AVYUKT VIEW{% endblock %}
 {% block content %}
-<main class="max-w-6xl mx-auto px-6 py-12">
-  <section class="rounded-[40px] border border-slate-200 bg-white p-10 shadow-sm">
-    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
-      <div class="center-mobile">
-        <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Special Offers</p>
-        <h1 class="text-4xl font-serif mb-4">Curated packages for your next stay</h1>
-        <p class="text-lg text-slate-600 mb-6">Enjoy exclusive savings, reward nights, and custom event packages created to make your visit extra special.</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="/contact" class="crystal-btn">Enquire now</a>
-          <a href="/rooms" class="room-details-cta">Browse rooms</a>
+
+<div class="bg-gradient-to-b from-[#fdfbf7] to-[#f1f5f9] min-h-screen text-neutral-900 antialiased">
+
+<!-- HERO SECTION -->
+<section id="home" class="relative min-h-[70vh] lg:min-h-[85vh] bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden border-b border-slate-200/80 flex items-center">
+    
+    <div class="absolute top-1/3 left-1/4 w-80 h-80 bg-amber-500/[0.06] rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+    <div class="absolute bottom-1/4 left-10 w-64 h-64 bg-amber-600/[0.04] rounded-full blur-[80px] pointer-events-none animate-pulse"></div>
+
+    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="lg:col-span-6 space-y-5 md:space-y-6 text-left p-2 md:pr-12">
+            
+            <div class="inline-flex items-center gap-2 bg-amber-600/5 border border-amber-500/10 px-3 py-1 rounded-full">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+                </span>
+                <span class="text-amber-800 tracking-[0.25em] uppercase text-[8px] md:text-[9px] font-extrabold block">
+                    Limited Time Offers
+                </span>
+            </div>
+            
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 tracking-tight font-bold leading-[1.15]">
+                Exclusive <span class="text-amber-700 font-normal italic font-serif relative">Packages</span>
+            </h1>
+            
+            <div class="flex items-center gap-3 opacity-90">
+                <div class="w-16 h-[2px] bg-amber-600/80 rounded-full"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-slate-900"></div>
+            </div>
+            
+            <p class="text-slate-700 font-medium md:font-normal text-xs sm:text-sm md:text-base max-w-md leading-relaxed opacity-95">
+                Enjoy exclusive savings, reward nights, and custom event packages created to make your visit extra special.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                
+                <a href="#offers-section" class="bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-bold text-xs px-6 py-4 rounded-xl tracking-wider text-center uppercase shadow-xl shadow-amber-700/10 hover:shadow-amber-600/30 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    View Offers
+                </a>
+                
+                <a href="/join" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-4 rounded-xl text-xs tracking-wider text-center uppercase transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95 shadow-lg shadow-slate-900/10 border border-slate-950">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Member Benefits
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="lg:col-span-6 relative w-full h-56 sm:h-72 md:h-96 lg:h-[70vh] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-200/60 group">
+            
+            <div class="absolute top-3 left-3 w-4 h-4 border-t border-l border-white/40 pointer-events-none z-20"></div>
+            <div class="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-white/40 pointer-events-none z-20"></div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-10"></div>
+            
+            <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=95" 
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
+                 alt="Special Offers at AVYUKT VIEW" />
+        </div>
+
+    </div>
+</section>
+
+<!-- OFFERS SECTION -->
+<section id="offers-section" class="py-12 md:py-24 bg-white border-t border-slate-100">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6">
+    <section class="rounded-[40px] border border-slate-200 bg-white p-8 md:p-10 shadow-sm">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+        <div class="center-mobile">
+          <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Special Offers</p>
+          <h2 class="text-3xl md:text-4xl font-serif mb-4">Curated packages for your next stay</h2>
+          <p class="text-lg text-slate-600 mb-6">Enjoy exclusive savings, reward nights, and custom event packages created to make your visit extra special.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="crystal-btn">Enquire now</a>
+            <a href="/rooms" class="room-details-cta">Browse rooms</a>
+          </div>
+        </div>
+        <div class="rounded-[32px] overflow-hidden shadow-lg">
+          <img src="{{ src_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel dining" class="w-full h-full object-cover" />
         </div>
       </div>
-      <div class="rounded-[32px] overflow-hidden shadow-lg">
-        <img src="{{ src_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg',1200) }}" srcset="{{ srcset_for('/static/images/optimized/opt_d66e4236_photo-1498654896293-37aacf113fd9.jpg') }}" sizes="(max-width:640px)100vw, (max-width:1024px)80vw, 50vw" alt="Hotel dining" class="w-full h-full object-cover" />
+      <div class="mt-10 horizontal-card-slider-wrapper">
+        <div class="horizontal-card-slider horizontal-card-slider-responsive grid gap-6 md:grid-cols-3">
+          {% for offer in offers %}
+          <article class="glass-card rounded-3xl p-6 shadow-sm">
+            <p class="text-sm uppercase tracking-[0.28em] text-amber-600 mb-3">Offer</p>
+            <h3 class="text-2xl font-semibold mb-3">{{ offer.title }}</h3>
+            <p class="text-slate-600 mb-6">{{ offer.description }}</p>
+            <a href="/contact" class="room-book-btn">{{ offer.cta }}</a>
+          </article>
+          {% endfor %}
+        </div>
+        <div class="carousel-dots"></div>
       </div>
-    </div>
-    <div class="mt-10 horizontal-card-slider-wrapper">
-      <div class="horizontal-card-slider horizontal-card-slider-responsive grid gap-6 md:grid-cols-3">
-        {% for offer in offers %}
-        <article class="glass-card rounded-3xl p-6 shadow-sm">
-          <p class="text-sm uppercase tracking-[0.28em] text-amber-600 mb-3">Offer</p>
-          <h3 class="text-2xl font-semibold mb-3">{{ offer.title }}</h3>
-          <p class="text-slate-600 mb-6">{{ offer.description }}</p>
-          <a href="/contact" class="room-book-btn">{{ offer.cta }}</a>
-        </article>
-        {% endfor %}
+      <div class="mt-10 rounded-[32px] border border-slate-200 bg-slate-50 p-8">
+        <h3 class="text-3xl font-semibold">Why choose our seasonal offers?</h3>
+        <p class="mt-4 text-slate-600 leading-7">Each offer is designed to give you more comfort, better service, and the best available package for your travel dates. Whether you are planning a romantic stay, a family holiday, or a business visit, we help you make the most of every moment.</p>
       </div>
-      <div class="carousel-dots"></div>
-    </div>
-    <div class="mt-10 rounded-[32px] border border-slate-200 bg-slate-50 p-8">
-      <h2 class="text-3xl font-semibold">Why choose our seasonal offers?</h2>
-      <p class="mt-4 text-slate-600 leading-7">Each offer is designed to give you more comfort, better service, and the best available package for your travel dates. Whether you are planning a romantic stay, a family holiday, or a business visit, we help you make the most of every moment.</p>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+</section>
+
+</div>
 {% endblock %}

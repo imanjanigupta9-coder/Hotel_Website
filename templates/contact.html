@@ -1,10 +1,105 @@
 {% extends "base.html" %}
 {% block title %}Contact | AVYUKT VIEW{% endblock %}
 {% block content %}
-<main class="max-w-6xl mx-auto px-6 py-12">
+
+<div class="bg-gradient-to-b from-[#fdfbf7] to-[#f1f5f9] min-h-screen text-neutral-900 antialiased">
+
+<!-- HERO SECTION -->
+<section id="home" class="relative min-h-[70vh] lg:min-h-[85vh] bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden border-b border-slate-200/80 flex items-center">
+    
+    <div class="absolute top-1/3 left-1/4 w-80 h-80 bg-amber-500/[0.06] rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+    <div class="absolute bottom-1/4 left-10 w-64 h-64 bg-amber-600/[0.04] rounded-full blur-[80px] pointer-events-none animate-pulse"></div>
+
+    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="lg:col-span-6 space-y-5 md:space-y-6 text-left p-2 md:pr-12">
+            
+            <div class="inline-flex items-center gap-2 bg-amber-600/5 border border-amber-500/10 px-3 py-1 rounded-full">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+                </span>
+                <span class="text-amber-800 tracking-[0.25em] uppercase text-[8px] md:text-[9px] font-extrabold block">
+                    We're Here to Help
+                </span>
+            </div>
+            
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 tracking-tight font-bold leading-[1.15]">
+                Get in <span class="text-amber-700 font-normal italic font-serif relative">Touch</span>
+            </h1>
+            
+            <div class="flex items-center gap-3 opacity-90">
+                <div class="w-16 h-[2px] bg-amber-600/80 rounded-full"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-slate-900"></div>
+            </div>
+            
+            <p class="text-slate-700 font-medium md:font-normal text-xs sm:text-sm md:text-base max-w-md leading-relaxed opacity-95">
+                Reach out to our team for bookings, special requests, or group packages. We're ready to make your stay unforgettable.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                
+                <a href="#contact-form" class="bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-bold text-xs px-6 py-4 rounded-xl tracking-wider text-center uppercase shadow-xl shadow-amber-700/10 hover:shadow-amber-600/30 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    Send Message
+                </a>
+                
+                <a href="/join" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-4 rounded-xl text-xs tracking-wider text-center uppercase transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 active:scale-95 shadow-lg shadow-slate-900/10 border border-slate-950">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m0 0h3m0-3v3m0-3h-3m0 0h-3" /></svg>
+                    Join Membership
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="lg:col-span-6 relative w-full h-56 sm:h-72 md:h-96 lg:h-[70vh] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-200/60 group">
+            
+            <div class="absolute top-3 left-3 w-4 h-4 border-t border-l border-white/40 pointer-events-none z-20"></div>
+            <div class="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-white/40 pointer-events-none z-20"></div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-10"></div>
+            
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=95" 
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
+                 alt="Contact AVYUKT VIEW" />
+        </div>
+
+    </div>
+</section>
+
+<!-- MAIN CONTENT SECTION -->
+<section id="contact-form" class="py-12 md:py-24 bg-white border-t border-slate-100">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6">
   <section class="rounded-[40px] border border-slate-200 bg-white p-10 shadow-sm">
-    <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
-      <div>
+    <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">        <div>
+          <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Contact</p>
+          <h2 class="text-3xl md:text-4xl font-serif mb-4">Let's make your stay unforgettable</h2>
+          <p class="text-lg text-slate-600 mb-6">Reach out to our reservations team for room bookings, group packages, or any special request. We're here to help you plan the perfect visit.</p>
+          <form action="/subscribe" method="POST" class="mt-8 space-y-5 max-w-xl">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <input name="name" type="text" placeholder="Name" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm" required />
+              <input name="email" type="email" placeholder="Email" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm" required />
+            </div>
+            <textarea name="message" rows="5" placeholder="Tell us how we can help" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm"></textarea>
+            <button type="submit" class="room-book-btn w-full">Send message</button>
+          </form>
+        </div>
+        <aside class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold">Visit us</h3>
+              <p class="text-slate-600 mt-3">{{ contact.address }}</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Reception hours</h3>
+              <p class="text-slate-600 mt-3">{{ contact.hours }}</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Need help now?</h3>
+              <p class="text-slate-600 mt-3">Call our reservations line for fast support.</p>
+            </div>
+          </div>
+        </aside>      <div>
         <p class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-3">Contact</p>
         <h1 class="text-4xl font-serif mb-4">Let’s make your stay unforgettable</h1>
         <p class="text-lg text-slate-600 mb-6">Reach out to our reservations team for room bookings, group packages, or any special request. We’re here to help you plan the perfect visit.</p>
@@ -34,21 +129,25 @@
         </div>
       </aside>
     </div>
-  </section>
+      </div>
+    </section>
 
-  <section class="mt-12 rounded-[40px] border border-slate-200 bg-white p-10 shadow-sm">
-    <h2 class="text-3xl font-semibold mb-5">Customer support & group bookings</h2>
-    <p class="text-slate-600">We offer tailored solutions for events, conferences, and group stays. Contact our events team for custom packages, menus, and room blocks.</p>
-    <div class="mt-6 grid gap-6 md:grid-cols-2">
-      <article class="glass-card rounded-3xl p-6 shadow-sm">
-        <h3 class="text-xl font-semibold mb-3">Events & Meetings</h3>
-        <p class="text-slate-600">Flexible meeting spaces with AV support, catering, and dedicated event coordinators to manage every detail.</p>
-      </article>
-      <article class="glass-card rounded-3xl p-6 shadow-sm">
-        <h3 class="text-xl font-semibold mb-3">Corporate & Group Rates</h3>
-        <p class="text-slate-600">Competitive group rates and negotiated contracts are available for corporate travel and long-stay bookings.</p>
-      </article>
-    </div>
-  </section>
-</main>
+    <section class="mt-12 rounded-[40px] border border-slate-200 bg-white p-8 md:p-10 shadow-sm">
+      <h2 class="text-3xl font-semibold mb-5">Customer support & group bookings</h2>
+      <p class="text-slate-600">We offer tailored solutions for events, conferences, and group stays. Contact our events team for custom packages, menus, and room blocks.</p>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <article class="glass-card rounded-3xl p-6 shadow-sm">
+          <h3 class="text-xl font-semibold mb-3">Events & Meetings</h3>
+          <p class="text-slate-600">Flexible meeting spaces with AV support, catering, and dedicated event coordinators to manage every detail.</p>
+        </article>
+        <article class="glass-card rounded-3xl p-6 shadow-sm">
+          <h3 class="text-xl font-semibold mb-3">Corporate & Group Rates</h3>
+          <p class="text-slate-600">Competitive group rates and negotiated contracts are available for corporate travel and long-stay bookings.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</section>
+
+</div>
 {% endblock %}
